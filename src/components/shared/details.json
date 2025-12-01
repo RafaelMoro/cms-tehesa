@@ -1,0 +1,66 @@
+{
+  "collectionName": "components_shared_details",
+  "info": {
+    "displayName": "details",
+    "icon": "bulletList"
+  },
+  "options": {},
+  "attributes": {
+    "diameter": {
+      "type": "string"
+    },
+    "material": {
+      "type": "string"
+    },
+    "packageQuantity": {
+      "type": "integer"
+    },
+    "length": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    },
+    "screwHeadType": {
+      "type": "enumeration",
+      "enum": [
+        "hexagonal",
+        "cilindrica",
+        "baja_cilindrica",
+        "baja",
+        "baja_metrico",
+        "plana_std",
+        "plana",
+        "boton_std",
+        "boton",
+        "queso_ranurado",
+        "plana_phillips",
+        "coche",
+        "plana_ranurado",
+        "queso",
+        "fijadora"
+      ]
+    },
+    "screwType": {
+      "type": "enumeration",
+      "enum": [
+        "tuerca",
+        "tornillo",
+        "perno",
+        "varilla_roscada",
+        "varilla",
+        "pija",
+        "rondana",
+        "remache",
+        "taquete",
+        "nudo",
+        "guia_std",
+        "cilindro",
+        "tapon",
+        "opresor",
+        "accesorios_EPDM"
+      ]
+    }
+  },
+  "config": {}
+}
