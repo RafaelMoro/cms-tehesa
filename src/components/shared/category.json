@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_shared_categories",
+  "info": {
+    "displayName": "category",
+    "icon": "apps"
+  },
+  "options": {},
+  "attributes": {
+    "categoryType": {
+      "type": "enumeration",
+      "enum": [
+        "tornilleria"
+      ]
+    }
+  },
+  "config": {}
+}

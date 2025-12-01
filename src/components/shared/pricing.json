@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_shared_pricings",
+  "info": {
+    "displayName": "pricing",
+    "icon": "shoppingCart"
+  },
+  "options": {},
+  "attributes": {
+    "price": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
