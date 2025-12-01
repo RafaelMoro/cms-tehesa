@@ -1,3 +1,9 @@
+## v0.4.0 (2025-12-01)
+
+### Pull Requests
+[#3](https://github.com/RafaelMoro/cms-tehesa/pull/3) | Add initial collections for products
+
+
 ## v0.3.0 (2025-12-01)
 
 ### Pull Requests
