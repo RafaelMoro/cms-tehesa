@@ -83,6 +83,7 @@ export interface SharedPricing extends Struct.ComponentSchema {
   };
   attributes: {
     price: Schema.Attribute.String;
+    pricePromotion: Schema.Attribute.String;
   };
 }
 
