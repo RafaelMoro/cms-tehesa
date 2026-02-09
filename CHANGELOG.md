@@ -1,3 +1,9 @@
+## v0.6.0 (2026-02-09)
+
+### Pull Requests
+[#6](https://github.com/RafaelMoro/cms-tehesa/pull/6) | Update schemas for enumations
+
+
 ## v0.5.0 (2026-01-26)
 
 ### Pull Requests
