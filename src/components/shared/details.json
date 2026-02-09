@@ -38,7 +38,18 @@
         "coche",
         "plana_ranurado",
         "queso",
-        "fijadora"
+        "fijadora",
+        "fijadora_phillips",
+        "guia_std",
+        "guia",
+        "punta_copa_std",
+        "punta_copa",
+        "gota_ranurado",
+        "plana_ranurado_phillips",
+        "fijadora_ranurado",
+        "k-lath",
+        "phillips",
+        "gota_combinado"
       ]
     },
     "screwType": {
@@ -58,8 +69,13 @@
         "cilindro",
         "tapon",
         "opresor",
-        "accesorios_EPDM"
+        "accesorios_EPDM",
+        "accesorio_pija"
       ]
+    },
+    "internalId": {
+      "type": "string",
+      "unique": true
     }
   },
   "config": {}

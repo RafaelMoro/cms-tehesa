@@ -7,7 +7,16 @@ export interface SharedCategory extends Struct.ComponentSchema {
     icon: 'apps';
   };
   attributes: {
-    categoryType: Schema.Attribute.Enumeration<['tornilleria']>;
+    categoryType: Schema.Attribute.Enumeration<
+      [
+        'tornilleria',
+        'llaves_herramientas_apriete',
+        'perforacion_accesorios_taladro',
+        'roscado_herramientas_roscas',
+        'extraccion_reparaci\u00F3n_fijaciones',
+        'herramientas_corte_conformado',
+      ]
+    >;
   };
 }
 
@@ -19,6 +28,7 @@ export interface SharedDetails extends Struct.ComponentSchema {
   };
   attributes: {
     diameter: Schema.Attribute.String;
+    internalId: Schema.Attribute.String & Schema.Attribute.Unique;
     length: Schema.Attribute.String;
     material: Schema.Attribute.String;
     packageQuantity: Schema.Attribute.Integer;
@@ -39,6 +49,17 @@ export interface SharedDetails extends Struct.ComponentSchema {
         'plana_ranurado',
         'queso',
         'fijadora',
+        'fijadora_phillips',
+        'guia_std',
+        'guia',
+        'punta_copa_std',
+        'punta_copa',
+        'gota_ranurado',
+        'plana_ranurado_phillips',
+        'fijadora_ranurado',
+        'k-lath',
+        'phillips',
+        'gota_combinado',
       ]
     >;
     screwType: Schema.Attribute.Enumeration<
@@ -58,6 +79,7 @@ export interface SharedDetails extends Struct.ComponentSchema {
         'tapon',
         'opresor',
         'accesorios_EPDM',
+        'accesorio_pija',
       ]
     >;
     size: Schema.Attribute.String;
