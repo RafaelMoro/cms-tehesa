@@ -9,7 +9,12 @@
     "categoryType": {
       "type": "enumeration",
       "enum": [
-        "tornilleria"
+        "tornilleria",
+        "llaves_herramientas_apriete",
+        "perforacion_accesorios_taladro",
+        "roscado_herramientas_roscas",
+        "extraccion_reparación_fijaciones",
+        "herramientas_corte_conformado"
       ]
     }
   },
