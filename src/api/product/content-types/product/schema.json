@@ -31,6 +31,10 @@
       "type": "component",
       "component": "shared.category",
       "repeatable": true
+    },
+    "internetId": {
+      "type": "uid",
+      "required": true
     }
   }
 }
