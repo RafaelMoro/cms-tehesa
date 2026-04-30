@@ -1,3 +1,9 @@
+## v0.7.0 (2026-04-30)
+
+### Pull Requests
+[#8](https://github.com/RafaelMoro/cms-tehesa/pull/8) | Add Brand, category, product variant collection types
+
+
 ## v0.6.0 (2026-02-09)
 
 ### Pull Requests
