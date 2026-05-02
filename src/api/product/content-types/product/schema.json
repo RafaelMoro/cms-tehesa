@@ -27,11 +27,6 @@
       "component": "shared.details",
       "repeatable": true
     },
-    "category": {
-      "type": "component",
-      "component": "shared.category",
-      "repeatable": true
-    },
     "internetId": {
       "type": "uid",
       "required": true
@@ -41,6 +36,11 @@
       "relation": "oneToMany",
       "target": "api::product-variant.product-variant",
       "mappedBy": "product"
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::brand.brand"
     }
   }
 }

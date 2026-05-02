@@ -11,32 +11,16 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "diameter": {
-      "type": "string",
-      "required": true
-    },
-    "price": {
-      "type": "decimal",
-      "required": true
-    },
-    "internalId": {
-      "type": "string"
-    },
-    "packageQuantity": {
-      "type": "integer",
-      "required": true
-    },
-    "screwHeadType": {
-      "type": "string"
-    },
-    "screwType": {
-      "type": "string"
-    },
     "product": {
       "type": "relation",
       "relation": "manyToOne",
       "target": "api::product.product",
       "inversedBy": "product_variants"
+    },
+    "details": {
+      "type": "component",
+      "component": "shared.details",
+      "repeatable": false
     }
   }
 }
