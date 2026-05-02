@@ -11,25 +11,25 @@
   },
   "categories": [
     {
-      "name": "tornilleria"
+      "name": "Tornillería"
     },
     {
-      "name": "perforacion_accesorios_taladro"
+      "name": "Perforación y accesorios para taladro"
     },
     {
-      "name": "roscado_herramientas_roscas"
+      "name": "Roscado y herramientas para roscas"
     },
     {
-      "name": "extraccion_reparación_fijaciones"
+      "name": "Extracción y Reparación de fijaciones"
     },
     {
-      "name": "herramientas_corte_conformado"
+      "name": "Herramientas de corte y conformado"
     },
     {
-      "name": "herramientas_impacto_forja"
+      "name": "Herramientas de impacto o forja"
     },
     {
-      "name": "diagnostico_electricidad_electronica"
+      "name": "Herramientas de diagnóstico de electricidad y electrónica"
     }
   ],
   "brands": [
