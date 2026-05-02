@@ -3,25 +3,25 @@
 const fs = require('fs-extra');
 const path = require('path');
 const mime = require('mime-types');
-const { categories, authors, articles, global, about } = require('../data/data-sample.json');
+const { categories, authors, articles, global, about, brands } = require('../data/data.json');
 
 async function seedExampleApp() {
   const shouldImportSeedData = await isFirstRun();
 
-  if (shouldImportSeedData) {
-    try {
-      console.log('Setting up the template...');
-      await importSeedData();
-      console.log('Ready to go');
-    } catch (error) {
-      console.log('Could not import seed data');
-      console.error(error);
-    }
-  } else {
-    console.log(
-      'Seed data has already been imported. We cannot reimport unless you clear your database first.'
-    );
+  try {
+    console.log('Setting up the template...');
+    await importSeedData();
+    console.log('Ready to go');
+  } catch (error) {
+    console.log('Could not import seed data');
+    console.error(error);
   }
+  // if (shouldImportSeedData) {
+  // } else {
+  //   console.log(
+  //     'Seed data has already been imported. We cannot reimport unless you clear your database first.'
+  //   );
+  // }
 }
 
 async function isFirstRun() {
@@ -166,23 +166,23 @@ async function updateBlocks(blocks) {
   return updatedBlocks;
 }
 
-async function importArticles() {
-  for (const article of articles) {
-    const cover = await checkFileExistsBeforeUpload([`${article.slug}.jpg`]);
-    const updatedBlocks = await updateBlocks(article.blocks);
+// async function importArticles() {
+//   for (const article of articles) {
+//     const cover = await checkFileExistsBeforeUpload([`${article.slug}.jpg`]);
+//     const updatedBlocks = await updateBlocks(article.blocks);
 
-    await createEntry({
-      model: 'article',
-      entry: {
-        ...article,
-        cover,
-        blocks: updatedBlocks,
-        // Make sure it's not a draft
-        publishedAt: Date.now(),
-      },
-    });
-  }
-}
+//     await createEntry({
+//       model: 'article',
+//       entry: {
+//         ...article,
+//         cover,
+//         blocks: updatedBlocks,
+//         // Make sure it's not a draft
+//         publishedAt: Date.now(),
+//       },
+//     });
+//   }
+// }
 
 async function importGlobal() {
   const favicon = await checkFileExistsBeforeUpload(['favicon.png']);
@@ -202,19 +202,19 @@ async function importGlobal() {
   });
 }
 
-async function importAbout() {
-  const updatedBlocks = await updateBlocks(about.blocks);
+// async function importAbout() {
+//   const updatedBlocks = await updateBlocks(about.blocks);
 
-  await createEntry({
-    model: 'about',
-    entry: {
-      ...about,
-      blocks: updatedBlocks,
-      // Make sure it's not a draft
-      publishedAt: Date.now(),
-    },
-  });
-}
+//   await createEntry({
+//     model: 'about',
+//     entry: {
+//       ...about,
+//       blocks: updatedBlocks,
+//       // Make sure it's not a draft
+//       publishedAt: Date.now(),
+//     },
+//   });
+// }
 
 async function importCategories() {
   for (const category of categories) {
@@ -222,36 +222,39 @@ async function importCategories() {
   }
 }
 
-async function importAuthors() {
-  for (const author of authors) {
-    const avatar = await checkFileExistsBeforeUpload([author.avatar]);
-
-    await createEntry({
-      model: 'author',
-      entry: {
-        ...author,
-        avatar,
-      },
-    });
+async function importBrands() {
+  for (const brand of brands) {
+    await createEntry({ model: 'brand', entry: brand });
   }
 }
+
+// async function importAuthors() {
+//   for (const author of authors) {
+//     const avatar = await checkFileExistsBeforeUpload([author.avatar]);
+
+//     await createEntry({
+//       model: 'author',
+//       entry: {
+//         ...author,
+//         avatar,
+//       },
+//     });
+//   }
+// }
 
 async function importSeedData() {
   // Allow read of application content types
   await setPublicPermissions({
-    article: ['find', 'findOne'],
     category: ['find', 'findOne'],
-    author: ['find', 'findOne'],
-    global: ['find', 'findOne'],
-    about: ['find', 'findOne'],
+    brand: ['find', 'findOne'],
   });
 
   // Create all entries
   await importCategories();
-  await importAuthors();
-  await importArticles();
-  await importGlobal();
-  await importAbout();
+  await importBrands();
+  // await importArticles();
+  // await importGlobal();
+  // await importAbout();
 }
 
 async function main() {
