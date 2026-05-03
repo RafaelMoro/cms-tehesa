@@ -592,7 +592,7 @@ export interface ApiProductVariantProductVariant
     material: Schema.Attribute.String;
     measurementUnit: Schema.Attribute.String;
     packageQuantity: Schema.Attribute.Integer;
-    price: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    pricing: Schema.Attribute.Component<'shared.pricing', false>;
     product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
     quantity: Schema.Attribute.Integer &

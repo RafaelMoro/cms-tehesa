@@ -88,12 +88,13 @@
         "accesorio_pija"
       ]
     },
-    "price": {
-      "type": "decimal",
-      "required": true
-    },
     "internalId": {
       "type": "string"
+    },
+    "pricing": {
+      "type": "component",
+      "component": "shared.pricing",
+      "repeatable": false
     }
   }
 }
