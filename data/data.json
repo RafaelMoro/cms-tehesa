@@ -84,7 +84,9 @@
       "packageQuantity": 1,
       "material": "",
       "measurementUnit": "pulgadas",
-      "price": 91.1,
+      "pricing": {
+        "price": 91.1
+      },
       "internalId": "M111-11201",
       "screwHeadType": "",
       "fastenersComponents": ""
@@ -96,7 +98,9 @@
       "packageQuantity": 1,
       "material": "",
       "measurementUnit": "pulgadas",
-      "price": 60.4,
+      "pricing": {
+        "price": 60.4
+      },
       "internalId": "M111-11202",
       "screwHeadType": "",
       "fastenersComponents": ""
@@ -108,7 +112,9 @@
       "packageQuantity": 1,
       "material": "",
       "measurementUnit": "pulgadas",
-      "price": 56,
+      "pricing": {
+        "price": 56
+      },
       "internalId": "M111-11203",
       "screwHeadType": "",
       "fastenersComponents": ""
@@ -120,7 +126,9 @@
       "packageQuantity": 1,
       "material": "",
       "measurementUnit": "pulgadas",
-      "price": 41.2,
+      "pricing": {
+        "price": 41.2
+      },
       "internalId": "M111-11204",
       "screwHeadType": "",
       "fastenersComponents": ""
@@ -132,7 +140,9 @@
       "packageQuantity": 1,
       "material": "",
       "measurementUnit": "pulgadas",
-      "price": 41.5,
+      "pricing": {
+        "price": 41.5
+      },
       "internalId": "M111-11205",
       "screwHeadType": "",
       "fastenersComponents": ""
