@@ -229,8 +229,44 @@ async function importBrands() {
 }
 
 async function importProducts() {
+  // Fetch categories and brands from Strapi to create relations
+  const categories = await strapi.documents('api::category.category').findMany({
+    limit: 1000,
+  });
+  const brands = await strapi.documents('api::brand.brand').findMany({
+    limit: 1000,
+  });
+
+  // Create maps for easy lookup
+  const categoriesMap = new Map();
+  categories.forEach((category) => {
+    if (category.customId) {
+      categoriesMap.set(category.customId, category.documentId);
+    }
+  });
+
+  const brandsMap = new Map();
+  brands.forEach((brand) => {
+    if (brand.customId) {
+      brandsMap.set(brand.customId, brand.documentId);
+    }
+  });
+
+  // Import each product with relations
   for (const product of products) {
-    await createEntry({ model: 'product', entry: product });
+    const { categoryCustomId, brandCustomId, ...productData } = product;
+
+    const categoryDocumentId = categoryCustomId ? categoriesMap.get(categoryCustomId) : null;
+    const brandDocumentId = brandCustomId ? brandsMap.get(brandCustomId) : null;
+
+    await createEntry({
+      model: 'product',
+      entry: {
+        ...productData,
+        category: categoryDocumentId,
+        brand: brandDocumentId,
+      },
+    });
   }
 }
 

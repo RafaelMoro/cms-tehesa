@@ -17,6 +17,10 @@
     "description": {
       "type": "text"
     },
+    "customId": {
+      "type": "string",
+      "unique": true
+    },
     "internetId": {
       "type": "uid",
       "required": true

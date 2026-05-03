@@ -11,54 +11,74 @@
   },
   "categories": [
     {
+      "customId": "tornilleria",
       "name": "Tornillería"
     },
     {
+      "customId": "perforacion-accesorios-taladro",
       "name": "Perforación y accesorios para taladro"
     },
     {
+      "customId": "roscado-herramientas-roscas",
       "name": "Roscado y herramientas para roscas"
     },
     {
+      "customId": "extraccion-reparacion-fijaciones",
       "name": "Extracción y Reparación de fijaciones"
     },
     {
+      "customId": "herramientas-corte-conformado",
       "name": "Herramientas de corte y conformado"
     },
     {
+      "customId": "herramientas-impacto-forja",
       "name": "Herramientas de impacto o forja"
     },
     {
+      "customId": "herramientas-diagnostico-electricidad",
       "name": "Herramientas de diagnóstico de electricidad y electrónica"
     }
   ],
   "brands": [
     {
+      "customId": "weston",
       "name": "Weston"
     },
     {
+      "customId": "king-tony",
       "name": "King Tony"
     },
     {
+      "customId": "bohrcraft",
       "name": "Bohrcraft"
     }
   ],
   "products": [
     {
+      "customId": "broca-aav-135-split-point",
       "name": "Broca AAV 135° Split Point",
-      "description": ""
+      "description": "",
+      "categoryCustomId": "perforacion-accesorios-taladro",
+      "brandCustomId": "bohrcraft"
     },
     {
+      "customId": "broca-avv-zanco",
       "name": "Broca AVV Zanco",
-      "description": ""
+      "description": "",
+      "categoryCustomId": "perforacion-accesorios-taladro",
+      "brandCustomId": "bohrcraft"
     },
     {
+      "customId": "broca-aav-135-split-point-thunderbit",
       "name": "Broca AAV 135° Split Point Thunderbit",
-      "description": ""
+      "description": "",
+      "categoryCustomId": "perforacion-accesorios-taladro",
+      "brandCustomId": "bohrcraft"
     }
   ],
   "productsVariant": [
     {
+      "productCustomId": "broca-aav-135-split-point",
       "diameter": "1/64\"",
       "quantity": 1,
       "packageQuantity": 1,
@@ -71,6 +91,7 @@
       "fastenersComponents": ""
     },
     {
+      "productCustomId": "broca-aav-135-split-point",
       "diameter": "1/32\"",
       "quantity": 1,
       "packageQuantity": 1,
@@ -83,6 +104,7 @@
       "fastenersComponents": ""
     },
     {
+      "productCustomId": "broca-avv-zanco",
       "diameter": "3/64\"",
       "quantity": 1,
       "packageQuantity": 1,
@@ -95,6 +117,7 @@
       "fastenersComponents": ""
     },
     {
+      "productCustomId": "broca-avv-zanco",
       "diameter": "1/16\"",
       "quantity": 1,
       "packageQuantity": 1,
@@ -107,6 +130,7 @@
       "fastenersComponents": ""
     },
     {
+      "productCustomId": "broca-aav-135-split-point-thunderbit",
       "diameter": "5/64\"",
       "quantity": 1,
       "packageQuantity": 1,
