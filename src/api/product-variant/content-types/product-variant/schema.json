@@ -95,6 +95,9 @@
       "type": "component",
       "component": "shared.pricing",
       "repeatable": false
+    },
+    "stock": {
+      "type": "integer"
     }
   }
 }
