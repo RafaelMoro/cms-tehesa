@@ -86,7 +86,7 @@ async function createEntry({ model, entry }) {
       data: entry,
     });
   } catch (error) {
-    console.error({ model, entry, error });
+    console.error({ model, entry, error: error.message, details: error.details });
   }
 }
 
@@ -147,6 +147,18 @@ async function updateBlocks(blocks) {
   return updatedBlocks;
 }
 
+// Helper function to remove empty strings and null values from an object
+function cleanEntryData(data) {
+  const cleaned = {};
+  for (const [key, value] of Object.entries(data)) {
+    // Skip empty strings, null, and undefined
+    if (value !== '' && value !== null && value !== undefined) {
+      cleaned[key] = value;
+    }
+  }
+  return cleaned;
+}
+
 async function importProductVariants() {
   // Set public permissions for product variants
   await setPublicPermissions({
@@ -180,11 +192,14 @@ async function importProductVariants() {
       continue;
     }
 
+    // Clean the variant data (remove empty strings and null values)
+    const cleanedVariantData = cleanEntryData(variantData);
+
     // Create the product variant with the product relation
     await createEntry({
       model: 'product-variant',
       entry: {
-        ...variantData,
+        ...cleanedVariantData,
         product: productDocumentId,
       },
     });
