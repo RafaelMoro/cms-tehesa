@@ -33,10 +33,7 @@
     "packageQuantity": {
       "type": "integer"
     },
-    "length": {
-      "type": "string"
-    },
-    "size": {
+    "measurementUnit": {
       "type": "string"
     },
     "screwHeadType": {

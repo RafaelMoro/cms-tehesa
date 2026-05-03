@@ -583,7 +583,6 @@ export interface ApiProductVariantProductVariant
       ]
     >;
     internalId: Schema.Attribute.String;
-    length: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -591,6 +590,7 @@ export interface ApiProductVariantProductVariant
     > &
       Schema.Attribute.Private;
     material: Schema.Attribute.String;
+    measurementUnit: Schema.Attribute.String;
     packageQuantity: Schema.Attribute.Integer;
     price: Schema.Attribute.Decimal & Schema.Attribute.Required;
     product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
@@ -634,7 +634,6 @@ export interface ApiProductVariantProductVariant
         'gota_combinado',
       ]
     >;
-    size: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
