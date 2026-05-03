@@ -559,15 +559,80 @@ export interface ApiProductVariantProductVariant
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    details: Schema.Attribute.Component<'shared.details', false>;
+    diameter: Schema.Attribute.String & Schema.Attribute.Required;
+    fastenersComponents: Schema.Attribute.Enumeration<
+      [
+        'tuerca',
+        'tornillo',
+        'perno',
+        'varilla_roscada',
+        'varilla',
+        'pija',
+        'rondana',
+        'remache',
+        'taquete',
+        'nudo',
+        'guia_std',
+        'cilindro',
+        'tapon',
+        'opresor',
+        'accesorios_EPDM',
+        'accesorio_pija',
+      ]
+    >;
+    internalId: Schema.Attribute.String;
+    length: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
       'api::product-variant.product-variant'
     > &
       Schema.Attribute.Private;
+    material: Schema.Attribute.String;
+    packageQuantity: Schema.Attribute.Integer;
+    price: Schema.Attribute.Decimal & Schema.Attribute.Required;
     product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
+    quantity: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+    screwHeadType: Schema.Attribute.Enumeration<
+      [
+        'hexagonal',
+        'cilindrica',
+        'baja_cilindrica',
+        'baja',
+        'baja_metrico',
+        'plana_std',
+        'plana',
+        'boton_std',
+        'boton',
+        'queso_ranurado',
+        'plana_phillips',
+        'coche',
+        'plana_ranurado',
+        'queso',
+        'fijadora',
+        'fijadora_phillips',
+        'guia_std',
+        'guia',
+        'punta_copa_std',
+        'punta_copa',
+        'gota_ranurado',
+        'plana_ranurado_phillips',
+        'fijadora_ranurado',
+        'k-lath',
+        'phillips',
+        'gota_combinado',
+      ]
+    >;
+    size: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -586,11 +651,11 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
   };
   attributes: {
     brand: Schema.Attribute.Relation<'oneToOne', 'api::brand.brand'>;
+    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     description: Schema.Attribute.Text;
-    details: Schema.Attribute.Component<'shared.details', true>;
     internetId: Schema.Attribute.UID & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -599,7 +664,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
-    pricing: Schema.Attribute.Component<'shared.pricing', true>;
     product_variants: Schema.Attribute.Relation<
       'oneToMany',
       'api::product-variant.product-variant'

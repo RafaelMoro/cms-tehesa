@@ -17,16 +17,6 @@
     "description": {
       "type": "text"
     },
-    "pricing": {
-      "type": "component",
-      "component": "shared.pricing",
-      "repeatable": true
-    },
-    "details": {
-      "type": "component",
-      "component": "shared.details",
-      "repeatable": true
-    },
     "internetId": {
       "type": "uid",
       "required": true
@@ -41,6 +31,11 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::brand.brand"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
     }
   }
 }
