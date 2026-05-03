@@ -42,5 +42,81 @@
     {
       "name": "Bohrcraft"
     }
+  ],
+  "products": [
+    {
+      "name": "Broca AAV 135° Split Point",
+      "description": ""
+    },
+    {
+      "name": "Broca AVV Zanco",
+      "description": ""
+    },
+    {
+      "name": "Broca AAV 135° Split Point Thunderbit",
+      "description": ""
+    }
+  ],
+  "productsVariant": [
+    {
+      "diameter": "1/64\"",
+      "quantity": 1,
+      "packageQuantity": 1,
+      "material": "",
+      "length": "",
+      "size": "pulgadas",
+      "price": 91.1,
+      "internalId": "M111-11201",
+      "screwHeadType": "",
+      "fastenersComponents": ""
+    },
+    {
+      "diameter": "1/32\"",
+      "quantity": 1,
+      "packageQuantity": 1,
+      "material": "",
+      "length": "",
+      "size": "pulgadas",
+      "price": 60.4,
+      "internalId": "M111-11202",
+      "screwHeadType": "",
+      "fastenersComponents": ""
+    },
+    {
+      "diameter": "3/64\"",
+      "quantity": 1,
+      "packageQuantity": 1,
+      "material": "",
+      "length": "",
+      "size": "pulgadas",
+      "price": 56,
+      "internalId": "M111-11203",
+      "screwHeadType": "",
+      "fastenersComponents": ""
+    },
+    {
+      "diameter": "1/16\"",
+      "quantity": 1,
+      "packageQuantity": 1,
+      "material": "",
+      "length": "",
+      "size": "pulgadas",
+      "price": 41.2,
+      "internalId": "M111-11204",
+      "screwHeadType": "",
+      "fastenersComponents": ""
+    },
+    {
+      "diameter": "5/64\"",
+      "quantity": 1,
+      "packageQuantity": 1,
+      "material": "",
+      "length": "",
+      "size": "pulgadas",
+      "price": 41.5,
+      "internalId": "M111-11205",
+      "screwHeadType": "",
+      "fastenersComponents": ""
+    }
   ]
 }
