@@ -1,3 +1,21 @@
+'use strict';
+
+const fs = require('fs-extra');
+const path = require('path');
+const mime = require('mime-types');
+const { productsVariant } = require('../data/data.json');
+
+async function seedExampleApp() {
+  try {
+    console.log('Setting up product variants...');
+    await importProductVariants();
+    console.log('Product variants imported successfully');
+  } catch (error) {
+    console.log('Could not import product variants');
+    console.error(error);
+  }
+}
+
 async function setPublicPermissions(newPermissions) {
   // Find the ID of the public role
   const publicRole = await strapi.query('plugin::users-permissions.role').findOne({
@@ -127,6 +145,52 @@ async function updateBlocks(blocks) {
   }
 
   return updatedBlocks;
+}
+
+async function importProductVariants() {
+  // Set public permissions for product variants
+  await setPublicPermissions({
+    'product-variant': ['find', 'findOne'],
+  });
+
+  // Fetch all products from Strapi
+  const products = await strapi.documents('api::product.product').findMany({
+    limit: 1000,
+  });
+
+  // Create a map of products by customId for easy lookup
+  const productsMap = new Map();
+  products.forEach((product) => {
+    if (product.customId) {
+      productsMap.set(product.customId, product.documentId);
+    }
+  });
+
+  console.log(`Found ${products.length} products in Strapi`);
+
+  // Import each product variant
+  for (const variant of productsVariant) {
+    const { productCustomId, ...variantData } = variant;
+
+    // Find the product documentId using the customId
+    const productDocumentId = productsMap.get(productCustomId);
+
+    if (!productDocumentId) {
+      console.warn(`Product with customId "${productCustomId}" not found. Skipping variant.`);
+      continue;
+    }
+
+    // Create the product variant with the product relation
+    await createEntry({
+      model: 'product-variant',
+      entry: {
+        ...variantData,
+        product: productDocumentId,
+      },
+    });
+  }
+
+  console.log(`Imported ${productsVariant.length} product variants`);
 }
 
 async function main() {
