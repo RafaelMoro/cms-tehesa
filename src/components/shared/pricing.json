@@ -6,11 +6,13 @@
   },
   "options": {},
   "attributes": {
-    "price": {
-      "type": "string"
-    },
     "pricePromotion": {
       "type": "string"
+    },
+    "price": {
+      "type": "decimal",
+      "required": true,
+      "min": 1
     }
   },
   "config": {}

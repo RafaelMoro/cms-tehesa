@@ -17,24 +17,29 @@
     "description": {
       "type": "text"
     },
-    "pricing": {
-      "type": "component",
-      "component": "shared.pricing",
-      "repeatable": true
-    },
-    "details": {
-      "type": "component",
-      "component": "shared.details",
-      "repeatable": true
-    },
-    "category": {
-      "type": "component",
-      "component": "shared.category",
-      "repeatable": true
+    "customId": {
+      "type": "string",
+      "unique": true
     },
     "internetId": {
       "type": "uid",
       "required": true
+    },
+    "product_variants": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::product-variant.product-variant",
+      "mappedBy": "product"
+    },
+    "brand": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::brand.brand"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
     }
   }
 }

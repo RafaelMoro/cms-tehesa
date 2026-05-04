@@ -104,7 +104,14 @@ export interface SharedPricing extends Struct.ComponentSchema {
     icon: 'shoppingCart';
   };
   attributes: {
-    price: Schema.Attribute.String;
+    price: Schema.Attribute.Decimal &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      >;
     pricePromotion: Schema.Attribute.String;
   };
 }
