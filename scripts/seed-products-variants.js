@@ -19,7 +19,13 @@ function loadProductVariants() {
     
     const filePath = path.join(folderPath, file);
     const variants = require(filePath);
-    allVariants.push(...variants);
+    
+    // Temporarily load only 5 variants from each file
+    const limitedVariants = variants.slice(0, 5);
+    allVariants.push(...limitedVariants);
+    
+    // Original code (commented out temporarily):
+    // allVariants.push(...variants);
   }
   
   return allVariants;
