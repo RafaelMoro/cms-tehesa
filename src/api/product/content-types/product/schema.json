@@ -21,10 +21,6 @@
       "type": "string",
       "unique": true
     },
-    "internetId": {
-      "type": "uid",
-      "required": true
-    },
     "product_variants": {
       "type": "relation",
       "relation": "oneToMany",

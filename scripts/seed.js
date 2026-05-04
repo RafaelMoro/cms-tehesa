@@ -139,55 +139,8 @@ async function checkFileExistsBeforeUpload(files) {
   return allFiles.length === 1 ? allFiles[0] : allFiles;
 }
 
-async function updateBlocks(blocks) {
-  const updatedBlocks = [];
-  for (const block of blocks) {
-    if (block.__component === 'shared.media') {
-      const uploadedFiles = await checkFileExistsBeforeUpload([block.file]);
-      // Copy the block to not mutate directly
-      const blockCopy = { ...block };
-      // Replace the file name on the block with the actual file
-      blockCopy.file = uploadedFiles;
-      updatedBlocks.push(blockCopy);
-    } else if (block.__component === 'shared.slider') {
-      // Get files already uploaded to Strapi or upload new files
-      const existingAndUploadedFiles = await checkFileExistsBeforeUpload(block.files);
-      // Copy the block to not mutate directly
-      const blockCopy = { ...block };
-      // Replace the file names on the block with the actual files
-      blockCopy.files = existingAndUploadedFiles;
-      // Push the updated block
-      updatedBlocks.push(blockCopy);
-    } else {
-      // Just push the block as is
-      updatedBlocks.push(block);
-    }
-  }
-
-  return updatedBlocks;
-}
-
-// async function importArticles() {
-//   for (const article of articles) {
-//     const cover = await checkFileExistsBeforeUpload([`${article.slug}.jpg`]);
-//     const updatedBlocks = await updateBlocks(article.blocks);
-
-//     await createEntry({
-//       model: 'article',
-//       entry: {
-//         ...article,
-//         cover,
-//         blocks: updatedBlocks,
-//         // Make sure it's not a draft
-//         publishedAt: Date.now(),
-//       },
-//     });
-//   }
-// }
-
 async function importGlobal() {
   const favicon = await checkFileExistsBeforeUpload(['favicon.png']);
-  const shareImage = await checkFileExistsBeforeUpload(['default-image.png']);
   return createEntry({
     model: 'global',
     entry: {
@@ -197,25 +150,10 @@ async function importGlobal() {
       publishedAt: Date.now(),
       defaultSeo: {
         ...global.defaultSeo,
-        shareImage,
       },
     },
   });
 }
-
-// async function importAbout() {
-//   const updatedBlocks = await updateBlocks(about.blocks);
-
-//   await createEntry({
-//     model: 'about',
-//     entry: {
-//       ...about,
-//       blocks: updatedBlocks,
-//       // Make sure it's not a draft
-//       publishedAt: Date.now(),
-//     },
-//   });
-// }
 
 async function importCategories() {
   for (const category of categories) {
@@ -271,20 +209,6 @@ async function importProducts() {
   }
 }
 
-// async function importAuthors() {
-//   for (const author of authors) {
-//     const avatar = await checkFileExistsBeforeUpload([author.avatar]);
-
-//     await createEntry({
-//       model: 'author',
-//       entry: {
-//         ...author,
-//         avatar,
-//       },
-//     });
-//   }
-// }
-
 async function importSeedData() {
   // Allow read of application content types
   await setPublicPermissions({
@@ -296,9 +220,6 @@ async function importSeedData() {
   await importCategories();
   await importBrands();
   await importProducts();
-  // await importArticles();
-  // await importGlobal();
-  // await importAbout();
 }
 
 async function main() {
