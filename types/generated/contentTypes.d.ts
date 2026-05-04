@@ -471,6 +471,7 @@ export interface ApiBrandBrand extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    customId: Schema.Attribute.String & Schema.Attribute.Unique;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::brand.brand'> &
       Schema.Attribute.Private;
@@ -497,6 +498,7 @@ export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    customId: Schema.Attribute.String & Schema.Attribute.Unique;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -560,6 +562,26 @@ export interface ApiProductVariantProductVariant
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     diameter: Schema.Attribute.String & Schema.Attribute.Required;
+    fastenersComponents: Schema.Attribute.Enumeration<
+      [
+        'tuerca',
+        'tornillo',
+        'perno',
+        'varilla_roscada',
+        'varilla',
+        'pija',
+        'rondana',
+        'remache',
+        'taquete',
+        'nudo',
+        'guia_std',
+        'cilindro',
+        'tapon',
+        'opresor',
+        'accesorios_EPDM',
+        'accesorio_pija',
+      ]
+    >;
     internalId: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -567,12 +589,52 @@ export interface ApiProductVariantProductVariant
       'api::product-variant.product-variant'
     > &
       Schema.Attribute.Private;
-    packageQuantity: Schema.Attribute.Integer & Schema.Attribute.Required;
-    price: Schema.Attribute.Decimal & Schema.Attribute.Required;
+    material: Schema.Attribute.String;
+    measurementUnit: Schema.Attribute.String;
+    packageQuantity: Schema.Attribute.Integer;
+    pricing: Schema.Attribute.Component<'shared.pricing', false>;
     product: Schema.Attribute.Relation<'manyToOne', 'api::product.product'>;
     publishedAt: Schema.Attribute.DateTime;
-    screwHeadType: Schema.Attribute.String;
-    screwType: Schema.Attribute.String;
+    quantity: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMax<
+        {
+          min: 1;
+        },
+        number
+      > &
+      Schema.Attribute.DefaultTo<0>;
+    screwHeadType: Schema.Attribute.Enumeration<
+      [
+        'hexagonal',
+        'cilindrica',
+        'baja_cilindrica',
+        'baja',
+        'baja_metrico',
+        'plana_std',
+        'plana',
+        'boton_std',
+        'boton',
+        'queso_ranurado',
+        'plana_phillips',
+        'coche',
+        'plana_ranurado',
+        'queso',
+        'fijadora',
+        'fijadora_phillips',
+        'guia_std',
+        'guia',
+        'punta_copa_std',
+        'punta_copa',
+        'gota_ranurado',
+        'plana_ranurado_phillips',
+        'fijadora_ranurado',
+        'k-lath',
+        'phillips',
+        'gota_combinado',
+      ]
+    >;
+    stock: Schema.Attribute.Integer;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -590,12 +652,13 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     draftAndPublish: true;
   };
   attributes: {
-    category: Schema.Attribute.Component<'shared.category', true>;
+    brand: Schema.Attribute.Relation<'oneToOne', 'api::brand.brand'>;
+    category: Schema.Attribute.Relation<'oneToOne', 'api::category.category'>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    customId: Schema.Attribute.String & Schema.Attribute.Unique;
     description: Schema.Attribute.Text;
-    details: Schema.Attribute.Component<'shared.details', true>;
     internetId: Schema.Attribute.UID & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -604,7 +667,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     > &
       Schema.Attribute.Private;
     name: Schema.Attribute.String;
-    pricing: Schema.Attribute.Component<'shared.pricing', true>;
     product_variants: Schema.Attribute.Relation<
       'oneToMany',
       'api::product-variant.product-variant'

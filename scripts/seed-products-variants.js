@@ -3,37 +3,45 @@
 const fs = require('fs-extra');
 const path = require('path');
 const mime = require('mime-types');
-const { categories, global, brands } = require('../data/data.json');
-const products = require('../../tehesa-products/data/perforacion-accesorios-taladro/products.perforacion-accessorios-taladro.json');
 
-async function seedExampleApp() {
-  const shouldImportSeedData = await isFirstRun();
-
-  try {
-    console.log('Setting up the template...');
-    await importSeedData();
-    console.log('Ready to go');
-  } catch (error) {
-    console.log('Could not import seed data');
-    console.error(error);
+// Load product variants from perforacion-accesorios-taladro folder
+function loadProductVariants() {
+  const folderPath = path.join(__dirname, '../../tehesa-products/data/perforacion-accesorios-taladro');
+  const files = fs.readdirSync(folderPath);
+  
+  const allVariants = [];
+  
+  for (const file of files) {
+    // Skip the products.perforacion-accessorios-taladro.json file
+    if (file.startsWith('products.') || !file.endsWith('.json')) {
+      continue;
+    }
+    
+    const filePath = path.join(folderPath, file);
+    const variants = require(filePath);
+    
+    // Temporarily load only 5 variants from each file
+    const limitedVariants = variants.slice(0, 5);
+    allVariants.push(...limitedVariants);
+    
+    // Original code (commented out temporarily):
+    // allVariants.push(...variants);
   }
-  // if (shouldImportSeedData) {
-  // } else {
-  //   console.log(
-  //     'Seed data has already been imported. We cannot reimport unless you clear your database first.'
-  //   );
-  // }
+  
+  return allVariants;
 }
 
-async function isFirstRun() {
-  const pluginStore = strapi.store({
-    environment: strapi.config.environment,
-    type: 'type',
-    name: 'setup',
-  });
-  const initHasRun = await pluginStore.get({ key: 'initHasRun' });
-  await pluginStore.set({ key: 'initHasRun', value: true });
-  return !initHasRun;
+const productsVariant = loadProductVariants();
+
+async function seedExampleApp() {
+  try {
+    console.log('Setting up product variants...');
+    await importProductVariants();
+    console.log('Product variants imported successfully');
+  } catch (error) {
+    console.log('Could not import product variants');
+    console.error(error);
+  }
 }
 
 async function setPublicPermissions(newPermissions) {
@@ -106,7 +114,7 @@ async function createEntry({ model, entry }) {
       data: entry,
     });
   } catch (error) {
-    console.error({ model, entry, error });
+    console.error({ model, entry, error: error.message, details: error.details });
   }
 }
 
@@ -167,138 +175,65 @@ async function updateBlocks(blocks) {
   return updatedBlocks;
 }
 
-// async function importArticles() {
-//   for (const article of articles) {
-//     const cover = await checkFileExistsBeforeUpload([`${article.slug}.jpg`]);
-//     const updatedBlocks = await updateBlocks(article.blocks);
-
-//     await createEntry({
-//       model: 'article',
-//       entry: {
-//         ...article,
-//         cover,
-//         blocks: updatedBlocks,
-//         // Make sure it's not a draft
-//         publishedAt: Date.now(),
-//       },
-//     });
-//   }
-// }
-
-async function importGlobal() {
-  const favicon = await checkFileExistsBeforeUpload(['favicon.png']);
-  const shareImage = await checkFileExistsBeforeUpload(['default-image.png']);
-  return createEntry({
-    model: 'global',
-    entry: {
-      ...global,
-      favicon,
-      // Make sure it's not a draft
-      publishedAt: Date.now(),
-      defaultSeo: {
-        ...global.defaultSeo,
-        shareImage,
-      },
-    },
-  });
-}
-
-// async function importAbout() {
-//   const updatedBlocks = await updateBlocks(about.blocks);
-
-//   await createEntry({
-//     model: 'about',
-//     entry: {
-//       ...about,
-//       blocks: updatedBlocks,
-//       // Make sure it's not a draft
-//       publishedAt: Date.now(),
-//     },
-//   });
-// }
-
-async function importCategories() {
-  for (const category of categories) {
-    await createEntry({ model: 'category', entry: category });
+// Helper function to remove empty strings and null values from an object
+function cleanEntryData(data) {
+  const cleaned = {};
+  for (const [key, value] of Object.entries(data)) {
+    // Skip empty strings, null, and undefined
+    if (value !== '' && value !== null && value !== undefined) {
+      cleaned[key] = value;
+    }
   }
+  return cleaned;
 }
 
-async function importBrands() {
-  for (const brand of brands) {
-    await createEntry({ model: 'brand', entry: brand });
-  }
-}
-
-async function importProducts() {
-  // Fetch categories and brands from Strapi to create relations
-  const categories = await strapi.documents('api::category.category').findMany({
-    limit: 1000,
+async function importProductVariants() {
+  // Set public permissions for product variants
+  await setPublicPermissions({
+    'product-variant': ['find', 'findOne'],
   });
-  const brands = await strapi.documents('api::brand.brand').findMany({
+
+  // Fetch all products from Strapi
+  const products = await strapi.documents('api::product.product').findMany({
     limit: 1000,
   });
 
-  // Create maps for easy lookup
-  const categoriesMap = new Map();
-  categories.forEach((category) => {
-    if (category.customId) {
-      categoriesMap.set(category.customId, category.documentId);
+  // Create a map of products by customId for easy lookup
+  const productsMap = new Map();
+  products.forEach((product) => {
+    if (product.customId) {
+      productsMap.set(product.customId, product.documentId);
     }
   });
 
-  const brandsMap = new Map();
-  brands.forEach((brand) => {
-    if (brand.customId) {
-      brandsMap.set(brand.customId, brand.documentId);
+  console.log(`Found ${products.length} products in Strapi`);
+
+  // Import each product variant
+  for (const variant of productsVariant) {
+    const { productCustomId, ...variantData } = variant;
+
+    // Find the product documentId using the customId
+    const productDocumentId = productsMap.get(productCustomId);
+
+    if (!productDocumentId) {
+      console.warn(`Product with customId "${productCustomId}" not found. Skipping variant.`);
+      continue;
     }
-  });
 
-  // Import each product with relations
-  for (const product of products) {
-    const { categoryCustomId, brandCustomId, ...productData } = product;
+    // Clean the variant data (remove empty strings and null values)
+    const cleanedVariantData = cleanEntryData(variantData);
 
-    const categoryDocumentId = categoryCustomId ? categoriesMap.get(categoryCustomId) : null;
-    const brandDocumentId = brandCustomId ? brandsMap.get(brandCustomId) : null;
-
+    // Create the product variant with the product relation
     await createEntry({
-      model: 'product',
+      model: 'product-variant',
       entry: {
-        ...productData,
-        category: categoryDocumentId,
-        brand: brandDocumentId,
+        ...cleanedVariantData,
+        product: productDocumentId,
       },
     });
   }
-}
 
-// async function importAuthors() {
-//   for (const author of authors) {
-//     const avatar = await checkFileExistsBeforeUpload([author.avatar]);
-
-//     await createEntry({
-//       model: 'author',
-//       entry: {
-//         ...author,
-//         avatar,
-//       },
-//     });
-//   }
-// }
-
-async function importSeedData() {
-  // Allow read of application content types
-  await setPublicPermissions({
-    category: ['find', 'findOne'],
-    brand: ['find', 'findOne'],
-  });
-
-  // Create all entries
-  await importCategories();
-  await importBrands();
-  await importProducts();
-  // await importArticles();
-  // await importGlobal();
-  // await importAbout();
+  console.log(`Imported ${productsVariant.length} product variants`);
 }
 
 async function main() {

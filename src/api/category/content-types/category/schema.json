@@ -14,6 +14,10 @@
     "name": {
       "type": "string"
     },
+    "customId": {
+      "type": "string",
+      "unique": true
+    },
     "products": {
       "type": "relation",
       "relation": "oneToMany",
