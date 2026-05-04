@@ -13,6 +13,7 @@
     "seed:start": "node ./scripts/seed.js",
     "seed:products": "node ./scripts/seed-products-variants.js",
     "seed:clear": "node ./scripts/clear-seed-data.js",
+    "seed:transfer": "strapi transfer",
     "start": "strapi start",
     "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",
