@@ -659,7 +659,6 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       Schema.Attribute.Private;
     customId: Schema.Attribute.String & Schema.Attribute.Unique;
     description: Schema.Attribute.Text;
-    internetId: Schema.Attribute.UID & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
