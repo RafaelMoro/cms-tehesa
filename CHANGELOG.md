@@ -1,3 +1,9 @@
+## v0.8.1 (2026-05-04)
+
+### Pull Requests
+[#11](https://github.com/RafaelMoro/cms-tehesa/pull/11) | Remove images, change product props, change seed
+
+
 ## v0.8.0 (2026-05-04)
 
 ### Pull Requests
