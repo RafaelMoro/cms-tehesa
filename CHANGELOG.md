@@ -1,3 +1,9 @@
+## v0.8.0 (2026-05-04)
+
+### Pull Requests
+[#9](https://github.com/RafaelMoro/cms-tehesa/pull/9) | Add custom seed
+
+
 ## v0.7.0 (2026-04-30)
 
 ### Pull Requests
