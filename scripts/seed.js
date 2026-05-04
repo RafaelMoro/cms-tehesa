@@ -3,7 +3,8 @@
 const fs = require('fs-extra');
 const path = require('path');
 const mime = require('mime-types');
-const { categories, global, brands, products } = require('../data/data.json');
+const { categories, global, brands } = require('../data/data.json');
+const products = require('../../tehesa-products/data/perforacion-accesorios-taladro/products.perforacion-accessorios-taladro.json');
 
 async function seedExampleApp() {
   const shouldImportSeedData = await isFirstRun();
