@@ -3,7 +3,29 @@
 const fs = require('fs-extra');
 const path = require('path');
 const mime = require('mime-types');
-const { productsVariant } = require('../data/data.json');
+
+// Load product variants from perforacion-accesorios-taladro folder
+function loadProductVariants() {
+  const folderPath = path.join(__dirname, '../../tehesa-products/data/perforacion-accesorios-taladro');
+  const files = fs.readdirSync(folderPath);
+  
+  const allVariants = [];
+  
+  for (const file of files) {
+    // Skip the products.perforacion-accessorios-taladro.json file
+    if (file.startsWith('products.') || !file.endsWith('.json')) {
+      continue;
+    }
+    
+    const filePath = path.join(folderPath, file);
+    const variants = require(filePath);
+    allVariants.push(...variants);
+  }
+  
+  return allVariants;
+}
+
+const productsVariant = loadProductVariants();
 
 async function seedExampleApp() {
   try {
