@@ -36,6 +36,15 @@
       "type": "relation",
       "relation": "oneToOne",
       "target": "api::category.category"
+    },
+    "minPrice": {
+      "type": "decimal"
+    },
+    "maxPrice": {
+      "type": "decimal"
+    },
+    "variantCount": {
+      "type": "integer"
     }
   }
 }

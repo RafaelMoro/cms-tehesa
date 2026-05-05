@@ -665,6 +665,8 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'api::product.product'
     > &
       Schema.Attribute.Private;
+    maxPrice: Schema.Attribute.Decimal;
+    minPrice: Schema.Attribute.Decimal;
     name: Schema.Attribute.String;
     product_variants: Schema.Attribute.Relation<
       'oneToMany',
@@ -674,6 +676,7 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    variantCount: Schema.Attribute.Integer;
   };
 }
 
