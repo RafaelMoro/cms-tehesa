@@ -14,6 +14,7 @@
     "seed:products": "node ./scripts/seed-products-variants.js",
     "seed:clear": "node ./scripts/clear-seed-data.js",
     "seed:transfer": "strapi transfer",
+    "update-products-price-count": "node ./scripts/update-price-variant-count-products.js",
     "start": "strapi start",
     "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",
