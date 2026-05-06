@@ -1,3 +1,9 @@
+## v0.9.0 (2026-05-06)
+
+### Pull Requests
+[#13](https://github.com/RafaelMoro/cms-tehesa/pull/13) | Enhance PLP Page
+
+
 ## v0.8.1 (2026-05-04)
 
 ### Pull Requests
