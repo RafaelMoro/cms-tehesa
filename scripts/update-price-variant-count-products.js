@@ -1,10 +1,34 @@
 'use strict';
 
+const CUSTOM_ID = 'perforacion-accesorios-taladro';
+
 async function updateProductPrices() {
   try {
     console.log('Starting to update product prices and variant counts...');
 
+    // Find the category by customId
+    const categories = await strapi.documents('api::category.category').findMany({
+      filters: {
+        customId: CUSTOM_ID,
+      },
+      limit: 1,
+    });
+
+    if (categories.length === 0) {
+      console.log(`Category with customId "${CUSTOM_ID}" not found`);
+      return;
+    }
+
+    const category = categories[0];
+    console.log(`Found category: ${category.name} (${category.documentId})`);
+
+    // Find products that belong to this category
     const products = await strapi.documents('api::product.product').findMany({
+      filters: {
+        category: {
+          documentId: category.documentId,
+        },
+      },
       limit: 10000,
     });
 
