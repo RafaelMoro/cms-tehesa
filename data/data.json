@@ -37,6 +37,10 @@
     {
       "customId": "herramientas-diagnostico-electricidad",
       "name": "Herramientas de diagnóstico de electricidad y electrónica"
+    },
+    {
+      "customId": "llaves-herramientas-apriete",
+      "name": "Llaves y herramientas de apriete"
     }
   ],
   "brands": [
