@@ -59,6 +59,14 @@
     {
       "customId": "saravia",
       "name": "Saravia"
+    },
+    {
+      "customId": "lugo",
+      "name": "Lugo"
+    },
+    {
+      "customId": "precision",
+      "name": "Precision"
     }
   ],
   "products": [
