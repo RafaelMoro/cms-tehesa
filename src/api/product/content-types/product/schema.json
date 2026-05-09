@@ -45,6 +45,10 @@
     },
     "variantCount": {
       "type": "integer"
+    },
+    "hasOneProductVariant": {
+      "type": "boolean",
+      "default": false
     }
   }
 }
