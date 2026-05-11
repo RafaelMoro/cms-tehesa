@@ -242,6 +242,7 @@ async function importProductVariants() {
       entry: {
         ...cleanedVariantData,
         product: productDocumentId,
+        publishedAt: Date.now(),
       },
     });
   }
