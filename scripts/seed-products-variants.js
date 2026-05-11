@@ -4,30 +4,43 @@ const fs = require('fs-extra');
 const path = require('path');
 const mime = require('mime-types');
 
-// Load product variants from perforacion-accesorios-taladro folder
+// Load product variants from all subdirectories in data folder
 function loadProductVariants() {
-  const folderPath = path.join(__dirname, '../../tehesa-products/data/perforacion-accesorios-taladro');
-  const files = fs.readdirSync(folderPath);
-  
+  const dataPath = path.join(__dirname, '../../tehesa-products/data');
   const allVariants = [];
   
-  for (const file of files) {
-    // Skip the products.perforacion-accessorios-taladro.json file
-    if (file.startsWith('products.') || !file.endsWith('.json')) {
-      continue;
+  // Get all subdirectories
+  const subdirectories = fs.readdirSync(dataPath, { withFileTypes: true })
+    .filter(entry => entry.isDirectory())
+    .map(entry => entry.name);
+  
+  for (const subdir of subdirectories) {
+    const folderPath = path.join(dataPath, subdir);
+    const files = fs.readdirSync(folderPath);
+    
+    for (const file of files) {
+      // Skip the products.*.json files
+      if (file.startsWith('products.') || !file.endsWith('.json')) {
+        continue;
+      }
+      
+      const filePath = path.join(folderPath, file);
+      const variants = require(filePath);
+      
+      // Filter out variants without a valid productCustomId
+      const validVariants = variants.filter(variant => {
+        if (!variant.productCustomId) {
+          console.warn(`Skipping variant without productCustomId in file: ${file}`);
+          return false;
+        }
+        return true;
+      });
+      
+      allVariants.push(...validVariants);
     }
-    
-    const filePath = path.join(folderPath, file);
-    const variants = require(filePath);
-    
-    // Temporarily load only 5 variants from each file
-    const limitedVariants = variants.slice(0, 5);
-    allVariants.push(...limitedVariants);
-    
-    // Original code (commented out temporarily):
-    // allVariants.push(...variants);
   }
   
+  console.log(`Loaded ${allVariants.length} product variants from all folders`);
   return allVariants;
 }
 
@@ -229,6 +242,7 @@ async function importProductVariants() {
       entry: {
         ...cleanedVariantData,
         product: productDocumentId,
+        publishedAt: Date.now(),
       },
     });
   }

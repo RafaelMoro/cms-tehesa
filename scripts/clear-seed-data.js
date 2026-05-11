@@ -6,9 +6,9 @@ async function clearSeedData() {
 
     // Delete in reverse order of dependencies
     await deleteProductVariants();
-    await deleteProducts();
-    await deleteBrands();
-    await deleteCategories();
+    // await deleteProducts();
+    // await deleteBrands();
+    // await deleteCategories();
 
     console.log('All seed data cleared successfully');
   } catch (error) {

@@ -13,6 +13,7 @@
     "seed:start": "node ./scripts/seed.js",
     "seed:products": "node ./scripts/seed-products-variants.js",
     "seed:clear": "node ./scripts/clear-seed-data.js",
+    "publish:variants": "node ./scripts/publish-variants.js",
     "seed:transfer": "strapi transfer",
     "update-products-price-count": "node ./scripts/update-price-variant-count-products.js",
     "start": "strapi start",
