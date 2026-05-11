@@ -1,3 +1,9 @@
+## v0.9.1 (2026-05-11)
+
+### Pull Requests
+[#15](https://github.com/RafaelMoro/cms-tehesa/pull/15) | Update categories and other fixes
+
+
 ## v0.9.0 (2026-05-06)
 
 ### Pull Requests
