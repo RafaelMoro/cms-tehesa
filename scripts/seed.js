@@ -4,7 +4,33 @@ const fs = require('fs-extra');
 const path = require('path');
 const mime = require('mime-types');
 const { categories, global, brands } = require('../data/data.json');
-const products = require('../../tehesa-products/data/perforacion-accesorios-taladro/products.perforacion-accessorios-taladro.json');
+
+// Load all products.*.json files from tehesa-products/data subdirectories
+const dataPath = path.join(__dirname, '../../tehesa-products/data');
+const products = [];
+
+function loadProductsFromDirectory(dirPath) {
+  const entries = fs.readdirSync(dirPath, { withFileTypes: true });
+  
+  for (const entry of entries) {
+    const fullPath = path.join(dirPath, entry.name);
+    
+    if (entry.isDirectory()) {
+      // Check if this directory contains a products.*.json file
+      const files = fs.readdirSync(fullPath);
+      const productFile = files.find(file => file.match(/^products\..+\.json$/));
+      
+      if (productFile) {
+        const productFilePath = path.join(fullPath, productFile);
+        const productData = require(productFilePath);
+        products.push(...productData);
+        console.log(`Loaded ${productData.length} products from ${productFile}`);
+      }
+    }
+  }
+}
+
+loadProductsFromDirectory(dataPath);
 
 async function seedExampleApp() {
   const shouldImportSeedData = await isFirstRun();
