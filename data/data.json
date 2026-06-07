@@ -41,6 +41,14 @@
     {
       "customId": "llaves-herramientas-apriete",
       "name": "Llaves y herramientas de apriete"
+    },
+    {
+      "customId": "sujecion",
+      "name": "Sujeción"
+    },
+    {
+      "customId": "adhesivos-selladores",
+      "name": "Adhesivos y selladores"
     }
   ],
   "brands": [
