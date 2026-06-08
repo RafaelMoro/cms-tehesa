@@ -49,6 +49,10 @@
     {
       "customId": "adhesivos-selladores",
       "name": "Adhesivos y selladores"
+    },
+    {
+      "customId": "carburo",
+      "name": "Carburo"
     }
   ],
   "brands": [
