@@ -1,3 +1,9 @@
+## v0.9.2 (2026-06-16)
+
+### Pull Requests
+[#17](https://github.com/RafaelMoro/cms-tehesa/pull/17) | Add new categories and replace lugo for cleveland
+
+
 ## v0.9.1 (2026-05-11)
 
 ### Pull Requests
