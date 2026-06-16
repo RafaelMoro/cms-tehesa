@@ -41,6 +41,18 @@
     {
       "customId": "llaves-herramientas-apriete",
       "name": "Llaves y herramientas de apriete"
+    },
+    {
+      "customId": "sujecion",
+      "name": "Sujeción"
+    },
+    {
+      "customId": "adhesivos-selladores",
+      "name": "Adhesivos y selladores"
+    },
+    {
+      "customId": "carburo",
+      "name": "Carburo"
     }
   ],
   "brands": [
@@ -61,8 +73,8 @@
       "name": "Saravia"
     },
     {
-      "customId": "lugo",
-      "name": "Lugo"
+      "customId": "cleveland",
+      "name": "Clevaland"
     },
     {
       "customId": "precision",
