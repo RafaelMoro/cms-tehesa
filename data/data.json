@@ -53,6 +53,42 @@
     {
       "customId": "carburo",
       "name": "Carburo"
+    },
+    {
+      "customId": "herramientas_maquinado",
+      "name": "Herramientas de maquinado"
+    },
+    {
+      "customId": "abrasivos_y_discos_corte",
+      "name": "Abrasivos y discos de corte"
+    },
+    {
+      "customId": "abrasivos_y_herramientas_desbaste",
+      "name": "Abrasivos y herramientas de desbaste"
+    },
+    {
+      "customId": "adhesivos-selladores",
+      "name": "Adhesivos y selladores"
+    },
+    {
+      "customId": "calibrador",
+      "name": "Calibrador"
+    },
+    {
+      "customId": "calibrador",
+      "name": "Calibrador"
+    },
+    {
+      "customId": "equipo-seguridad",
+      "name": "Equipo de seguridad"
+    },
+    {
+      "customId": "herrajes_accesorios_cable",
+      "name": "Herrajes y accesorios para cable"
+    },
+    {
+      "customId": "lubricantes_multifuncionales",
+      "name": "Lubricantes multifuncionales"
     }
   ],
   "brands": [
