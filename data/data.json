@@ -55,7 +55,7 @@
       "name": "Carburo"
     },
     {
-      "customId": "herramientas_maquinado",
+      "customId": "herramientas-maquinado",
       "name": "Herramientas de maquinado"
     },
     {
@@ -63,7 +63,7 @@
       "name": "Abrasivos y discos de corte"
     },
     {
-      "customId": "abrasivos_y_herramientas_desbaste",
+      "customId": "abrasivos-herramientas-desbaste",
       "name": "Abrasivos y herramientas de desbaste"
     },
     {
@@ -83,11 +83,11 @@
       "name": "Equipo de seguridad"
     },
     {
-      "customId": "herrajes_accesorios_cable",
+      "customId": "herrajes-accesorios-cable",
       "name": "Herrajes y accesorios para cable"
     },
     {
-      "customId": "lubricantes_multifuncionales",
+      "customId": "lubricantes-multifuncionales",
       "name": "Lubricantes multifuncionales"
     }
   ],
