@@ -103,6 +103,10 @@
     {
       "customId": "precision",
       "name": "Precision"
+    },
+    {
+      "customId": "libre",
+      "name": "Marca Libre"
     }
   ],
   "products": [
