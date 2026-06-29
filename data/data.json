@@ -55,16 +55,8 @@
       "name": "Carburo"
     },
     {
-      "customId": "herramientas-maquinado",
-      "name": "Herramientas de maquinado"
-    },
-    {
-      "customId": "abrasivos-discos-corte",
-      "name": "Abrasivos y discos de corte"
-    },
-    {
-      "customId": "abrasivos-herramientas-desbaste",
-      "name": "Abrasivos y herramientas de desbaste"
+      "customId": "abrasivos",
+      "name": "Abrasivos"
     },
     {
       "customId": "adhesivos-selladores",
