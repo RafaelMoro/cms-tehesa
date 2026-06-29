@@ -55,16 +55,8 @@
       "name": "Carburo"
     },
     {
-      "customId": "herramientas-maquinado",
-      "name": "Herramientas de maquinado"
-    },
-    {
-      "customId": "abrasivos-discos-corte",
-      "name": "Abrasivos y discos de corte"
-    },
-    {
-      "customId": "abrasivos-herramientas-desbaste",
-      "name": "Abrasivos y herramientas de desbaste"
+      "customId": "abrasivos",
+      "name": "Abrasivos"
     },
     {
       "customId": "adhesivos-selladores",
@@ -101,8 +93,8 @@
       "name": "Bohrcraft"
     },
     {
-      "customId": "saravia",
-      "name": "Saravia"
+      "customId": "bondhus",
+      "name": "Bondhus"
     },
     {
       "customId": "cleveland",
@@ -111,6 +103,10 @@
     {
       "customId": "precision",
       "name": "Precision"
+    },
+    {
+      "customId": "libre",
+      "name": "Marca Libre"
     }
   ],
   "products": [

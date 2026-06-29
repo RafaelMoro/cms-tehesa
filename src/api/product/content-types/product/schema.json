@@ -49,6 +49,21 @@
     "hasOneProductVariant": {
       "type": "boolean",
       "default": false
+    },
+    "subcategory": {
+      "type": "enumeration",
+      "enum": [
+        "nudo",
+        "opresor",
+        "perno",
+        "pija",
+        "remache",
+        "rondana",
+        "taquete",
+        "tornillos",
+        "tuerca",
+        "varilla"
+      ]
     }
   }
 }
