@@ -1,3 +1,9 @@
+## v0.11.0 (2026-06-29)
+
+### Pull Requests
+[#19](https://github.com/RafaelMoro/cms-tehesa/pull/19) | Correct brands, categories and add subcategories
+
+
 ## v0.10.0 (2026-06-23)
 
 ### Pull Requests
