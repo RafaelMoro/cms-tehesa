@@ -675,6 +675,20 @@ export interface ApiProductProduct extends Struct.CollectionTypeSchema {
       'api::product-variant.product-variant'
     >;
     publishedAt: Schema.Attribute.DateTime;
+    subcategory: Schema.Attribute.Enumeration<
+      [
+        'nudo',
+        'opresor',
+        'perno',
+        'pija',
+        'remache',
+        'rondana',
+        'taquete',
+        'tornillos',
+        'tuerca',
+        'varilla',
+      ]
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

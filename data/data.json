@@ -41,6 +41,42 @@
     {
       "customId": "llaves-herramientas-apriete",
       "name": "Llaves y herramientas de apriete"
+    },
+    {
+      "customId": "sujecion",
+      "name": "Sujeción"
+    },
+    {
+      "customId": "adhesivos-selladores",
+      "name": "Adhesivos y selladores"
+    },
+    {
+      "customId": "carburo",
+      "name": "Carburo"
+    },
+    {
+      "customId": "abrasivos",
+      "name": "Abrasivos"
+    },
+    {
+      "customId": "adhesivos-selladores",
+      "name": "Adhesivos y selladores"
+    },
+    {
+      "customId": "calibrador",
+      "name": "Calibrador"
+    },
+    {
+      "customId": "equipo-seguridad",
+      "name": "Equipo de seguridad"
+    },
+    {
+      "customId": "herrajes-accesorios-cable",
+      "name": "Herrajes y accesorios para cable"
+    },
+    {
+      "customId": "lubricantes-multifuncionales",
+      "name": "Lubricantes multifuncionales"
     }
   ],
   "brands": [
@@ -57,16 +93,20 @@
       "name": "Bohrcraft"
     },
     {
-      "customId": "saravia",
-      "name": "Saravia"
+      "customId": "bondhus",
+      "name": "Bondhus"
     },
     {
-      "customId": "lugo",
-      "name": "Lugo"
+      "customId": "cleveland",
+      "name": "Clevaland"
     },
     {
       "customId": "precision",
       "name": "Precision"
+    },
+    {
+      "customId": "libre",
+      "name": "Marca Libre"
     }
   ],
   "products": [

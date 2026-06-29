@@ -1,3 +1,21 @@
+## v0.11.0 (2026-06-29)
+
+### Pull Requests
+[#19](https://github.com/RafaelMoro/cms-tehesa/pull/19) | Correct brands, categories and add subcategories
+
+
+## v0.10.0 (2026-06-23)
+
+### Pull Requests
+[#18](https://github.com/RafaelMoro/cms-tehesa/pull/18) | Update categories
+
+
+## v0.9.2 (2026-06-16)
+
+### Pull Requests
+[#17](https://github.com/RafaelMoro/cms-tehesa/pull/17) | Add new categories and replace lugo for cleveland
+
+
 ## v0.9.1 (2026-05-11)
 
 ### Pull Requests
