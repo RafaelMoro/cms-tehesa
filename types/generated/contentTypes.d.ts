@@ -632,6 +632,7 @@ export interface ApiProductVariantProductVariant
         'k-lath',
         'phillips',
         'gota_combinado',
+        'accesorios_EPDM',
       ]
     >;
     stock: Schema.Attribute.Integer;

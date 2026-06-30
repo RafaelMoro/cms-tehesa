@@ -1,3 +1,9 @@
+## v1.0.0 (2026-06-30)
+
+### Pull Requests
+[#21](https://github.com/RafaelMoro/cms-tehesa/pull/21) | Add script to list draft product variants
+
+
 ## v0.11.0 (2026-06-29)
 
 ### Pull Requests
