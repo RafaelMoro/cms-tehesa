@@ -1,3 +1,9 @@
+## v1.1.0 (2026-07-08)
+
+### Pull Requests
+[#23](https://github.com/RafaelMoro/cms-tehesa/pull/23) | Remove products, product variants mocks and remove old category
+
+
 ## v1.0.0 (2026-06-30)
 
 ### Pull Requests
