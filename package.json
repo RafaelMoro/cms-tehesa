@@ -20,7 +20,8 @@
     "start": "strapi start",
     "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",
-    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
+    "transfer:prod": "set -a && . ./.env && set +a && strapi transfer --exclude files --to \"$STRAPI_TRANSFER_URL\" --to-token \"$STRAPI_TRANSFER_TOKEN\""
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.31.0",
