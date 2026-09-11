@@ -21,9 +21,9 @@ WORKDIR /opt/app
 
 COPY --from=build /opt/app/node_modules ./node_modules
 COPY --from=build /opt/app/dist ./dist
-COPY --from=build /opt/app/build ./build
 COPY --from=build /opt/app/public ./public
-COPY --from=build /opt/app/package.json ./package.json
+COPY --from=build /opt/app/src ./src
+COPY --from=build /opt/app/package.json /opt/app/tsconfig.json ./
 COPY --from=build /opt/app/favicon.png ./favicon.png
 
 RUN chown -R node:node /opt/app
