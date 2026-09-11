@@ -1,0 +1,14 @@
+node_modules
+.git
+.github
+.env
+.env.*
+!.env.example
+.tmp
+dist
+build
+.strapi
+transfer_*.log
+docs
+data
+*.md
