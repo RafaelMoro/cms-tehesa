@@ -1,3 +1,9 @@
+## v1.2.0 (2026-09-11)
+
+### Pull Requests
+[#25](https://github.com/RafaelMoro/cms-tehesa/pull/25) | Add lightsail deployment
+
+
 ## v1.1.0 (2026-07-08)
 
 ### Pull Requests
