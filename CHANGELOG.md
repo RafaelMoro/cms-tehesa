@@ -1,3 +1,9 @@
+## v1.2.2 (2026-09-12)
+
+### Pull Requests
+[#27](https://github.com/RafaelMoro/cms-tehesa/pull/27) | Update runbook AWS lightsail deploy
+
+
 ## v1.2.1 (2026-09-12)
 
 ### Pull Requests
