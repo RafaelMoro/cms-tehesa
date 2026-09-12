@@ -7,7 +7,7 @@ Written 2026-08-04. Executes the recommendation in
 
 > **As deployed 2026-09-11.** Executed end to end on a **$5/mo (512 MB) instance**, not the
 > $12 one — see §13. Where reality diverged from the original plan the section says so in an
-> "As deployed" note. Live at `https://tehesa-strapi.budget-master.space`.
+> "As deployed" note.
 
 ---
 
@@ -685,7 +685,7 @@ npm run transfer:prod
 ```
 
 The script sources `.env` and runs `strapi transfer --exclude files`. `--exclude files` is
-required: the remote's assets restore *renames* `public/uploads` to a backup folder, and
+required: the remote's assets restore _renames_ `public/uploads` to a backup folder, and
 `uploads` is a volume mountpoint, so it fails with `The backup folder for the assets could
 not be created inside the public folder`. There is no media to transfer today anyway.
 
@@ -844,7 +844,7 @@ Cron, 03:00 UTC nightly:
 
 An untested backup is a rumor. Restore into a throwaway container and compare counts.
 
-The §5.1 IAM user is **PutObject-only**, so the box cannot `aws s3 cp` *from* the bucket.
+The §5.1 IAM user is **PutObject-only**, so the box cannot `aws s3 cp` _from_ the bucket.
 As deployed, the drill restores a fresh dump made with the same `pg_dump` command; to
 verify the S3 object itself, download it from the console, or add `s3:GetObject` +
 `s3:ListBucket` to the inline policy.
@@ -1007,18 +1007,18 @@ Every PR still needs a `major`/`minor`/`patch` label.
 
 ## 11. Operations
 
-| Task                        | Command (on the box, in `~/store-tehesa-api`)                        |
-| --------------------------- | -------------------------------------------------------------------- |
-| Tail logs                   | `docker compose logs -f strapi`                                      |
-| Restart Strapi only         | `docker compose restart strapi`                                      |
-| Full restart                | `docker compose down && docker compose up -d`                        |
-| Postgres shell              | `docker compose exec postgres psql -U strapi -d strapi`              |
-| Manual backup now           | `./scripts/backup-to-s3.sh`                                          |
-| Disk usage                  | `df -h && docker system df`                                          |
-| Reclaim disk                | `docker image prune -a -f`                                           |
-| Memory check                | `free -h && docker stats --no-stream`                                |
+| Task                        | Command (on the box, in `~/store-tehesa-api`)                                                                                                   |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------- |
+| Tail logs                   | `docker compose logs -f strapi`                                                                                                                 |
+| Restart Strapi only         | `docker compose restart strapi`                                                                                                                 |
+| Full restart                | `docker compose down && docker compose up -d`                                                                                                   |
+| Postgres shell              | `docker compose exec postgres psql -U strapi -d strapi`                                                                                         |
+| Manual backup now           | `./scripts/backup-to-s3.sh`                                                                                                                     |
+| Disk usage                  | `df -h && docker system df`                                                                                                                     |
+| Reclaim disk                | `docker image prune -a -f`                                                                                                                      |
+| Memory check                | `free -h && docker stats --no-stream`                                                                                                           |
 | Deploy a new image manually | `docker login ghcr.io` first — the package is private and CI's token expires — then `docker compose pull strapi && docker compose up -d strapi` |
-| Strapi minor upgrade        | bump `@strapi/*` in `package.json`, merge to `develop`, CI redeploys |
+| Strapi minor upgrade        | bump `@strapi/*` in `package.json`, merge to `develop`, CI redeploys                                                                            |
 
 **Config changes** (`config/*.ts`) require a rebuilt image — they are compiled into `dist/`.
 Push to `develop` and let CI handle it. `.env` changes only need
@@ -1078,15 +1078,15 @@ The `uploads` volume isn't mounted, or Strapi is writing elsewhere. The mount pa
 
 ## 13. Cost check & deliberate omissions
 
-| Line item                     | $/mo       |
-| ----------------------------- | ---------- |
-| Lightsail $5 instance (512 MB) | 5.00       |
-| Static IP (attached)          | 0.00       |
-| Disk, egress (bundled)        | 0.00       |
-| Postgres (Docker, same box)   | 0.00       |
-| S3 for nightly dumps          | ~0.05      |
-| GHCR (private packages)       | 0.00       |
-| **Total**                     | **~5.05**  |
+| Line item                      | $/mo      |
+| ------------------------------ | --------- |
+| Lightsail $5 instance (512 MB) | 5.00      |
+| Static IP (attached)           | 0.00      |
+| Disk, egress (bundled)         | 0.00      |
+| Postgres (Docker, same box)    | 0.00      |
+| S3 for nightly dumps           | ~0.05     |
+| GHCR (private packages)        | 0.00      |
+| **Total**                      | **~5.05** |
 
 **As deployed on 512 MB:** idle RSS ~250 MiB with ~350 MiB in swap; Strapi takes ~2 min to
 come up after a deploy; disk is 20 GB, ~8 GB used after cleanup. It runs. Resize to the 2 GB
