@@ -1,3 +1,9 @@
+## v1.2.1 (2026-09-12)
+
+### Pull Requests
+[#26](https://github.com/RafaelMoro/cms-tehesa/pull/26) | Fix deploy aws lightsail
+
+
 ## v1.2.0 (2026-09-11)
 
 ### Pull Requests
