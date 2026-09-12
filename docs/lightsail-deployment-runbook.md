@@ -5,6 +5,10 @@ Written 2026-08-04. Executes the recommendation in
 (2 GB, `us-east-1`) running Strapi + Postgres + Caddy via Docker Compose, with a nightly
 `pg_dump` to S3.** All-in ≈ $12.05/mo.
 
+> **As deployed 2026-09-11.** Executed end to end on a **$5/mo (512 MB) instance**, not the
+> $12 one — see §13. Where reality diverged from the original plan the section says so in an
+> "As deployed" note. Live at `https://tehesa-strapi.budget-master.space`.
+
 ---
 
 ## 0. How to use this doc
@@ -147,9 +151,9 @@ WORKDIR /opt/app
 
 COPY --from=build /opt/app/node_modules ./node_modules
 COPY --from=build /opt/app/dist ./dist
-COPY --from=build /opt/app/build ./build
 COPY --from=build /opt/app/public ./public
-COPY --from=build /opt/app/package.json ./package.json
+COPY --from=build /opt/app/src ./src
+COPY --from=build /opt/app/package.json /opt/app/tsconfig.json ./
 COPY --from=build /opt/app/favicon.png ./favicon.png
 
 RUN chown -R node:node /opt/app
@@ -160,8 +164,15 @@ CMD ["npm", "run", "start"]
 
 Notes for the agent:
 
-- `npm run start` is `strapi start` (already in `package.json`). It serves the prebuilt
-  admin from `build/` and the compiled server from `dist/`.
+- `npm run start` is `strapi start` (already in `package.json`). It serves the compiled
+  server from `dist/` and the prebuilt admin from `dist/build/` (not `./build` — Strapi 5
+  with TypeScript puts everything under `dist`).
+- **`tsconfig.json` and `src/` in the runtime stage are load-bearing.** Strapi decides it is a
+  TS project — and therefore loads config from `dist/config` — by the presence of
+  `tsconfig.json`. Without it, config is empty and boot dies with
+  `Cannot destructure property 'client' of 'db.config.connection'`. With `tsconfig.json` but
+  no `src/`, it dies with `TS18003: No inputs were found` because the include globs match
+  nothing. Both were hit on the first deploy.
 - `node_modules` is copied from the build stage rather than reinstalled with
   `--omit=dev`. Strapi 5 resolves plugins at runtime through the full dependency graph;
   pruning dev deps is a known source of "plugin not found" boots. The image is ~1 GB —
@@ -426,6 +437,10 @@ At the `budget-master.space` registrar, create an **A record**:
 | ---- | --------------- | ------------- | --- |
 | A    | `tehesa-strapi` | `<STATIC_IP>` | 300 |
 
+**If the zone is on Cloudflare, set the record to "DNS only" (grey cloud).** Proxied
+(orange cloud) resolves to Cloudflare IPs, auto-publishes AAAA records, and puts a second TLS
+terminator in front of Caddy. This bit us on the first attempt.
+
 **Do not create an AAAA record.** Lightsail also assigns the instance a public IPv6 address,
 governed by a _separate_ IPv6 firewall tab. An AAAA record pointing at a v6 address with port 80
 shut makes Let's Encrypt fail the challenge while `dig` (which queries A by default) looks
@@ -442,6 +457,9 @@ the instance already ships with SSH 22 (anywhere) and HTTP 80 (anywhere).
 - HTTPS 443 — anywhere (**you add this**)
 - SSH 22 — **restricted to your IP** (**you tighten this**)
 - Nothing else. Especially not 1337 or 5432.
+
+**As deployed: SSH 22 is left open to Anywhere IPv4.** Phase 6's GitHub Actions runner has
+no fixed IP, so restricting 22 breaks CI deploys. Key-only auth is already enforced.
 
 Two things to know before restricting SSH:
 
@@ -606,12 +624,20 @@ The DB password strips `/+=` because it also has to survive a URL context in Pha
 
 ### 2.3 `[AGENT]` Build and start
 
+**As deployed (512 MB box): do not build on the box.** Build locally in WSL and ship the
+image over SSH — no registry or credentials needed:
+
 ```bash
-docker compose up -d --build
+# local
+docker build -t store-tehesa-api:local .
+docker save store-tehesa-api:local | gzip -1 | ssh tehesa 'docker load'   # ~3 GB, a few minutes
+# on the box
+cd ~/store-tehesa-api && docker compose up -d --no-build
 docker compose logs -f strapi
 ```
 
-First build takes 5–10 minutes on 2 vCPU. Watch for the Strapi banner. Caddy fetches the
+On a 2 GB box the original `docker compose up -d --build` works (5–10 minutes on 2 vCPU).
+Either way, watch for the Strapi banner — on 512 MB it takes ~2 minutes to appear. Caddy fetches the
 certificate on its first request to `<DOMAIN>`; `docker compose logs caddy` should show
 `certificate obtained successfully`.
 
@@ -654,12 +680,21 @@ Copy it immediately; it is shown once. Hand back as `<TRANSFER_TOKEN>`.
 From the **local machine**, with the local repo pointing at local SQLite:
 
 ```bash
-npx strapi transfer --to https://<DOMAIN>/admin --to-token '<TRANSFER_TOKEN>'
+# local .env: STRAPI_TRANSFER_URL=https://<DOMAIN>/admin  STRAPI_TRANSFER_TOKEN=<TRANSFER_TOKEN>
+npm run transfer:prod
 ```
 
+The script sources `.env` and runs `strapi transfer --exclude files`. `--exclude files` is
+required: the remote's assets restore *renames* `public/uploads` to a backup folder, and
+`uploads` is a volume mountpoint, so it fails with `The backup folder for the assets could
+not be created inside the public folder`. There is no media to transfer today anyway.
+
 Confirm the destructive-overwrite prompt — the remote is empty, so there is nothing to
-lose. The transfer moves entities, files, and config, and prints a per-content-type table
-at the end.
+lose. The transfer moves entities and config, and prints a per-content-type table at the end.
+
+**It also transfers the local users-permissions roles.** The remote Public role ends up
+with whatever the local dev DB had (111 permission rows, heavily duplicated, in our case).
+Phase 4 step 2 cleans that up — do not skip it.
 
 ### 3.3 `[AGENT]` Verify
 
@@ -695,8 +730,14 @@ docker compose down && docker compose up -d
 
 1. **Mint a read-only API token.** Remote admin → Settings → API Tokens → Create new →
    type **Read-only**, duration Unlimited. Copy it once.
-2. **Leave the public role empty.** Settings → Roles → Public must have **zero**
-   permissions. The frontend authenticates with the token; nothing needs anonymous access.
+2. **Empty the public role.** Settings → Users & Permissions → Roles → Public → expand
+   **every** section and uncheck everything → Save. The transfer in §3.2 copies the local
+   role config over, so this is not empty by default. Verify with:
+   ```bash
+   docker compose exec -T postgres psql -U strapi -d strapi -tA -c \
+     "SELECT r.type, count(p.id) FROM up_roles r LEFT JOIN up_permissions_role_lnk l ON l.role_id=r.id LEFT JOIN up_permissions p ON p.id=l.permission_id GROUP BY r.type;"
+   # public|0
+   ```
 3. **Update `fe-tehesa`** — set `STRAPI_HOST=https://<DOMAIN>` and `STRAPI_API_TOKEN=<the
 token>` in its Vercel environment, then redeploy.
 4. **Verify** the storefront renders the catalog from the deployed endpoint. Because
@@ -710,7 +751,8 @@ read-only token, neither surface exposes anything unintended. The Caddy `/api/*`
 §0.5 is available if that isn't enough.
 
 **Done when:** the storefront lists products served from `<DOMAIN>`, and
-`curl https://<DOMAIN>/api/products` (no token) returns 403.
+`curl https://<DOMAIN>/api/<type>` (no token) returns 401 for **every** type — check
+`product-variants`, `categories`, `brands`, `global` too, not only `products`.
 
 ---
 
@@ -756,7 +798,7 @@ cd "$(dirname "$0")/.."
 STAMP=$(date -u +%Y%m%dT%H%M%SZ)
 FILE="/tmp/strapi-${STAMP}.sql.gz"
 
-docker compose exec -T postgres pg_dump -U strapi -d strapi --clean --if-exists \
+/usr/bin/docker compose exec -T postgres pg_dump -U strapi -d strapi --clean --if-exists \
   | gzip -9 > "$FILE"
 
 # fail loudly on an empty or truncated dump rather than uploading garbage
@@ -765,7 +807,7 @@ if [ "$(stat -c%s "$FILE")" -lt 10000 ]; then
   exit 1
 fi
 
-aws s3 cp "$FILE" "s3://<S3_BUCKET>/pg/strapi-${STAMP}.sql.gz"
+/usr/local/bin/aws s3 cp "$FILE" "s3://<S3_BUCKET>/pg/strapi-${STAMP}.sql.gz"
 rm -f "$FILE"
 echo "backup ok: ${STAMP}"
 ```
@@ -776,7 +818,10 @@ every night is worse than no backup, because it looks like one.
 Install the AWS CLI and credentials:
 
 ```bash
-sudo apt-get install -y awscli
+# Ubuntu 24.04 has no apt `awscli` package — use the official installer (no snapd)
+sudo apt-get install -y unzip
+curl -sS https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o /tmp/awscliv2.zip
+(cd /tmp && unzip -qo awscliv2.zip && sudo ./aws/install && rm -rf aws awscliv2.zip)
 aws configure   # <AWS_ACCESS_KEY_ID>, <AWS_SECRET_ACCESS_KEY>, us-east-1, json
 chmod +x ~/store-tehesa-api/scripts/backup-to-s3.sh
 ```
@@ -797,10 +842,17 @@ Cron, 03:00 UTC nightly:
 
 ### 5.3 `[AGENT]` Restore drill — required, not optional
 
-An untested backup is a rumor. Restore into a throwaway container and compare counts:
+An untested backup is a rumor. Restore into a throwaway container and compare counts.
+
+The §5.1 IAM user is **PutObject-only**, so the box cannot `aws s3 cp` *from* the bucket.
+As deployed, the drill restores a fresh dump made with the same `pg_dump` command; to
+verify the S3 object itself, download it from the console, or add `s3:GetObject` +
+`s3:ListBucket` to the inline policy.
 
 ```bash
-aws s3 cp s3://<S3_BUCKET>/pg/<latest>.sql.gz /tmp/restore.sql.gz
+aws s3 cp s3://<S3_BUCKET>/pg/<latest>.sql.gz /tmp/restore.sql.gz   # needs GetObject
+# or, write-only policy:
+docker compose exec -T postgres pg_dump -U strapi -d strapi --clean --if-exists | gzip -9 > /tmp/restore.sql.gz
 
 docker run -d --name pgtest -e POSTGRES_PASSWORD=test -e POSTGRES_USER=strapi \
   -e POSTGRES_DB=strapi postgres:16-alpine
@@ -843,9 +895,12 @@ Mint a second, CI-only keypair locally and install its public half on the box:
 
 ```bash
 ssh-keygen -t ed25519 -C "github-actions-deploy" -f ~/.ssh/tehesa_deploy -N ""
-ssh-copy-id -i ~/.ssh/tehesa_deploy.pub tehesa      # appends to the box's authorized_keys
-ssh -i ~/.ssh/tehesa_deploy ubuntu@<STATIC_IP> 'echo deploy key works'
+cat ~/.ssh/tehesa_deploy.pub | ssh tehesa 'cat >> ~/.ssh/authorized_keys'
+ssh -i ~/.ssh/tehesa_deploy -o IdentitiesOnly=yes ubuntu@<STATIC_IP> 'echo deploy key works'
 ```
+
+Not `ssh-copy-id`: it tests by logging in, your `~/.ssh/config` key succeeds, and it reports
+"All keys were skipped because they already exist" without installing anything.
 
 `-N ""` gives it an empty passphrase — required, since Actions cannot type one. That is why it
 must be a dedicated key: paste the **whole** `~/.ssh/tehesa_deploy` file (including the
@@ -918,6 +973,13 @@ jobs:
 `git pull` on the box is still needed — `docker-compose.yml` and `Caddyfile` are read from
 disk, not baked into the image. Only the Strapi service comes from the registry.
 
+Two preconditions for that `git pull --ff-only` to succeed, both bitten once:
+
+- The box's checkout must be on **`develop`** (`git checkout develop`), not the feature branch.
+- The deploy files must be **tracked**, not `scp`'d copies. If Phase 2 shipped them by hand
+  before the PR merged, `rm` the untracked copies and `git checkout develop` — the running
+  containers don't care, they only read those files at `up` time.
+
 Pin the image tag on the box so a restart doesn't silently pull a different `latest`:
 
 ```bash
@@ -955,7 +1017,7 @@ Every PR still needs a `major`/`minor`/`patch` label.
 | Disk usage                  | `df -h && docker system df`                                          |
 | Reclaim disk                | `docker image prune -a -f`                                           |
 | Memory check                | `free -h && docker stats --no-stream`                                |
-| Deploy a new image manually | `docker compose pull strapi && docker compose up -d strapi`          |
+| Deploy a new image manually | `docker login ghcr.io` first — the package is private and CI's token expires — then `docker compose pull strapi && docker compose up -d strapi` |
 | Strapi minor upgrade        | bump `@strapi/*` in `package.json`, merge to `develop`, CI redeploys |
 
 **Config changes** (`config/*.ts`) require a rebuilt image — they are compiled into `dist/`.
@@ -996,6 +1058,18 @@ existing token. Mint a fresh one.
 Cron has a minimal environment: no `docker` group membership refresh, no `aws` on `PATH`
 in some setups. Check `~/backup.log`. Use absolute paths in the crontab entry.
 
+**`Cannot destructure property 'client' of 'db.config.connection'` on boot.**
+`tsconfig.json` is missing from the image, so Strapi treats it as a JS project and loads no
+config. See the §0.2 note. `TS18003: No inputs were found` is the same family — `src/` is
+missing.
+
+**`strapi transfer` fails: "backup folder for the assets could not be created".**
+The remote `public/uploads` is a volume mountpoint and cannot be renamed. Use
+`--exclude files` (already in `npm run transfer:prod`).
+
+**REST returns 200 without a token after the transfer.**
+The Public role inherited local permissions. Phase 4 step 2.
+
 **Uploads disappear on restart.**
 The `uploads` volume isn't mounted, or Strapi is writing elsewhere. The mount path must be
 `/opt/app/public/uploads`, matching the `WORKDIR` in the Dockerfile.
@@ -1006,13 +1080,18 @@ The `uploads` volume isn't mounted, or Strapi is writing elsewhere. The mount pa
 
 | Line item                     | $/mo       |
 | ----------------------------- | ---------- |
-| Lightsail $12 instance (2 GB) | 12.00      |
+| Lightsail $5 instance (512 MB) | 5.00       |
 | Static IP (attached)          | 0.00       |
 | Disk, egress (bundled)        | 0.00       |
 | Postgres (Docker, same box)   | 0.00       |
 | S3 for nightly dumps          | ~0.05      |
 | GHCR (private packages)       | 0.00       |
-| **Total**                     | **~12.05** |
+| **Total**                     | **~5.05**  |
+
+**As deployed on 512 MB:** idle RSS ~250 MiB with ~350 MiB in swap; Strapi takes ~2 min to
+come up after a deploy; disk is 20 GB, ~8 GB used after cleanup. It runs. Resize to the 2 GB
+plan (snapshot → new instance, minutes) the moment the admin feels sluggish or
+`docker compose logs strapi` shows OOM kills. Nothing else in this runbook changes.
 
 Deliberately not built, each with its trigger from
 [`deployment-research.md`](./deployment-research.md#phase-3--scale-when-triggered):
