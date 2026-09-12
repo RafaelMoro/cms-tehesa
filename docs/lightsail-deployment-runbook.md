@@ -48,6 +48,24 @@ console work. Read this section before doing anything.
 | `<TRANSFER_TOKEN>`                                | —                                              | Minted in remote admin, Phase 3.1 `[HUMAN]`                     |
 | `<DB_PASSWORD>`                                   | —                                              | Generated in Phase 2.2 `[AGENT]`, written only to server `.env` |
 
+**Every `[HUMAN]` step, in order.** This is the whole list of things the agent will stop and
+ask you for. Each links to the section with the click-by-click detail.
+
+| # | Step | You hand back |
+|---|---|---|
+| 1 | [§1.0](#10-generate-the-ssh-keypair--do-this-first-locally) Generate SSH keypair locally | nothing — the agent finds it at `~/.ssh/tehesa_lightsail` |
+| 2 | [§1.1](#11-create-the-instance) Create the Lightsail instance | instance RAM size |
+| 3 | [§1.2](#12-attach-a-static-ip) Attach a static IP | `<STATIC_IP>` |
+| 4 | [§1.3](#13-dns) Create the DNS A record (DNS-only if Cloudflare) | "done" |
+| 5 | [§1.4](#14-firewall) Add HTTPS 443 to the firewall | "done" |
+| 6 | [§2.4](#24-human-create-the-first-admin-user) Register the first admin at `https://<DOMAIN>/admin` | "logged in, survived a refresh" |
+| 7 | [§3.1](#31-human-mint-a-transfer-token) Mint a transfer token, put it in local `.env`, run `npm run transfer:prod` | the summary table it prints |
+| 8 | [§8](#8-phase-4-human--wire-the-frontend) Empty the Public role, mint a read-only API token, wire the frontend | "done" |
+| 9 | [§5.1](#51-human-bucket-and-iam-user) S3 bucket + IAM user + access key, then `ssh tehesa aws configure` | "done" |
+| 10 | [§5.4](#54-human-lightsail-snapshots) Enable automatic snapshots | "done" |
+| 11 | [§6.1](#61-human-repo-secrets) Deploy keypair + 3 GitHub secrets | "done" |
+| 12 | [§6.2](#62-agent-githubworkflowsdeployyml) Open the PR, merge it, confirm the *Deploy to Lightsail* run is green | run URL |
+
 ---
 
 ## 1. Purpose & scope
@@ -458,6 +476,18 @@ the instance already ships with SSH 22 (anywhere) and HTTP 80 (anywhere).
 - SSH 22 — **restricted to your IP** (**you tighten this**)
 - Nothing else. Especially not 1337 or 5432.
 
+To add 443: instance → **Networking** tab → IPv4 Firewall → **+ Add rule** → set exactly:
+
+| Field | Value |
+|---|---|
+| Application | `HTTPS` (this auto-fills Protocol `TCP`, Port `443`) |
+| Source IP addresses, Preset | `Anywhere IPv4` (`0.0.0.0/0`) |
+
+→ **Add rule** (the orange button, not "Add" which adds another source row). It applies
+immediately; no restart. Note Let's Encrypt only needs port 80, so **Caddy will obtain a
+certificate even with 443 closed** and the site will still time out from outside — if
+`curl https://<DOMAIN>` hangs while it works on the box, this rule is missing.
+
 **As deployed: SSH 22 is left open to Anywhere IPv4.** Phase 6's GitHub Actions runner has
 no fixed IP, so restricting 22 breaks CI deploys. Key-only auth is already enforced.
 
@@ -675,9 +705,10 @@ The deployed database is empty. The catalog lives in local `.tmp/data.db`.
 Remote admin → Settings → Transfer Tokens → Create new → type **Push**, duration 7 days.
 Copy it immediately; it is shown once. Hand back as `<TRANSFER_TOKEN>`.
 
-### 3.2 `[AGENT]` Run the transfer
+### 3.2 `[HUMAN]` Run the transfer
 
-From the **local machine**, with the local repo pointing at local SQLite:
+Run this yourself — the token stays out of the agent's transcript and the command prompts
+for confirmation. From the **local repo**, with the local `.env` still pointing at SQLite:
 
 ```bash
 # local .env: STRAPI_TRANSFER_URL=https://<DOMAIN>/admin  STRAPI_TRANSFER_TOKEN=<TRANSFER_TOKEN>
@@ -691,6 +722,10 @@ not be created inside the public folder`. There is no media to transfer today an
 
 Confirm the destructive-overwrite prompt — the remote is empty, so there is nothing to
 lose. The transfer moves entities and config, and prints a per-content-type table at the end.
+
+If it says `sh: 1: strapi: not found`, `node_modules` is broken (an earlier `npm install`
+pruned `@strapi/strapi`) — run `npm ci` and retry. If it says `option '--to' argument '' is
+invalid`, the two env vars are not in `.env`.
 
 **It also transfers the local users-permissions roles.** The remote Public role ends up
 with whatever the local dev DB had (111 permission rows, heavily duplicated, in our case).
@@ -764,11 +799,32 @@ RDS later.
 
 ### 5.1 `[HUMAN]` Bucket and IAM user
 
-1. Create S3 bucket `<S3_BUCKET>` in `us-east-1`. Block all public access. Enable default
-   encryption (SSE-S3).
-2. Lifecycle rule: expire objects under `pg/` after **30 days**.
-3. Create an IAM user `tehesa-strapi-backup` with programmatic access only and this
-   inline policy — write-only, single prefix, no delete:
+Three console tasks. Check the region selector (top right) says **US East (N. Virginia)
+`us-east-1`** before each.
+
+**1. S3 bucket** — console → S3 → *Create bucket*:
+
+| Field | Value |
+|---|---|
+| Bucket name | `<S3_BUCKET>` |
+| Region | US East (N. Virginia) |
+| Block Public Access | leave **all four boxes checked** |
+| Default encryption | SSE-S3 (the default) |
+
+→ *Create bucket*. Then open the bucket → **Management** tab → *Create lifecycle rule*:
+name `expire-pg-dumps`, scope *Limit the scope using filters* → Prefix `pg/`, action
+**Expire current versions of objects** → 30 days → *Create rule*.
+
+**2. IAM user** — console → IAM → Users → *Create user*:
+
+- User name `tehesa-strapi-backup`. **Do not** tick "Provide user access to the AWS
+  Management Console" — this user is for a script, not a person.
+- Permissions: *Attach policies directly* → attach nothing → Next → *Create user*.
+- Open the user → **Permissions** tab → *Add permissions* → **Create inline policy** →
+  **JSON** tab → paste the policy below → Next → name `tehesa-strapi-backup-put` →
+  *Create policy*.
+
+Write-only, single prefix, no delete:
 
 ```json
 {
@@ -783,7 +839,25 @@ RDS later.
 }
 ```
 
-Hand back `<AWS_ACCESS_KEY_ID>` and `<AWS_SECRET_ACCESS_KEY>`.
+**3. Access key** — this is where `<AWS_ACCESS_KEY_ID>` and `<AWS_SECRET_ACCESS_KEY>` come
+from. Same user → **Security credentials** tab → *Access keys* → **Create access key** → use
+case **Application running outside AWS** → Next → *Create access key*. The page shows the
+Access key ID (`AKIA…`) and the Secret access key. **The secret is shown once** — copy both
+now or download the `.csv`.
+
+**4. Put them on the box yourself**, so they never pass through the agent's transcript:
+
+```bash
+ssh tehesa aws configure
+# AWS Access Key ID:     <paste>
+# AWS Secret Access Key: <paste>
+# Default region name:   us-east-1
+# Default output format: json
+```
+
+(The agent installs the AWS CLI in §5.2 first — if `aws` is not found, wait for that.)
+
+Hand back: "done".
 
 ### 5.2 `[AGENT]` Backup script
 
@@ -881,7 +955,11 @@ matters). Images build on GitHub's runners and the box only pulls.
 
 ### 6.1 `[HUMAN]` Repo secrets
 
-Settings → Secrets and variables → Actions:
+Do the keypair block below **first**, then the secrets. Order matters: `SSH_KEY` is the
+private half of the key you are about to create.
+
+GitHub → repo → **Settings** → *Secrets and variables* → **Actions** → *New repository
+secret*, three times:
 
 | Secret     | Value                                                |
 | ---------- | ---------------------------------------------------- |
@@ -906,6 +984,14 @@ Not `ssh-copy-id`: it tests by logging in, your `~/.ssh/config` key succeeds, an
 must be a dedicated key: paste the **whole** `~/.ssh/tehesa_deploy` file (including the
 `-----BEGIN`/`-----END` lines and the trailing newline) into the secret, then delete the local
 private copy if you prefer — the box and the secret are the only places it needs to exist.
+
+```bash
+cat ~/.ssh/tehesa_deploy     # copy ALL of this into the SSH_KEY secret
+```
+
+**If you skip this section** the *Build and push* step still succeeds (the image lands in
+GHCR) and only *Deploy over SSH* fails. That is what happened on the first run: symptom is a
+red run with every step green except the last. Fix the secrets and re-run — no code change.
 
 ### 6.2 `[AGENT]` `.github/workflows/deploy.yml`
 
@@ -991,8 +1077,13 @@ echo "STRAPI_IMAGE=ghcr.io/rafaelmoro/cms-tehesa:latest" >> ~/store-tehesa-api/.
 push step fails outright. `${GITHUB_REPOSITORY,,}` is bash lowercasing, so the tag comes out
 `ghcr.io/rafaelmoro/cms-tehesa`. Do not "simplify" it back.
 
-**Done when:** a push to `develop` produces a GHCR package and `<DOMAIN>` serves the new
-image. Verify with `docker compose images`.
+**To trigger the first run:** open the PR `feat/… → develop` with a `minor` label, merge it.
+*Deploy to Lightsail* appears under the repo's **Actions** tab within a minute. To re-run
+without a new merge: Actions → *Deploy to Lightsail* → **Run workflow** → branch `develop`.
+
+**Done when:** the run is green, and on the box `docker compose images` shows the `strapi`
+service on `ghcr.io/rafaelmoro/cms-tehesa:<sha>`, not `store-tehesa-api:local`. Then delete
+the hand-shipped image: `docker image rm store-tehesa-api:local` (3 GB).
 
 ### 6.3 `[AGENT]` Retire the swapfile build path
 
