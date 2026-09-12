@@ -31,18 +31,18 @@ console work. Read this section before doing anything.
 
 **Placeholders:**
 
-| Placeholder | Example | Where it comes from |
-|---|---|---|
-| `<STATIC_IP>` | `54.210.11.22` | Lightsail static IP, Phase 1.2 `[HUMAN]` |
-| `<DOMAIN>` | `tehesa-strapi.budget-master.space` | Fixed. Subdomain of `budget-master.space` |
-| `<SSH_USER>` | `ubuntu` | Lightsail Ubuntu default |
-| `<SSH_KEY>` | `~/.ssh/tehesa_lightsail` | Generated locally in Phase 1.0 `[HUMAN]` |
-| `<REPO_URL>` | `https://github.com/RafaelMoro/cms-tehesa.git` | Fixed. **Public** repo — HTTPS, no auth |
-| `<GHCR_IMAGE>` | `ghcr.io/rafaelmoro/cms-tehesa` | **Lowercase is mandatory** — see Phase 6.2 |
-| `<S3_BUCKET>` | `tehesa-strapi-backups` | Created in Phase 5.1 `[HUMAN]` |
-| `<AWS_ACCESS_KEY_ID>` / `<AWS_SECRET_ACCESS_KEY>` | — | Backup IAM user, Phase 5.1 `[HUMAN]` |
-| `<TRANSFER_TOKEN>` | — | Minted in remote admin, Phase 3.1 `[HUMAN]` |
-| `<DB_PASSWORD>` | — | Generated in Phase 2.2 `[AGENT]`, written only to server `.env` |
+| Placeholder                                       | Example                                        | Where it comes from                                             |
+| ------------------------------------------------- | ---------------------------------------------- | --------------------------------------------------------------- |
+| `<STATIC_IP>`                                     | `54.210.11.22`                                 | Lightsail static IP, Phase 1.2 `[HUMAN]`                        |
+| `<DOMAIN>`                                        | `tehesa-strapi.budget-master.space`            | Fixed. Subdomain of `budget-master.space`                       |
+| `<SSH_USER>`                                      | `ubuntu`                                       | Lightsail Ubuntu default                                        |
+| `<SSH_KEY>`                                       | `~/.ssh/tehesa_lightsail`                      | Generated locally in Phase 1.0 `[HUMAN]`                        |
+| `<REPO_URL>`                                      | `https://github.com/RafaelMoro/cms-tehesa.git` | Fixed. **Public** repo — HTTPS, no auth                         |
+| `<GHCR_IMAGE>`                                    | `ghcr.io/rafaelmoro/cms-tehesa`                | **Lowercase is mandatory** — see Phase 6.2                      |
+| `<S3_BUCKET>`                                     | `tehesa-strapi-backups`                        | Created in Phase 5.1 `[HUMAN]`                                  |
+| `<AWS_ACCESS_KEY_ID>` / `<AWS_SECRET_ACCESS_KEY>` | —                                              | Backup IAM user, Phase 5.1 `[HUMAN]`                            |
+| `<TRANSFER_TOKEN>`                                | —                                              | Minted in remote admin, Phase 3.1 `[HUMAN]`                     |
+| `<DB_PASSWORD>`                                   | —                                              | Generated in Phase 2.2 `[AGENT]`, written only to server `.env` |
 
 ---
 
@@ -70,7 +70,7 @@ Confirm all of these before Phase 0. Missing any one blocks a later phase.
       `npm run seed:clear`.
 - [ ] An SSH keypair for the Lightsail instance — **you generate it in Phase 1.0**, before
       creating the instance, because Lightsail asks for the public key during creation.
-- [ ] Docker installed locally is *optional* — the image builds on the box in Phase 2. Verify
+- [ ] Docker installed locally is _optional_ — the image builds on the box in Phase 2. Verify
       with `docker compose version`.
 
 ---
@@ -86,11 +86,11 @@ Internet ──────────► caddy ──────────�
                   (volume)           (volume)             (volume)
 ```
 
-| Service | Image | Published ports | Volumes |
-|---|---|---|---|
-| `caddy` | `caddy:2-alpine` | `80:80`, `443:443` | `caddy_data`, `caddy_config`, `./Caddyfile` |
-| `strapi` | built from `Dockerfile` | **none** | `uploads` → `/opt/app/public/uploads` |
-| `postgres` | `postgres:16-alpine` | **none** | `pgdata` → `/var/lib/postgresql/data` |
+| Service    | Image                   | Published ports    | Volumes                                     |
+| ---------- | ----------------------- | ------------------ | ------------------------------------------- |
+| `caddy`    | `caddy:2-alpine`        | `80:80`, `443:443` | `caddy_data`, `caddy_config`, `./Caddyfile` |
+| `strapi`   | built from `Dockerfile` | **none**           | `uploads` → `/opt/app/public/uploads`       |
+| `postgres` | `postgres:16-alpine`    | **none**           | `pgdata` → `/var/lib/postgresql/data`       |
 
 Only Caddy is reachable from outside. Strapi and Postgres talk over the Compose network by
 service name. **Postgres must never publish 5432 to the host** — the Lightsail firewall is
@@ -166,7 +166,7 @@ Notes for the agent:
   `--omit=dev`. Strapi 5 resolves plugins at runtime through the full dependency graph;
   pruning dev deps is a known source of "plugin not found" boots. The image is ~1 GB —
   acceptable here, and disk is 60 GB.
-- `postgresql-client` in the runtime stage is deliberate: it is *not* for Strapi, it is so
+- `postgresql-client` in the runtime stage is deliberate: it is _not_ for Strapi, it is so
   `pg_dump` is available for Phase 5.
 - `better-sqlite3` stays installed and unused in production. Removing it would break local
   development. It costs disk, nothing else.
@@ -213,7 +213,8 @@ services:
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${DATABASE_USERNAME} -d ${DATABASE_NAME}"]
+      test:
+        ["CMD-SHELL", "pg_isready -U ${DATABASE_USERNAME} -d ${DATABASE_NAME}"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -279,9 +280,9 @@ comes from the environment, so the same file works for any hostname.
 Add `PUBLIC_DOMAIN` to the `caddy` service in `docker-compose.yml`:
 
 ```yaml
-  caddy:
-    environment:
-      PUBLIC_DOMAIN: ${PUBLIC_DOMAIN}
+caddy:
+  environment:
+    PUBLIC_DOMAIN: ${PUBLIC_DOMAIN}
 ```
 
 **Optional hardening, not applied by default:** if REST being reachable at all is
@@ -298,12 +299,12 @@ the admin login appears to succeed and then bounces straight back to the login s
 
 ```ts
 export default ({ env }) => ({
-  host: env('HOST', '0.0.0.0'),
-  port: env.int('PORT', 1337),
-  url: env('PUBLIC_URL', 'http://localhost:1337'),
-  proxy: env.bool('IS_PROXIED', false),
+  host: env("HOST", "0.0.0.0"),
+  port: env.int("PORT", 1337),
+  url: env("PUBLIC_URL", "http://localhost:1337"),
+  proxy: env.bool("IS_PROXIED", false),
   app: {
-    keys: env.array('APP_KEYS'),
+    keys: env.array("APP_KEYS"),
   },
 });
 ```
@@ -329,7 +330,7 @@ export default ({ env }) => ({
       maxLimit: 100,
       depthLimit: 7,
       apolloServer: {
-        introspection: env.bool('GRAPHQL_INTROSPECTION', false),
+        introspection: env.bool("GRAPHQL_INTROSPECTION", false),
       },
     },
   },
@@ -384,7 +385,7 @@ The agent cannot do any of this. Hand this section to the human and wait for
 
 ### 1.0 Generate the SSH keypair — do this first, locally
 
-Lightsail asks for a public key *while* creating the instance, so the key must exist before
+Lightsail asks for a public key _while_ creating the instance, so the key must exist before
 step 1.1. On your WSL machine:
 
 ```bash
@@ -394,7 +395,7 @@ cat ~/.ssh/tehesa_lightsail.pub     # this is what you paste into Lightsail
 
 Chosen over letting Lightsail generate a `.pem` for you, because that `.pem` is displayed
 exactly once — lose it and recovery is snapshot → new instance → re-key — and because it is a
-*regional default* silently reused by every future `us-east-1` instance. Phase 6.1 forces a
+_regional default_ silently reused by every future `us-east-1` instance. Phase 6.1 forces a
 second, deploy-only keypair anyway, so one mechanism covers both. The private half never
 leaves your machine.
 
@@ -404,7 +405,7 @@ leaves your machine.
 
 Lightsail → Create instance:
 
-- **Region `us-east-1`** (N. Virginia). Set this first — the SSH key you upload is *regional*.
+- **Region `us-east-1`** (N. Virginia). Set this first — the SSH key you upload is _regional_.
 - Linux/Unix → OS Only → **Ubuntu 22.04 LTS or 24.04 LTS**. Either works; §2.1's Docker install
   keys off `$VERSION_CODENAME`. Prefer 24.04 for the longer support window.
 - **"Change SSH key pair" → Upload new** → paste the contents of `~/.ssh/tehesa_lightsail.pub`.
@@ -421,18 +422,18 @@ it detached. Record it as `<STATIC_IP>`.
 
 At the `budget-master.space` registrar, create an **A record**:
 
-| Type | Host | Value | TTL |
-|---|---|---|---|
-| A | `tehesa-strapi` | `<STATIC_IP>` | 300 |
+| Type | Host            | Value         | TTL |
+| ---- | --------------- | ------------- | --- |
+| A    | `tehesa-strapi` | `<STATIC_IP>` | 300 |
 
 **Do not create an AAAA record.** Lightsail also assigns the instance a public IPv6 address,
-governed by a *separate* IPv6 firewall tab. An AAAA record pointing at a v6 address with port 80
+governed by a _separate_ IPv6 firewall tab. An AAAA record pointing at a v6 address with port 80
 shut makes Let's Encrypt fail the challenge while `dig` (which queries A by default) looks
 perfectly healthy — the hardest-to-diagnose version of the §12 "could not get certificate" trap.
 
 ### 1.4 Firewall
 
-Lightsail → instance → Networking. Note you are *modifying* defaults, not building from empty:
+Lightsail → instance → Networking. Note you are _modifying_ defaults, not building from empty:
 the instance already ships with SSH 22 (anywhere) and HTTP 80 (anywhere).
 
 **IPv4 firewall** — target state:
@@ -460,7 +461,7 @@ dig +short tehesa-strapi.budget-master.space @1.1.1.1
 ```
 
 It must print `<STATIC_IP>`. `@1.1.1.1` deliberately bypasses your local resolver: if you
-queried this name *before* the record existed, a negative NXDOMAIN cache entry (5–60 min TTL)
+queried this name _before_ the record existed, a negative NXDOMAIN cache entry (5–60 min TTL)
 keeps answering empty and looks exactly like a DNS failure.
 
 **Do not start Caddy until it resolves** — failed ACME challenges count against Let's Encrypt
@@ -536,7 +537,7 @@ sudo swapon --show          # must list /swapfile, 2G
 free -h
 ```
 
-`swapon --show` is the real check — `free -h` reports a total but not *which* file, so it still
+`swapon --show` is the real check — `free -h` reports a total but not _which_ file, so it still
 looks right if `/etc/fstab` is wrong and the swap vanishes on reboot. If `fallocate` ever errors
 on the filesystem, `sudo dd if=/dev/zero of=/swapfile bs=1M count=2048` is the fallback.
 
@@ -664,12 +665,12 @@ at the end.
 
 Row counts must match the source dataset:
 
-| Content type | Expected |
-|---|---|
+| Content type    | Expected                              |
+| --------------- | ------------------------------------- |
 | product-variant | **18,088** total, **9,044** published |
-| product | **666** |
-| category | **32** |
-| brand | **14** |
+| product         | **666**                               |
+| category        | **32**                                |
+| brand           | **14**                                |
 
 Check from the admin Content Manager, or directly:
 
@@ -697,7 +698,7 @@ docker compose down && docker compose up -d
 2. **Leave the public role empty.** Settings → Roles → Public must have **zero**
    permissions. The frontend authenticates with the token; nothing needs anonymous access.
 3. **Update `fe-tehesa`** — set `STRAPI_HOST=https://<DOMAIN>` and `STRAPI_API_TOKEN=<the
-   token>` in its Vercel environment, then redeploy.
+token>` in its Vercel environment, then redeploy.
 4. **Verify** the storefront renders the catalog from the deployed endpoint. Because
    `fe-tehesa` queries Strapi server-side (Apollo inside `src/app/api/catalog/*`), no
    browser ever hits `<DOMAIN>` — so no CORS change is needed in
@@ -730,11 +731,13 @@ RDS later.
 ```json
 {
   "Version": "2012-10-17",
-  "Statement": [{
-    "Effect": "Allow",
-    "Action": "s3:PutObject",
-    "Resource": "arn:aws:s3:::<S3_BUCKET>/pg/*"
-  }]
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": "s3:PutObject",
+      "Resource": "arn:aws:s3:::<S3_BUCKET>/pg/*"
+    }
+  ]
 }
 ```
 
@@ -786,7 +789,7 @@ Cron, 03:00 UTC nightly:
 ) | crontab -
 ```
 
-`date -u` fixes the *filename*, but cron fires on **host** time — that is what §2.1's
+`date -u` fixes the _filename_, but cron fires on **host** time — that is what §2.1's
 `timedatectl` check confirms. On a stock Lightsail Ubuntu (UTC) `0 3 * * *` is 03:00 UTC.
 
 **Done when:** `./scripts/backup-to-s3.sh` prints `backup ok` and the object appears in
@@ -828,13 +831,14 @@ matters). Images build on GitHub's runners and the box only pulls.
 
 Settings → Secrets and variables → Actions:
 
-| Secret | Value |
-|---|---|
-| `SSH_HOST` | `<STATIC_IP>` |
-| `SSH_USER` | `<SSH_USER>` |
-| `SSH_KEY` | private key of a **deploy-only** keypair (see below) |
+| Secret     | Value                                                |
+| ---------- | ---------------------------------------------------- |
+| `SSH_HOST` | `<STATIC_IP>`                                        |
+| `SSH_USER` | `<SSH_USER>`                                         |
+| `SSH_KEY`  | private key of a **deploy-only** keypair (see below) |
 
 `SSH_KEY` is **not** `<SSH_KEY>` from Phase 1.0 — that one is yours and stays on your machine.
+
 Mint a second, CI-only keypair locally and install its public half on the box:
 
 ```bash
@@ -941,18 +945,18 @@ Every PR still needs a `major`/`minor`/`patch` label.
 
 ## 11. Operations
 
-| Task | Command (on the box, in `~/store-tehesa-api`) |
-|---|---|
-| Tail logs | `docker compose logs -f strapi` |
-| Restart Strapi only | `docker compose restart strapi` |
-| Full restart | `docker compose down && docker compose up -d` |
-| Postgres shell | `docker compose exec postgres psql -U strapi -d strapi` |
-| Manual backup now | `./scripts/backup-to-s3.sh` |
-| Disk usage | `df -h && docker system df` |
-| Reclaim disk | `docker image prune -a -f` |
-| Memory check | `free -h && docker stats --no-stream` |
-| Deploy a new image manually | `docker compose pull strapi && docker compose up -d strapi` |
-| Strapi minor upgrade | bump `@strapi/*` in `package.json`, merge to `develop`, CI redeploys |
+| Task                        | Command (on the box, in `~/store-tehesa-api`)                        |
+| --------------------------- | -------------------------------------------------------------------- |
+| Tail logs                   | `docker compose logs -f strapi`                                      |
+| Restart Strapi only         | `docker compose restart strapi`                                      |
+| Full restart                | `docker compose down && docker compose up -d`                        |
+| Postgres shell              | `docker compose exec postgres psql -U strapi -d strapi`              |
+| Manual backup now           | `./scripts/backup-to-s3.sh`                                          |
+| Disk usage                  | `df -h && docker system df`                                          |
+| Reclaim disk                | `docker image prune -a -f`                                           |
+| Memory check                | `free -h && docker stats --no-stream`                                |
+| Deploy a new image manually | `docker compose pull strapi && docker compose up -d strapi`          |
+| Strapi minor upgrade        | bump `@strapi/*` in `package.json`, merge to `develop`, CI redeploys |
 
 **Config changes** (`config/*.ts`) require a rebuilt image — they are compiled into `dist/`.
 Push to `develop` and let CI handle it. `.env` changes only need
@@ -1000,26 +1004,26 @@ The `uploads` volume isn't mounted, or Strapi is writing elsewhere. The mount pa
 
 ## 13. Cost check & deliberate omissions
 
-| Line item | $/mo |
-|---|---|
-| Lightsail $12 instance (2 GB) | 12.00 |
-| Static IP (attached) | 0.00 |
-| Disk, egress (bundled) | 0.00 |
-| Postgres (Docker, same box) | 0.00 |
-| S3 for nightly dumps | ~0.05 |
-| GHCR (private packages) | 0.00 |
-| **Total** | **~12.05** |
+| Line item                     | $/mo       |
+| ----------------------------- | ---------- |
+| Lightsail $12 instance (2 GB) | 12.00      |
+| Static IP (attached)          | 0.00       |
+| Disk, egress (bundled)        | 0.00       |
+| Postgres (Docker, same box)   | 0.00       |
+| S3 for nightly dumps          | ~0.05      |
+| GHCR (private packages)       | 0.00       |
+| **Total**                     | **~12.05** |
 
 Deliberately not built, each with its trigger from
 [`deployment-research.md`](./deployment-research.md#phase-3--scale-when-triggered):
 
-| Not built | Add it when |
-|---|---|
+| Not built                    | Add it when                                                                                      |
+| ---------------------------- | ------------------------------------------------------------------------------------------------ |
 | RDS / point-in-time recovery | Editing becomes weekly rather than quarterly. Only `DATABASE_*` changes; the Compose file stays. |
-| S3 uploads + CloudFront | The media library exceeds ~1 GB. Today `public/uploads` is empty. |
-| Staging environment | You need one — a second $12 instance beats a $60/mo Strapi Cloud environment. |
-| Load balancer / multi-AZ | Real HA becomes a requirement. That is the ECS Fargate + RDS Multi-AZ conversation. |
-| Resize to 4 GB | The box sustains >80% RAM. One click, minutes of downtime. |
+| S3 uploads + CloudFront      | The media library exceeds ~1 GB. Today `public/uploads` is empty.                                |
+| Staging environment          | You need one — a second $12 instance beats a $60/mo Strapi Cloud environment.                    |
+| Load balancer / multi-AZ     | Real HA becomes a requirement. That is the ECS Fargate + RDS Multi-AZ conversation.              |
+| Resize to 4 GB               | The box sustains >80% RAM. One click, minutes of downtime.                                       |
 
 The single deferred decision worth revisiting on a schedule is **RDS**. The argument for
 deferring it is write frequency, not database size: with price updates every three months,
