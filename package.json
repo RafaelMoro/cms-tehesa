@@ -1,6 +1,6 @@
 {
   "name": "tehesa-store-api",
-  "version": "1.1.0",
+  "version": "1.2.2",
   "private": true,
   "description": "A Strapi application",
   "scripts": {
@@ -20,7 +20,8 @@
     "start": "strapi start",
     "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",
-    "upgrade:dry": "npx @strapi/upgrade latest --dry"
+    "upgrade:dry": "npx @strapi/upgrade latest --dry",
+    "transfer:prod": "set -a && . ./.env && set +a && strapi transfer --exclude files --to \"$STRAPI_TRANSFER_URL\" --to-token \"$STRAPI_TRANSFER_TOKEN\""
   },
   "dependencies": {
     "@strapi/plugin-cloud": "5.31.0",
@@ -30,6 +31,7 @@
     "better-sqlite3": "12.4.1",
     "fs-extra": "^10.0.0",
     "mime-types": "^2.1.27",
+    "pg": "^8.23.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.0",
