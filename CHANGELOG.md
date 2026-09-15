@@ -1,3 +1,9 @@
+## v1.2.3 (2026-09-15)
+
+### Pull Requests
+[#29](https://github.com/RafaelMoro/cms-tehesa/pull/29) | Enable GraphQL introspection for local development
+
+
 ## v1.2.2 (2026-09-12)
 
 ### Pull Requests
