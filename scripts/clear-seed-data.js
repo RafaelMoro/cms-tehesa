@@ -1,14 +1,16 @@
 'use strict';
 
+const { allDocumentIds } = require('./document-ids');
+
 async function clearSeedData() {
   try {
     console.log('Starting to clear seed data...');
 
     // Delete in reverse order of dependencies
     await deleteProductVariants();
-    // await deleteProducts();
-    // await deleteBrands();
-    // await deleteCategories();
+    await deleteProducts();
+    await deleteBrands();
+    await deleteCategories();
 
     console.log('All seed data cleared successfully');
   } catch (error) {
@@ -17,69 +19,19 @@ async function clearSeedData() {
   }
 }
 
-async function deleteProductVariants() {
-  console.log('Deleting product variants...');
-  
-  const variants = await strapi.documents('api::product-variant.product-variant').findMany({
-    limit: 10000,
-  });
-
-  for (const variant of variants) {
-    await strapi.documents('api::product-variant.product-variant').delete({
-      documentId: variant.documentId,
-    });
+async function deleteAll(model) {
+  const uid = `api::${model}.${model}`;
+  const ids = await allDocumentIds(uid);
+  console.log(`Deleting ${ids.length} ${model} documents...`);
+  for (const documentId of ids) {
+    await strapi.documents(uid).delete({ documentId });
   }
-
-  console.log(`Deleted ${variants.length} product variants`);
 }
 
-async function deleteProducts() {
-  console.log('Deleting products...');
-  
-  const products = await strapi.documents('api::product.product').findMany({
-    limit: 10000,
-  });
-
-  for (const product of products) {
-    await strapi.documents('api::product.product').delete({
-      documentId: product.documentId,
-    });
-  }
-
-  console.log(`Deleted ${products.length} products`);
-}
-
-async function deleteBrands() {
-  console.log('Deleting brands...');
-  
-  const brands = await strapi.documents('api::brand.brand').findMany({
-    limit: 10000,
-  });
-
-  for (const brand of brands) {
-    await strapi.documents('api::brand.brand').delete({
-      documentId: brand.documentId,
-    });
-  }
-
-  console.log(`Deleted ${brands.length} brands`);
-}
-
-async function deleteCategories() {
-  console.log('Deleting categories...');
-  
-  const categories = await strapi.documents('api::category.category').findMany({
-    limit: 10000,
-  });
-
-  for (const category of categories) {
-    await strapi.documents('api::category.category').delete({
-      documentId: category.documentId,
-    });
-  }
-
-  console.log(`Deleted ${categories.length} categories`);
-}
+const deleteProductVariants = () => deleteAll('product-variant');
+const deleteProducts = () => deleteAll('product');
+const deleteBrands = () => deleteAll('brand');
+const deleteCategories = () => deleteAll('category');
 
 async function main() {
   const { createStrapi, compileStrapi } = require('@strapi/strapi');

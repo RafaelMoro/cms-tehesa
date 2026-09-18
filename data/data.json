@@ -55,10 +55,6 @@
       "name": "Carburo"
     },
     {
-      "customId": "abrasivos",
-      "name": "Abrasivos"
-    },
-    {
       "customId": "calibrador",
       "name": "Calibrador"
     },
@@ -73,6 +69,14 @@
     {
       "customId": "lubricantes-multifuncionales",
       "name": "Lubricantes multifuncionales"
+    },
+    {
+      "customId": "herramientas-marcado",
+      "name": "Herramientas de marcado"
+    },
+    {
+      "customId": "sellado-taponado",
+      "name": "Sellado y taponado"
     }
   ],
   "brands": [
@@ -94,7 +98,7 @@
     },
     {
       "customId": "cleveland",
-      "name": "Clevaland"
+      "name": "Cleveland"
     },
     {
       "customId": "precision",
@@ -103,6 +107,10 @@
     {
       "customId": "libre",
       "name": "Marca Libre"
+    },
+    {
+      "customId": "volkel",
+      "name": "Volkel"
     }
   ]
 }

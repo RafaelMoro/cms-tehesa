@@ -1,11 +1,15 @@
 'use strict';
 
+const { allDocumentIds } = require('./document-ids');
+
 async function listDraftVariants() {
   try {
     console.log('Fetching draft product variants...');
 
+    const documentIds = await allDocumentIds('api::product-variant.product-variant', { unpublishedOnly: true });
     const variants = await strapi.documents('api::product-variant.product-variant').findMany({
-      limit: 10000,
+      filters: { documentId: { $in: documentIds } },
+      limit: -1,
       status: 'draft',
       populate: ['product', 'pricing'],
     });
