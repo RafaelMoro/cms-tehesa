@@ -130,6 +130,7 @@ async function createEntry({ model, entry }) {
     // Actually create the entry in Strapi
     await strapi.documents(`api::${model}.${model}`).create({
       data: entry,
+      status: 'published',
     });
   } catch (error) {
     console.error({ model, entry, error });
@@ -172,8 +173,6 @@ async function importGlobal() {
     entry: {
       ...global,
       favicon,
-      // Make sure it's not a draft
-      publishedAt: Date.now(),
       defaultSeo: {
         ...global.defaultSeo,
       },

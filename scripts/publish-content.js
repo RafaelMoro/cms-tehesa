@@ -1,5 +1,7 @@
 'use strict';
 
+const { allDocumentIds } = require('./document-ids');
+
 // Publish all draft documents. Usage: node scripts/publish-content.js [model ...]
 // Defaults to categories, brands, products and product variants, in relation order.
 const ALL_MODELS = ['category', 'brand', 'product', 'product-variant'];
@@ -7,18 +9,18 @@ const models = process.argv.slice(2).length ? process.argv.slice(2) : ALL_MODELS
 
 async function publishAll(model) {
   const uid = `api::${model}.${model}`;
-  const drafts = await strapi.documents(uid).findMany({ limit: 10000, status: 'draft' });
-  console.log(`[${model}] ${drafts.length} drafts found`);
+  const drafts = await allDocumentIds(uid, { unpublishedOnly: true });
+  console.log(`[${model}] ${drafts.length} unpublished documents found`);
 
   let published = 0;
   let errors = 0;
-  for (const doc of drafts) {
+  for (const documentId of drafts) {
     try {
-      await strapi.documents(uid).publish({ documentId: doc.documentId });
+      await strapi.documents(uid).publish({ documentId });
       published++;
       if (published % 500 === 0) console.log(`[${model}] published ${published}...`);
     } catch (error) {
-      console.error(`[${model}] failed ${doc.documentId}: ${error.message}`);
+      console.error(`[${model}] failed ${documentId}: ${error.message}`);
       errors++;
     }
   }
