@@ -1,7 +1,7 @@
 # Catalog resync plan (products-tehesa → Strapi)
 
 Audit date: 2026-09-18. Seed source: `/home/rafael/projects/tehesa/products-tehesa` @ `bdf7a69` (post v1.6.0).
-Local DB: `.tmp/data.db`, seeded 2026-07-08 (products-tehesa v1.2.0). Nothing has been changed yet — this is the plan.
+Local DB: `.tmp/data.db`, seeded 2026-07-08 (products-tehesa v1.2.0). Phase B applied 2026-09-18; note the local DB got an extra 8,525 variants from an accidental script run and must be cleared (phase C) before use.
 
 ## Findings
 
@@ -78,12 +78,12 @@ Expected: 332 products, 0 null categories, 0 null brands. `update-products-price
 
 ## Open questions
 - Display names for `herramientas-marcado` and `sellado-taponado`.
-- Keep or drop the now-empty `abrasivos` category in `data.json`.
+- ~~Keep or drop `abrasivos`~~ → dropped.
 
 ## Action items
-- [ ] `data/data.json`: add categories `herramientas-marcado` and `sellado-taponado` (`marcador-valve-action`, `marcador-hp-proline`, `tapon-dry-seal` depend on them).
-- [ ] `data/data.json`: add brand `volkel` (60 products / 740 variants currently `brand = null`).
-- [ ] Fix seed path `../../tehesa-products/data` → `../../products-tehesa/data` in both seed scripts + AGENTS.md.
-- [ ] `seed-products-variants.js`: load only `_file` per product (or delete the stray `tornilleria-hex-int-cab-cilindrica-din-912.json` upstream).
-- [ ] `clear-seed-data.js`: uncomment product/brand/category deletes.
+- [x] `data/data.json`: add categories `herramientas-marcado` and `sellado-taponado`, drop `abrasivos` (`marcador-valve-action`, `marcador-hp-proline`, `tapon-dry-seal` depend on them).
+- [x] `data/data.json`: add brand `volkel` (60 products / 740 variants currently `brand = null`).
+- [x] Fix seed path `../../tehesa-products/data` → `../../products-tehesa/data` in both seed scripts + AGENTS.md.
+- [x] `seed-products-variants.js`: load only `_file` per product (or delete the stray `tornilleria-hex-int-cab-cilindrica-din-912.json` upstream).
+- [x] `clear-seed-data.js`: uncomment product/brand/category deletes.
 - [ ] Reseed local (section C), verify counts, then `transfer:prod`.

@@ -6,7 +6,7 @@ const mime = require('mime-types');
 
 // Load product variants from all subdirectories in data folder
 function loadProductVariants() {
-  const dataPath = path.join(__dirname, '../../tehesa-products/data');
+  const dataPath = path.join(__dirname, '../../products-tehesa/data');
   const allVariants = [];
   
   // Get all subdirectories
@@ -17,14 +17,18 @@ function loadProductVariants() {
   for (const subdir of subdirectories) {
     const folderPath = path.join(dataPath, subdir);
     const files = fs.readdirSync(folderPath);
-    
-    for (const file of files) {
-      // Skip the products.*.json files
-      if (file.startsWith('products.') || !file.endsWith('.json')) {
+    const productFile = files.find(file => file.match(/^products\..+\.json$/));
+    if (!productFile) continue;
+
+    // Only load variant files referenced by a product's _file, so stray/duplicate JSONs are ignored
+    const variantFiles = require(path.join(folderPath, productFile)).map(p => p._file).filter(Boolean);
+
+    for (const file of variantFiles) {
+      const filePath = path.join(folderPath, file);
+      if (!fs.existsSync(filePath)) {
+        console.warn(`Variant file not found: ${subdir}/${file}`);
         continue;
       }
-      
-      const filePath = path.join(folderPath, file);
       const variants = require(filePath);
       
       // Filter out variants without a valid productCustomId

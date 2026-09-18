@@ -19,7 +19,7 @@
 
 ## Seed Scripts
 - Current product seeding is split: run `npm run seed:start` before `npm run seed:products` so products exist before variants are linked by `productCustomId`.
-- `seed:start` and `seed:products` read product JSON from `../../tehesa-products/data` relative to `scripts/`, not from this repo's `data/data.json`.
+- `seed:start` and `seed:products` read product JSON from `../../products-tehesa/data` relative to `scripts/`, not from this repo's `data/data.json`.
 - `npm run seed:clear` deletes variants, products, brands, then categories; use it only when clearing local seed data is intended.
 - `npm run publish:variants` publishes draft product variants; `npm run update-products-price-count` only updates products in category customId `perforacion-accesorios-taladro`.
 - `npm run seed:example` is the Strapi starter/sample seed path and references `article`/`author` content types that are not present in the current app.

@@ -5,8 +5,8 @@ const path = require('path');
 const mime = require('mime-types');
 const { categories, global, brands } = require('../data/data.json');
 
-// Load all products.*.json files from tehesa-products/data subdirectories
-const dataPath = path.join(__dirname, '../../tehesa-products/data');
+// Load all products.*.json files from products-tehesa/data subdirectories
+const dataPath = path.join(__dirname, '../../products-tehesa/data');
 const products = [];
 
 function loadProductsFromDirectory(dirPath) {
