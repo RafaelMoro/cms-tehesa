@@ -68,7 +68,8 @@ Handoff for products-tehesa: nothing left to fix for brands. All null brands are
 ```
 npm run seed:clear      # full wipe after B.4 — irreversible for .tmp/data.db
 npm run seed:start      # categories + brands (data.json), products (products-tehesa)
-npm run seed:products   # variants, created published
+npm run seed:products   # variants
+npm run publish:all     # publish any drafts: categories → brands → products → variants
 npm run draft:variants  # expect 0 drafts
 ```
 Expected: 332 products, 0 null categories, 0 null brands. `update-products-price-count` is not needed (values ship in the JSON).
