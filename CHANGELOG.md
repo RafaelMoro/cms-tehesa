@@ -1,3 +1,9 @@
+## v1.2.4 (2026-09-18)
+
+### Pull Requests
+[#31](https://github.com/RafaelMoro/cms-tehesa/pull/31) | Update lightsail runbook
+
+
 ## v1.2.3 (2026-09-15)
 
 ### Pull Requests
