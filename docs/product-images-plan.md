@@ -201,19 +201,129 @@ Confidence: ✓ exact match, ~ same product type (shared image), ? guess — ver
 
 ## 3. Products with no image (need a photo or an explicit fallback)
 
-Whole categories with zero images: `adhesivos-selladores` (2), `calibrador` (5), `equipo_seguridad` (1), `herramientas-diagnostico-electricidad` (1), `herramientas-marcado` (2), `herramientas_impacto_forja` (2), `lubricantes-multifuncionales` (1).
+Format: `customId` — brand.
 
-| category | customId |
-|---|---|
-| carburo | punta-montada-rosa-weston, juego-puntas-diamante-weston, juego-limas-diamantadas-weston, cortador-vertical-bola-av-2f-weston, cortador-vertical-av-2f-weston, cortador-vertical-cobalto-4f-weston, cortador-vertical-av-4f-weston, cortador-vertical-av-milimetrico-weston, cortador-vertical-av-4f-lgo-weston, cortador-vertical-ext-lgo-4f-weston, cortador-desbaste-cobalto-4f-weston, cortador-anular-titanio-weston, cortador-vertical-radial-carburo-4f-weston, cortador-vertical-carburo-4f-weston, cortador-vertical-carburo-milimetrico-weston |
-| herramientas-corte-conformado | discos-corte-weston, buriles-incor-k-42, extension-machuelos-volkel, extension-machuelos-bohrcraft, juego-machuelos-aac-cleveland, juego-machuelos-aav-cleveland, juego-machuelos-av-bohrcraft, machuelo-bsp-av-weston, machuelo-ac-weston, machuelo-aav-npt-cleveland, machuelo-npt-av-bohrcraft, machuelo-sti-av-bohrcraft, rima-perno-conico-weston, plus the ~19 Volkel cónico/recto/izquierdo machuelos flagged `?` above |
-| llaves-herramientas-apriete | all 12 `dado-cuadro-*` / `dado-impacto-*`, llave-banda-60x140, llave-estrias-golpe, llave-gancho-ajustable-13-35mm, llaves-combinadas-matraca-cambio, matraca-cuadro-1-2-cabeza-articulado, 1-2-dr-dado-punta-spline, 1-2-punta-bristol-cromado, pinza-presion-c-6, pinza-presion-curva-cromada, punta-cinco-estrellas-cuadro |
-| perforacion-accesorios-taladro | broquero-con-llave-y-montaje-weston, super-broquero-embalado-con-llave-weston, broquero-ajustable-weston, broquero-jacobs-con-llave-weston, llave-jacobs-weston, broquero-jacobs-weston, arbol-para-broquero-weston, boquilla-cono-morse-weston, moleteador-weston |
-| roscado-herramientas-roscas | maneral-para-insertar-volkel (if the `?` above is wrong) |
-| sujecion | clamp-accion-pestillo-weston, clamp-pestillo-weston |
-| pija | — (all covered) |
-| tornillos | tornillo-ojo-forjado-weston (if `argolla-carga` is wrong) |
-| varilla | varilla-rosc-cl-8.8-neg-1mt-mm, varilla-rosc-cl-4.8-neg-1mt-mm (fallback: varilla-87) |
+### adhesivos-selladores (whole category)
+- loctite-243-fijador-de-roscas-resistencia-removible-50-ml — weston
+- loctite-495-adhesivo-instantaneo-super-bonder-20-gr — weston
+
+### calibrador (whole category)
+- calibrador-gage-angulo-corte-rosca-acero-inoxidable-weston — weston
+- calibrador-gage-cuerda-60-weston — weston
+- calibrador-gage-cuerdas-acme-weston — weston
+- contador-hilos-weston — weston
+- cuenta-hilos-metrico-weston — weston
+
+### carburo
+- punta-montada-rosa-weston — weston
+- juego-puntas-diamante-weston — weston
+- juego-limas-diamantadas-weston — weston
+- cortador-anular-titanio-weston — weston
+- cortador-desbaste-cobalto-4f-weston — weston
+- cortador-vertical-av-2f-weston — weston
+- cortador-vertical-av-4f-weston — weston
+- cortador-vertical-av-4f-lgo-weston — weston
+- cortador-vertical-av-milimetrico-weston — weston
+- cortador-vertical-bola-av-2f-weston — weston
+- cortador-vertical-carburo-4f-weston — weston
+- cortador-vertical-carburo-milimetrico-weston — weston
+- cortador-vertical-cobalto-4f-weston — weston
+- cortador-vertical-ext-lgo-4f-weston — weston
+- cortador-vertical-radial-carburo-4f-weston — weston
+
+### equipo-seguridad (whole category)
+- lente-general-tricolor-ansi-weston — weston
+
+### herramientas-corte-conformado
+- discos-corte-weston — weston
+- machuelo-ac-weston — weston
+- machuelo-bsp-av-weston — weston
+- rima-perno-conico-weston — weston
+- buriles-incor-k-42 — cleveland
+- juego-machuelos-aac-cleveland — cleveland
+- juego-machuelos-aav-cleveland — cleveland
+- machuelo-aav-npt-cleveland — cleveland
+- extension-machuelos-bohrcraft — bohrcraft
+- juego-machuelos-av-bohrcraft — bohrcraft
+- machuelo-npt-av-bohrcraft — bohrcraft
+- machuelo-sti-av-bohrcraft — bohrcraft
+- extension-machuelos-volkel — volkel
+- Volkel cónico/recto/izquierdo machuelos (flagged `?` in section 2, no matching image):
+  - machelo-conico-milimetricos-av-fino-volkel — volkel
+  - machelo-conico-milimetricos-av-tipo-europeo-volkel — volkel
+  - machelo-recto-milimetricos-aav-fino-volkel — volkel
+  - machelo-recto-milimetricos-av-tipo-europeo-volkel — volkel
+  - machuelo-fraccional-aav-conico-volkel — volkel
+  - machuelo-fraccional-aav-conico-fino-volkel — volkel
+  - machuelo-fraccional-aav-recto-volkel — volkel
+  - machuelo-fraccional-aav-recto-fino-volkel — volkel
+  - machuelo-izq-conicos-aav-volkel — volkel
+  - machuelos-izq-con-finos-volkel — volkel
+  - machuelos-izq-fracc-rectos-aav-volkel — volkel
+  - machuelos-izq-fraccionales-conicos-aav-volkel — volkel
+  - machuelos-izq-rectos-aav-volkel — volkel
+  - machuelos-izq-rectos-finos-volkel — volkel
+
+### herramientas-diagnostico-electricidad (whole category)
+- probador-circuito-6-24v — king-tony
+
+### herramientas-impacto-forja (whole category)
+- martillo-estilo-aleman — king-tony
+- martillo-reparacion-hojalateria — king-tony
+
+### herramientas-marcado (whole category)
+- marcador-hp-proline — weston
+- marcador-valve-action — weston
+
+### llaves-herramientas-apriete
+- 1-2-dr-dado-punta-spline — king-tony
+- 1-2-punta-bristol-cromado — king-tony
+- dado-cuadro-1-2-corto-estrella — king-tony
+- dado-cuadro-1-2-de-cuadro — king-tony
+- dado-cuadro-1-2-estrella-largo — king-tony
+- dado-cuadro-1-2-punta-bristol-60mm — king-tony
+- dado-cuadro-1-2-punta-bristol-80mm — king-tony
+- dado-cuadro-1-2-punta-bristol-de-seguridad — king-tony
+- dado-cuadro-1-2-punta-bristol-m-measure — king-tony
+- dado-cuadro-1-2-punta-ribe — king-tony
+- dado-cuadro-1-2-punta-torx-larga — king-tony
+- dado-cuadro-1-2-punta-torx-segmento-corto — king-tony
+- dado-cuadro-1-llanta-trasera-capuchon — king-tony
+- dado-impacto-cuadro-1-2-17mm-6-puntas — king-tony
+- llave-banda-60x140 — king-tony
+- llave-estrias-golpe — king-tony
+- llave-gancho-ajustable-13-35mm — king-tony
+- llaves-combinadas-matraca-cambio — king-tony
+- matraca-cuadro-1-2-cabeza-articulado — king-tony
+- pinza-presion-c-6 — king-tony
+- pinza-presion-curva-cromada — king-tony
+- punta-cinco-estrellas-cuadro — king-tony
+
+### lubricantes-multifuncionales (whole category)
+- wd-40-aerosol — weston
+
+### perforacion-accesorios-taladro
+- arbol-para-broquero-weston — weston
+- boquilla-cono-morse-weston — weston
+- broquero-ajustable-weston — weston
+- broquero-con-llave-y-montaje-weston — weston
+- broquero-jacobs-con-llave-weston — weston
+- broquero-jacobs-weston — weston
+- llave-jacobs-weston — weston
+- moleteador-weston — weston
+- super-broquero-embalado-con-llave-weston — weston
+
+### roscado-herramientas-roscas
+- maneral-para-insertar-volkel — volkel (only if the `maneral-dado-tarraja-volkel` `?` guess is wrong)
+
+### sujecion
+- clamp-accion-pestillo-weston — weston
+- clamp-pestillo-weston — weston
+
+### tornilleria
+- tornillo-ojo-forjado-weston — weston (only if the `argolla-carga` `?` guess is wrong)
+- varilla-rosc-cl-4.8-neg-1mt-mm — libre (fallback: varilla-87)
+- varilla-rosc-cl-8.8-neg-1mt-mm — libre (fallback: varilla-87)
 
 Rough count: ~215 products mapped (≈95 `✓`, rest shared/guessed), ~115 without an image.
 
