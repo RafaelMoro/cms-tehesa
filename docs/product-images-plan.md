@@ -63,23 +63,23 @@ Confidence: ✓ exact match, ~ same product type (shared image), ? guess — ver
 ### perforacion-accesorios-taladro
 | image | customId | internalIds (first 3) | conf |
 |---|---|---|---|
-| broca-fraccional-zanco-recto | broca-zco-recto-acero-av-weston-inches, broca-zco-recto-acero-av-weston, broca-zco-recto-acero-av-weston-number, broca-zanco-recto-acero-av-weston-abc, broca-zco-recto-acero-av-mims-weston, broca-zco-recto-acero-av-bohrcraft, broca-aav-135-split-point, broca-aav-135-split-point-thunderbit | ST-5-160-005, ST-5-160-010, ST-5-160-015… / ST-5-163-010, ST-5-163-017, ST-5-163-022… / ST-5-170-005, ST-5-170-010, ST-5-170-015… / ST-5-180-005, ST-5-180-010, ST-5-180-015… / ST-5-154-020, ST-5-154-025, ST-5-154-030… / BC-1100-100, BC-1100-130, BC-1100-150… / M111-11201, M111-11202, M111-11203… / M211-12504, M211-12505, M211-12506… | ~ |
+| broca-fraccional-zanco-recto | broca-zco-recto-acero-av-weston-inches, broca-zco-recto-acero-av-weston, broca-zco-recto-acero-av-weston-number, broca-zanco-recto-acero-av-weston-abc, broca-zco-recto-acero-av-mims-weston, broca-zco-recto-acero-av-bohrcraft, broca-aav-135-split-point, broca-aav-135-split-point-thunderbit | ST-5-160-005, ST-5-160-010, ST-5-160-015… / ST-5-163-010, ST-5-163-017, ST-5-163-022… / ST-5-170-005, ST-5-170-010, ST-5-170-015… / ST-5-180-005, ST-5-180-010, ST-5-180-015… / ST-5-154-020, ST-5-154-025, ST-5-154-030… / BC-1100-100, BC-1100-130, BC-1100-150… / M111-11201, M111-11202, M111-11203… / M211-12504, M211-12505, M211-12506… | ✓ confirmed |
 | broca-concreto-sds | broca-concreto-sds-weston, broca-wp-zanco-sds-plus-weston | ST-5-151-100, ST-5-151-150, ST-5-151-200… / ST-5-148-350, ST-5-148-370, ST-5-148-410 | ✓ |
-| broca-concreto | broca-concreto-weston, broca-para-concreto-diager | ST-5-150-10000, ST-5-150-10002, ST-5-150-10004… / D282-03076, D282-04076, D282-05102… | ✓/~ |
-| broca-concreto-booster | broca-wp-concreto-weston | ST-5-148-020, ST-5-148-030, ST-5-148-050… | ? |
+| broca-concreto | broca-concreto-weston, broca-para-concreto-diager | ST-5-150-10000, ST-5-150-10002, ST-5-150-10004… / D282-03076, D282-04076, D282-05102… | ✓ confirmed |
+| broca-concreto-booster | broca-wp-concreto-weston | ST-5-148-020, ST-5-148-030, ST-5-148-050… | ✓ confirmed |
 | broca-cobalto | broca-zco-recto-cobalto-bohrcraft, broca-zco-recto-cobalto-weston-inches, broca-zco-recto-cobalto-weston-m-measure | BC-1141-100, BC-1141-150, BC-1141-200… / ST-5-162-010, ST-5-162-025, ST-5-162-035… / ST-5-162-300, ST-5-162-305, ST-5-162-310… | ✓ |
 | broca-centro | broca-centro-acero-av-weston | ST-8-600-010, ST-8-600-015, ST-8-600-020… | ✓ |
 | broca-carburo-TiAlN | broca-carburo-solido-m13-tialn-bohrcraft | BC-1502-300, BC-1502-350, BC-1502-400… | ✓ |
 | broca-carburo-solido | broca-carburo-solido-weston | ST-1-160-040, ST-1-160-045, ST-1-160-050… | ✓ |
-| jgo-escariadores-metrico | insertos-elicoil-std-juego-6-escareadores-tornillo-allen-acero-av-bohrcraft | — | ~ |
+| jgo-escariadores-metrico | insertos-elicoil-std-juego-6-escareadores-tornillo-allen-acero-av-bohrcraft | — | ✓ confirmed |
 | jgo-brocas-metrica | juego-brocas-av-metricas-25-pzas, juego-brocas-acero-av-25-pzas-bohrcraft | ST-5-159-008 / BC-1100-30019, BC-1100-30025 | ✓ |
 | jgo-brocas-fraccional | juego-brocas-acero-av-fraccionales, jgo-brocas-acer-av-std-numericas-alfabetica-115-pzas-weston, jgo-brocas-av-alfabeticas-26-pzas-weston, jgo-brocas-av-numericas-60-pzas-weston | ST-5-159-003, ST-5-159-004, ST-5-159-010 / ST-5-159-001 / ST-5-180-500 / ST-5-170-525 | ✓/~ |
 | jgo-brocas-cobalto | juego-brocas-cobalto-metricas-25-pzas, juego-brocas-cobalto-fraccionales-weston | ST-5-159-009 / ST-5-159-006 | ✓ |
 | broca-zanco-media-pulgada | broca-av-zanco-weston-inches, broca-av-zanco-weston-metric, broca-zanco-1-2-cobalto-weston | ST-5-166-010, ST-5-166-015, ST-5-166-020… / ST-5-166-260, ST-5-166-265, ST-5-166-270… / ST-5-167-320, ST-5-167-360, ST-5-167-440 | ✓ |
 | broca-zanco-conico | broca-zco-conico-inches-number-weston | ST-5-190-225, ST-5-190-240, ST-5-190-260… | ✓ |
 | broca-vidrio | broca-punta-carburo-tungsteno-weston | ST-5-149-10200, ST-5-149-10210, ST-5-149-10220… | ? |
-| broca-larga | broca-larga-acero-av-bohrcraft, broca-extra-larga-acero-av-bohrcraft, broca-larga-tl-weston, broca-larga-av-weston, broca-larga-tl-inches-weston, broca-larga-aav-wp-black-silver-weston | BC-1350-100, BC-1350-150, BC-1350-200… / BC-1400-10200, BC-1400-10250, BC-1400-10300… / NB-5-164-015, NB-5-164-035, NB-5-164-050… / ST-5-165-005, ST-5-165-010 / ST-5-164-005, ST-5-164-010, ST-5-164-055… / NB-5-165-005, NB-5-165-010, NB-5-165-015… | ~ |
-| jgo-broca-zanco-media, broca-multiusos | — | — | no product |
+| broca-larga | broca-larga-acero-av-bohrcraft, broca-extra-larga-acero-av-bohrcraft, broca-larga-tl-weston, broca-larga-av-weston, broca-larga-tl-inches-weston, broca-larga-aav-wp-black-silver-weston | BC-1350-100, BC-1350-150, BC-1350-200… / BC-1400-10200, BC-1400-10250, BC-1400-10300… / NB-5-164-015, NB-5-164-035, NB-5-164-050… / ST-5-165-005, ST-5-165-010 / ST-5-164-005, ST-5-164-010, ST-5-164-055… / NB-5-165-005, NB-5-165-010, NB-5-165-015… | ✓ confirmed |
+| jgo-broca-zanco-media, broca-multiusos | — | — | not found or related |
 
 ### roscado-herramientas-roscas (products split across `herramientas-corte-conformado` and `roscado-herramientas-roscas`)
 | image | customId | internalIds (first 3) | conf |
