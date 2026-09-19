@@ -336,3 +336,42 @@ Rough count: ~215 products mapped (≈95 `✓`, rest shared/guessed), ~115 witho
 5. Update `AGENTS.md` / `REPO_CONTEXT.md` / `CLAUDE.md` script list and field table.
 6. `npm run transfer:prod`.
 7. Shoot / source photos for section 3 (category placeholders in the frontend meanwhile).
+
+## Appendix A. Commercial use of brand images in Mexico
+
+Not legal advice — checklist to clear with the brands and, if in doubt, a lawyer. Context: Tehesa is an authorized commercial supplier of these brands and the images come from the brands themselves.
+
+### What applies
+- **Copyright (Ley Federal del Derecho de Autor):** product photos and renders are protected works; the photographer/brand holds the economic rights. Using them on a store needs a license (written, even a simple email/PDF counts). Being a distributor does not by itself grant a license to the brand's photos.
+- **Trademarks (Ley Federal de Protección a la Propiedad Industrial):** showing a brand's name/logo to identify genuine goods you legitimately sell is allowed (nominative use). Don't use the logo as if Tehesa were the brand, don't alter it, don't imply exclusivity or official-store status unless the brand agrees.
+- **Consumer protection (Ley Federal de Protección al Consumidor, PROFECO):** the image must not mislead — it has to match what is actually sold (e.g. shared "type" images from section 2 should be labeled "imagen ilustrativa" when the variant/finish differs).
+- **Third-party content inside the image:** stock photos, models, or other brands' products in a manufacturer image are not covered by the manufacturer's permission — avoid those images.
+
+### What Tehesa needs per brand
+1. **Written authorization** to reproduce the brand's product images on `tehesa` web/store and social media. Ask for: scope (web, social, print), territory (Mexico), duration (while distributor), whether Tehesa may crop/resize/convert (we serve webp on Cloudinary), and whether attribution is required.
+2. **Official source**: dealer/partner media portal or an email from the brand's marketing contact with the files. Prefer that over saving images from their website or from other resellers.
+3. **Brand guidelines** if they have them (logo use, minimum size, "distribuidor autorizado" wording).
+4. **Proof of distributor status** (invoice/contract) — not for the images, but it is what makes the trademark use clearly legitimate.
+
+Brands to cover (from the seed): weston, volkel, bohrcraft, bondhus, cleveland, precision, king-tony, plus Loctite (Henkel), WD-40, Diager, Saravia, Surtek where their products/images appear. Products with brand `libre` have no brand owner — those images must be Tehesa's own or licensed stock.
+
+### Record keeping
+Keep one row per brand in a small table (here or `docs/image-licenses.md`): brand · contact · date · what was authorized · where the authorization file is. Add a `source` note per brand in `data/product-images.json` only if the map ever mixes brand images with Tehesa's own photos; today all URLs are one Cloudinary folder, so a per-brand table is enough.
+
+| brand | authorization | date | contact / file |
+|---|---|---|---|
+| weston | pending | | |
+| volkel | pending | | |
+| bohrcraft | pending | | |
+| bondhus | pending | | |
+| cleveland | pending | | |
+| precision | pending | | |
+| king-tony | pending | | |
+| henkel (loctite) | pending | | |
+| wd-40 | pending | | |
+| diager | pending | | |
+
+### Cleanup before launch
+- Remove any image whose origin you can't name (unknown reseller, Google Images).
+- Show `imagen ilustrativa` on products mapped with `~` / `?` in section 2.
+- Don't hotlink from brand sites — keep serving from Tehesa's Cloudinary (already the case).
