@@ -16,14 +16,13 @@ Frontend fallback: products without `imageUrl` should render a category placehol
 
 ## 2. Image → product map
 
-Confidence: ✓ exact match, ~ same product type (shared image), ? guess — verify before shipping.
+Confidence: ✓ exact match, ~ same product type (shared image), ? guess — verify before shipping. `✓ confirmed` = reviewed by Tehesa. `not registered` = image exists but the product is not in the catalog.
 
 ### carburo
 | image | customId | internalIds (first 3) | conf |
 |---|---|---|---|
-| lima-sc | lima-rotativa-weston | ST-2-200-003, ST-2-200-005, ST-2-200-007… | ~ (SC/SD/SF/SG are shapes; pick one per product) |
-| lima-sd | lima-rotativa-doble-corte-weston | ST-1-199-003, ST-1-199-004, ST-1-199-025… | ~ |
-| lima-sf, lima-sg | — | — | unused (shape variants) |
+| lima-sc | lima-rotativa-weston | ST-2-200-003, ST-2-200-005, ST-2-200-007… | ✓ confirmed |
+| lima-sd | lima-rotativa-doble-corte-weston | ST-1-199-003, ST-1-199-004, ST-1-199-025… | ✓ confirmed |
 
 ### extraccion-reparacion-fijaciones
 | image | customId | internalIds (first 3) | conf |
@@ -35,17 +34,17 @@ Confidence: ✓ exact match, ~ same product type (shared image), ? guess — ver
 | image | customId | internalIds (first 3) | conf |
 |---|---|---|---|
 | avellanador-3-filos | avellanador-weston | ST-5-660-6015, ST-5-660-6020, ST-5-660-6035… | ✓ |
-| avellanador-3-filos | avellanador-juego-6f-weston | ST-5-660-6088, ST-5-660-8288, ST-5-660-9088 | ? (6F set, image is 3 flutes) |
-| rima-recta-maquina | rima-recta-maquina-h8-weston, rima-maquina-h8-weston, rima-flauta-recta-aav-h7-weston | ST-8-015-005, ST-8-015-010, ST-8-015-015… / ST-8-019-040, ST-8-019-055, ST-8-019-065… / ST-8-015-403, ST-8-015-406, ST-8-015-409… | ~ |
-| laina-metrica-inoxidable | laina-acero-inoxidable-150mm-1-25m-precision, laina-acero-inoxidable-6pul-50pul-precision | PB-22971, PB-22972, PB-22973… / PB-22125, PB-22L2, PB-22195… | ~ |
-| laina-fraccional-metrica | laina-acero-6pul-100pul-precision, laina-acero-150mm-2-5m-precision | PB-16130, PB-16195, PB-16245… / PB-16971, PB-16972, PB-16973… | ~ |
+| avellanador-3-filos | avellanador-juego-6f-weston | ST-5-660-6088, ST-5-660-8288, ST-5-660-9088 | ✓ confirmed |
+| rima-recta-maquina | rima-recta-maquina-h8-weston, rima-maquina-h8-weston, rima-flauta-recta-aav-h7-weston | ST-8-015-005, ST-8-015-010, ST-8-015-015… / ST-8-019-040, ST-8-019-055, ST-8-019-065… / ST-8-015-403, ST-8-015-406, ST-8-015-409… | ✓ confirmed |
+| laina-metrica-inoxidable | laina-acero-inoxidable-150mm-1-25m-precision, laina-acero-inoxidable-6pul-50pul-precision | PB-22971, PB-22972, PB-22973… / PB-22125, PB-22L2, PB-22195… | ✓ confirmed |
+| laina-fraccional-metrica | laina-acero-6pul-100pul-precision, laina-acero-150mm-2-5m-precision | PB-16130, PB-16195, PB-16245… / PB-16971, PB-16972, PB-16973… | ✓ confirmed |
 | laina-azul-templado | laina-acero-azul-templado-precision, laina-acero-azul-templado-5pul-precision | PB-07000, PB-09000, PB-10000 / PB-23130 | ✓ |
-| escariador-caja | escareador-tornillo-allen-acero-av-bohrcraft | BC-1707-300, BC-1707-400, BC-1707-500… | ~ |
-| cortador-vertical-tin | cortador-vertical-4f-titanio-weston, cortador-vertical-carburo-ctian-weston, cortador-vertical-radial-carburo-altin-weston | ST-3-306-005, ST-3-306-015, ST-3-306-025… / ST-2-306-5015, ST-2-306-5025, ST-2-306-5035… / ST-1-222-004, ST-1-222-005, ST-1-222-006… | ~ |
+| escariador-caja | escareador-tornillo-allen-acero-av-bohrcraft | BC-1707-300, BC-1707-400, BC-1707-500… | ✓ confirmed |
+| cortador-vertical-tin | cortador-vertical-4f-titanio-weston, cortador-vertical-carburo-ctian-weston, cortador-vertical-radial-carburo-altin-weston | ST-3-306-005, ST-3-306-015, ST-3-306-025… / ST-2-306-5015, ST-2-306-5025, ST-2-306-5035… / ST-1-222-004, ST-1-222-005, ST-1-222-006… | ✓ confirmed |
 | buril-redondo | buriles-redondo-av-weston | ST-5-091-002, ST-5-091-008, ST-5-091-013… | ✓ |
-| buril-momax-cobalto | buriles-cuadrados-cobalto-cleveland | CC44540, CC44544, CC44545… | ✓ (Mo-Max = Cleveland) |
+| buril-momax-cobalto | buriles-cuadrados-cobalto-cleveland | CC44540, CC44544, CC44545… | ✓ confirmed |
 | buril-cobalto-8-porciento | buriles-cobalto-co8-weston | ST-5-095-007, ST-5-095-012, ST-5-095-017… | ✓ |
-| buril-calzado-punta-60, buril-calzado-punta-80, buril-calzado-punta-cuadrada, buril-corte-izquierdo, buril-corte-derecho, sierra-cinta, rima-ajustable | — | — | no product |
+| buril-calzado-punta-60, buril-calzado-punta-80, buril-calzado-punta-cuadrada, buril-corte-izquierdo, buril-corte-derecho, sierra-cinta, rima-ajustable | — | — | not registered |
 
 ### llaves-herramientas-torque (category `llaves-herramientas-apriete`)
 | image | customId | internalIds (first 3) | conf |
@@ -55,9 +54,11 @@ Confidence: ✓ exact match, ~ same product type (shared image), ? guess — ver
 | llave-allen-punta-bola-metrica-fraccional | llave-hexagonal-std-punta-de-bola-bondhus, llave-hexagonal-mm-punta-de-bola-bondhus | B121-15702, B121-15703, B121-15704… / B122-15749, B122-15750, B122-15752… | ✓ |
 | llave-allen-brazo-largo | llave-hexagonal-mm-larga-recta-bondhus, llave-hexagonal-std-larga-recta-bondhus | B132-15947, B132-15948, B132-15949… / B131-15900, B131-15901, B131-15902… | ✓ |
 | llave-allen | llave-hexagonal-mm-corta-recta-bondhus, llave-hexagonal-std-corta-bondhus | B112-15847, B112-15848, B112-15849… / B111-15800, B111-15801, B111-15802… | ✓ |
-| jgo-llave-torx | juego-llaves-torx | B412-31732, B412-31734, B422-31832… | ✓ |
-| jgo-llave-allen-brazo-largo-metrico | juego-llaves-allen-std-mm | B123-10945, B123-10932, B123-10938… | ~ |
-| jgo-llave-torx-larga, jgo-llave-punta-bola-fraccional, jgo-llave-allen-punta-bola-metrica, llave-allen-t-metrica, llave-allen-t-fraccional, llave-torx-t, goldguard, colorguard, plateado, extra-largas | — | — | no product (finishes / T-handles are not in the seed) |
+| jgo-llave-torx | juego-llaves-torx | B412-31732, B412-31734, B422-31832… | ✓ confirmed |
+| jgo-llave-allen-brazo-largo-metrico | juego-llaves-allen-std-mm | B123-10945, B123-10932, B123-10938… | ✓ confirmed |
+| jgo-llave-torx-larga | — | — | not found or related |
+| jgo-llave-punta-bola-fraccional, jgo-llave-allen-punta-bola-metrica, llave-allen-t-metrica, llave-allen-t-fraccional, llave-torx-t, goldguard, colorguard | — | — | not found or related |
+| plateado, extra-largas | — | — | pending: image needs a more descriptive name |
 
 ### perforacion-accesorios-taladro
 | image | customId | internalIds (first 3) | conf |
