@@ -201,129 +201,129 @@ Confidence: ✓ exact match, ~ same product type (shared image), ? guess — ver
 
 ## 3. Products with no image (need a photo or an explicit fallback)
 
-Format: `customId` — brand.
+Format: `customId | internalId(s) of its variants | brand`.
 
 ### adhesivos-selladores (whole category)
-- loctite-243-fijador-de-roscas-resistencia-removible-50-ml — weston
-- loctite-495-adhesivo-instantaneo-super-bonder-20-gr — weston
+- loctite-243-fijador-de-roscas-resistencia-removible-50-ml | LT-1329467 | weston
+- loctite-495-adhesivo-instantaneo-super-bonder-20-gr | LT-270821 | weston
 
 ### calibrador (whole category)
-- calibrador-gage-angulo-corte-rosca-acero-inoxidable-weston — weston
-- calibrador-gage-cuerda-60-weston — weston
-- calibrador-gage-cuerdas-acme-weston — weston
-- contador-hilos-weston — weston
-- cuenta-hilos-metrico-weston — weston
+- calibrador-gage-angulo-corte-rosca-acero-inoxidable-weston | STW-9047 | weston
+- calibrador-gage-cuerda-60-weston | STW-9050 | weston
+- calibrador-gage-cuerdas-acme-weston | STW-9045 | weston
+- contador-hilos-weston | STW-4823-31, STW-4823-52, STW-4823-55, STW-4823-60, STW-4823-65 | weston
+- cuenta-hilos-metrico-weston | STW-4821-52 | weston
 
 ### carburo
-- punta-montada-rosa-weston — weston
-- juego-puntas-diamante-weston — weston
-- juego-limas-diamantadas-weston — weston
-- cortador-anular-titanio-weston — weston
-- cortador-desbaste-cobalto-4f-weston — weston
-- cortador-vertical-av-2f-weston — weston
-- cortador-vertical-av-4f-weston — weston
-- cortador-vertical-av-4f-lgo-weston — weston
-- cortador-vertical-av-milimetrico-weston — weston
-- cortador-vertical-bola-av-2f-weston — weston
-- cortador-vertical-carburo-4f-weston — weston
-- cortador-vertical-carburo-milimetrico-weston — weston
-- cortador-vertical-cobalto-4f-weston — weston
-- cortador-vertical-ext-lgo-4f-weston — weston
-- cortador-vertical-radial-carburo-4f-weston — weston
+- punta-montada-rosa-weston | Z-50600, Z-50615, Z-50620, Z-50630, Z-50632, Z-50640, Z-50660, Z-50662, Z-50665, Z-50670, Z-50680, Z-50690, Z-50700, Z-50710, Z-50720, Z-50721, Z-50722, Z-50725, Z-50725-A, Z-50727, Z-50728, Z-50729-A, Z-50730, Z-50740, Z-50750, Z-50765 | weston
+- juego-puntas-diamante-weston | SA-290-0010, SA-290-0020, SA-290-0030 | weston
+- juego-limas-diamantadas-weston | SA-290-0040, SA-290-0050, SA-290-0060, SA-290-0070, SA-290-0080 | weston
+- cortador-anular-titanio-weston | ST-5-530-121-T, ST-5-530-133-T, ST-5-530-136-T, ST-5-530-138-T, ST-5-530-151-T | weston
+- cortador-desbaste-cobalto-4f-weston | ST-5-431-005, ST-5-431-010, ST-5-431-015, ST-5-431-020, ST-5-431-030, ST-5-431-040 | weston
+- cortador-vertical-av-2f-weston | ST-5-300-005, ST-5-300-010, ST-5-300-015, ST-5-300-025, ST-5-300-035, ST-5-300-045, ST-5-300-055, ST-5-300-070, ST-5-300-092, ST-5-300-115, ST-5-300-210, ST-5-300-235 | weston
+- cortador-vertical-av-4f-weston | ST-5-305-005, ST-5-305-010, ST-5-305-015, ST-5-305-020, ST-5-305-025, ST-5-305-035, ST-5-305-045, ST-5-305-055, ST-5-305-065, ST-5-305-070, ST-5-305-080, ST-5-305-085, ST-5-305-095, ST-5-305-125, ST-5-305-170, ST-5-305-200, ST-5-305-236, ST-5-305-265, ST-5-305-270, ST-5-305-273, ST-5-305-275, ST-5-305-280, ST-5-305-310 | weston
+- cortador-vertical-av-4f-lgo-weston | ST-5-315-005, ST-5-315-010, ST-5-315-015, ST-5-315-025, ST-5-315-035, ST-5-315-040, ST-5-315-060, ST-5-315-065 | weston
+- cortador-vertical-av-milimetrico-weston | ST-5-307-003, ST-5-307-004, ST-5-307-005, ST-5-307-006, ST-5-307-008, ST-5-307-010, ST-5-307-012, ST-5-307-014, ST-5-307-016, ST-5-307-018, ST-5-307-020 | weston
+- cortador-vertical-bola-av-2f-weston | ST-5-220-005, ST-5-220-010, ST-5-220-015, ST-5-220-020, ST-5-220-025, ST-5-220-035, ST-5-220-050, ST-5-220-055 | weston
+- cortador-vertical-carburo-4f-weston | ST-2-305-5005, ST-2-305-5010, ST-2-305-5015, ST-2-305-5025, ST-2-305-5035, ST-2-305-5045, ST-2-305-5055, ST-2-305-5070, ST-2-305-5125, ST-2-305-5170 | weston
+- cortador-vertical-carburo-milimetrico-weston | ST-2-307-003, ST-2-307-004, ST-2-307-005, ST-2-307-006, ST-2-307-008, ST-2-307-010, ST-2-307-012, ST-2-307-014, ST-2-307-016 | weston
+- cortador-vertical-cobalto-4f-weston | ST-5-304-005, ST-5-304-015, ST-5-304-025, ST-5-304-035, ST-5-304-045, ST-5-304-055, ST-5-304-070, ST-5-304-125, ST-5-304-170 | weston
+- cortador-vertical-ext-lgo-4f-weston | ST-5-425-015, ST-5-425-020, ST-5-425-035, ST-5-425-040, ST-5-425-045, ST-5-425-050 | weston
+- cortador-vertical-radial-carburo-4f-weston | ST-2-220-5005, ST-2-220-5010, ST-2-220-5015, ST-2-220-5020, ST-2-220-5025, ST-2-220-5030, ST-2-220-5035, ST-2-220-5050 | weston
 
 ### equipo-seguridad (whole category)
-- lente-general-tricolor-ansi-weston — weston
+- lente-general-tricolor-ansi-weston | ST-6-500-065, ST-6-500-066 | weston
 
 ### herramientas-corte-conformado
-- discos-corte-weston — weston
-- machuelo-ac-weston — weston
-- machuelo-bsp-av-weston — weston
-- rima-perno-conico-weston — weston
-- buriles-incor-k-42 — cleveland
-- juego-machuelos-aac-cleveland — cleveland
-- juego-machuelos-aav-cleveland — cleveland
-- machuelo-aav-npt-cleveland — cleveland
-- extension-machuelos-bohrcraft — bohrcraft
-- juego-machuelos-av-bohrcraft — bohrcraft
-- machuelo-npt-av-bohrcraft — bohrcraft
-- machuelo-sti-av-bohrcraft — bohrcraft
-- extension-machuelos-volkel — volkel
+- discos-corte-weston | Z-20185, Z-20190, Z-20197, Z-20198, Z-20215 | weston
+- machuelo-ac-weston | ST-5-778-140 | weston
+- machuelo-bsp-av-weston | ST-5-764-002-1, ST-5-764-003-1, ST-5-764-004-1, ST-5-764-005-1, ST-5-764-006-1, ST-5-764-007-1 | weston
+- rima-perno-conico-weston | ST-5-100-003, ST-5-100-005, ST-5-100-007, ST-5-100-008 | weston
+- buriles-incor-k-42 | I01-001, I01-002, I01-003, I01-005, I01-006, I01-007, I01-008, I01-009, I01-010, I01-011, I01-013, I01-014, I01-015, I01-016, I01-033, I01-034, I01-035, I01-037, I01-038, I01-039, I01-040, I01-041, I01-042, I01-043, I01-045, I01-046, I01-047, I01-048, I01-049, I01-050, I01-051, I01-053, I01-054, I01-055, I01-056 | cleveland
+- juego-machuelos-aac-cleveland | GGG107883, GGG107943, GGG108003, GGG108033, GGG108113, GGG108143, GGG108173, GGG108203, GGG108233, GGG108263, GGG108293, GGG108323, GGG108353, GGG108383, GGG108413, GGG108443, GGG108473, GGG108503, GGG108533, GGG108563, GGG108593, GGG108623, GGG108663, GGG300076603, GGG300076923, GGG300077253, GGG300077563, GGG300078003, GGG300078293, GGG300078403, GGG300078483, GGG300078683, GGG300078753, GGG300078783, GGG300078883, GGG300079153, GGG300079183, GGG300079283, GGG300079753, GGG300080783, GGG300081113, GGG300081183, GGG300081513, GGG300081583 | cleveland
+- juego-machuelos-aav-cleveland | CC1123-05323, CC1123-06243, CC1123-06323, CC54460, CC54476, CC54511, CC54523, CC54587, CC54600, CC54656, CC54665, CC54731, CC54741, CC54762, CC54768, CC54782, CC54790, CC54841, CC54849, CC54887, CC54893, CC54926, CC1123-030503M, CC1123-040704M, CC1123-050804M, CC1123-061005M, CC1123-081005M, CC1123-081255M, CC1123-101005M, CC1123-101255M, CC1123-101506M, CC1123-121006M, CC1123-121255M, CC1123-121506M, CC1123-121756M, CC1123-141006M, CC1123-141256M, CC1123-141506M, CC1123-142007M, CC1123-161006M, CC1123-161506M, CC1123-162007M, CC1123-201506M, CC1123-202507M, CC1123-221506M | cleveland
+- machuelo-aav-npt-cleveland | CC64038, CC64039, CC64040, CC64041, CC64042 | cleveland
+- extension-machuelos-bohrcraft | BC-4500-270, BC-4500-340, BC-4500-700 | bohrcraft
+- juego-machuelos-av-bohrcraft | — | bohrcraft
+- machuelo-npt-av-bohrcraft | — | bohrcraft
+- machuelo-sti-av-bohrcraft | BC-4800-300, BC-4800-400, BC-4800-500, BC-4800-600, BC-4800-800, BC-4800-1000, BC-4800-1200, BC-4800-1400, BC-4800-1600, BC-4800-1800, BC-4800-2000 | bohrcraft
+- extension-machuelos-volkel | 14527, 14534, 14549, 14555, 14570, 14590, 14612, 14614 | volkel
 - Volkel cónico/recto/izquierdo machuelos (flagged `?` in section 2, no matching image):
-  - machelo-conico-milimetricos-av-fino-volkel — volkel
-  - machelo-conico-milimetricos-av-tipo-europeo-volkel — volkel
-  - machelo-recto-milimetricos-aav-fino-volkel — volkel
-  - machelo-recto-milimetricos-av-tipo-europeo-volkel — volkel
-  - machuelo-fraccional-aav-conico-volkel — volkel
-  - machuelo-fraccional-aav-conico-fino-volkel — volkel
-  - machuelo-fraccional-aav-recto-volkel — volkel
-  - machuelo-fraccional-aav-recto-fino-volkel — volkel
-  - machuelo-izq-conicos-aav-volkel — volkel
-  - machuelos-izq-con-finos-volkel — volkel
-  - machuelos-izq-fracc-rectos-aav-volkel — volkel
-  - machuelos-izq-fraccionales-conicos-aav-volkel — volkel
-  - machuelos-izq-rectos-aav-volkel — volkel
-  - machuelos-izq-rectos-finos-volkel — volkel
+  - machelo-conico-milimetricos-av-fino-volkel | 26326-1, 26336-1, 26338-1, 26344-1, 26346-1, 26348-1, 26354-1, 26356-1, 26362-1, 26364-1, 26366-1, 26372-1, 26374-1, 26377-1, 26384-1, 26386-1, 26394-1, 26396-1, 26504-1, 26506-1, 26508-1, 26512-1, 26530-1, 26532-1, 26538-1, 26550-1, 26554-1 | volkel
+  - machelo-conico-milimetricos-av-tipo-europeo-volkel | 27316-1, 27322-1, 27326-1, 27330-1, 27334-1, 27338-1, 27342-1, 27346-1, 27350-1, 27354-1, 27358-1, 27362-1, 27366-1, 27370-1, 27374-1, 27376-1, 27378-1, 27382-1, 27386-1, 27390-1 | volkel
+  - machelo-recto-milimetricos-aav-fino-volkel | 26326-2, 26336-2, 26338-2, 26344-2, 26346-2, 26348-2, 26354-2, 26356-2, 26362-2, 26364-2, 26366-2, 26372-2, 26374-2, 26377-2, 26384-2, 26386-2, 26394-2, 26396-2, 26504-2, 26506-2, 26508-2, 26512-2, 26530-2, 26532-2, 26538-2, 26550-2, 26554-2 | volkel
+  - machelo-recto-milimetricos-av-tipo-europeo-volkel | 27316-3, 27322-3, 27326-3, 27330-3, 27334-3, 27338-3, 27342-3, 27346-3, 27350-3, 27354-3, 27358-3, 27362-3, 27366-3, 27370-3, 27374-3, 27376-3, 27378-3, 27382-3, 27386-3, 27390-3 | volkel
+  - machuelo-fraccional-aav-conico-volkel | 23305-1, 23308-1, 23310-1, 23314-1, 23316-1, 23318-1, 23320-1, 23322-1, 23324-1, 23326-1, 23330-1, 23334-1, 23338-1, 23342-1, 23346-1, 23350-1, 23354-1 | volkel
+  - machuelo-fraccional-aav-conico-fino-volkel | 24305-1, 24310-1, 24314-1, 24316-1, 24318-1, 24320-1, 24322-1, 24324-1, 24326-1, 24330-1, 24334-1, 24340-1, 24342-1, 24346-1 | volkel
+  - machuelo-fraccional-aav-recto-volkel | 23305-3, 23308-3, 23310-3, 23314-3, 23316-3, 23318-3, 23320-3, 23322-3, 23324-3, 23326-3, 23330-3, 23334-3, 23338-3, 23342-3, 23346-3, 23350-3, 23354-3, 23362-3 | volkel
+  - machuelo-fraccional-aav-recto-fino-volkel | 24305-3, 24310-3, 24314-3, 24316-3, 24318-3, 24320-3, 24322-3, 24324-3, 24326-3, 24330-3, 24334-3, 24340-3, 24342-3, 24346-3 | volkel
+  - machuelo-izq-conicos-aav-volkel | 27026-1, 27030-1, 27034-1, 27038-1, 27042-1, 27046-1, 27050-1, 27054-1, 27058-1 | volkel
+  - machuelos-izq-con-finos-volkel | 24010-1, 24014-1, 24016-1, 24018-1, 24020-1, 24022-1, 24024-1, 24026-1 | volkel
+  - machuelos-izq-fracc-rectos-aav-volkel | 23008-3, 23010-3, 23014-3, 23016-3, 23018-3, 23020-3, 23022-3, 23026-3 | volkel
+  - machuelos-izq-fraccionales-conicos-aav-volkel | 23008-1, 23010-1, 23014-1, 23016-1, 23018-1, 23020-1, 23022-1, 23026-1 | volkel
+  - machuelos-izq-rectos-aav-volkel | 27026-3, 27030-3, 27034-3, 27038-3, 27042-3, 27046-3, 27050-3, 27054-3, 27058-3 | volkel
+  - machuelos-izq-rectos-finos-volkel | 24010-3, 24014-3, 24016-3, 24018-3, 24020-3, 24022-3, 24024-3, 24026-3 | volkel
 
 ### herramientas-diagnostico-electricidad (whole category)
-- probador-circuito-6-24v — king-tony
+- probador-circuito-6-24v | KT-9DC22 | king-tony
 
 ### herramientas-impacto-forja (whole category)
-- martillo-estilo-aleman — king-tony
-- martillo-reparacion-hojalateria — king-tony
+- martillo-estilo-aleman | KT-7821-50 | king-tony
+- martillo-reparacion-hojalateria | KT-9CF131 | king-tony
 
 ### herramientas-marcado (whole category)
-- marcador-hp-proline — weston
-- marcador-valve-action — weston
+- marcador-hp-proline | STM-096960, STM-096961, STM-096964, STM-096966 | weston
+- marcador-valve-action | STM-096809, STM-096820, STM-096821, STM-096822, STM-096823, STM-096825, STM-096826 | weston
 
 ### llaves-herramientas-apriete
-- 1-2-dr-dado-punta-spline — king-tony
-- 1-2-punta-bristol-cromado — king-tony
-- dado-cuadro-1-2-corto-estrella — king-tony
-- dado-cuadro-1-2-de-cuadro — king-tony
-- dado-cuadro-1-2-estrella-largo — king-tony
-- dado-cuadro-1-2-punta-bristol-60mm — king-tony
-- dado-cuadro-1-2-punta-bristol-80mm — king-tony
-- dado-cuadro-1-2-punta-bristol-de-seguridad — king-tony
-- dado-cuadro-1-2-punta-bristol-m-measure — king-tony
-- dado-cuadro-1-2-punta-ribe — king-tony
-- dado-cuadro-1-2-punta-torx-larga — king-tony
-- dado-cuadro-1-2-punta-torx-segmento-corto — king-tony
-- dado-cuadro-1-llanta-trasera-capuchon — king-tony
-- dado-impacto-cuadro-1-2-17mm-6-puntas — king-tony
-- llave-banda-60x140 — king-tony
-- llave-estrias-golpe — king-tony
-- llave-gancho-ajustable-13-35mm — king-tony
-- llaves-combinadas-matraca-cambio — king-tony
-- matraca-cuadro-1-2-cabeza-articulado — king-tony
-- pinza-presion-c-6 — king-tony
-- pinza-presion-curva-cromada — king-tony
-- punta-cinco-estrellas-cuadro — king-tony
+- 1-2-dr-dado-punta-spline | KT-406610, KT-406612 | king-tony
+- 1-2-punta-bristol-cromado | KT-406614 | king-tony
+- dado-cuadro-1-2-corto-estrella | KT-437510M, KT-437512M, KT-437514M, KT-437516M, KT-437518M, KT-437520M, KT-437522M, KT-437524M | king-tony
+- dado-cuadro-1-2-de-cuadro | KT-401411 | king-tony
+- dado-cuadro-1-2-estrella-largo | KT-427512M, KT-427514M, KT-427516M, KT-427518M, KT-427520M, KT-427522M, KT-427524M | king-tony
+- dado-cuadro-1-2-punta-bristol-60mm | KT-402605, KT-402606, KT-402608, KT-402610, KT-402612, KT-402614, KT-402616 | king-tony
+- dado-cuadro-1-2-punta-bristol-80mm | KT-403606, KT-403608, KT-403610, KT-403612 | king-tony
+- dado-cuadro-1-2-punta-bristol-de-seguridad | KT-402B16, KT-402B18 | king-tony
+- dado-cuadro-1-2-punta-bristol-m-measure | KT-406616 | king-tony
+- dado-cuadro-1-2-punta-ribe | KT-404904, KT-404905, KT-404906, KT-404907, KT-404908, KT-404909, KT-404910, KT-404912, KT-404913, KT-404914, KT-404916, KT-404925 | king-tony
+- dado-cuadro-1-2-punta-torx-larga | KT-403320, KT-403325, KT-403330, KT-403340, KT-403345, KT-403350, KT-403355, KT-403360, KT-403370 | king-tony
+- dado-cuadro-1-2-punta-torx-segmento-corto | KT-402720, KT-402725, KT-402727, KT-402730, KT-402745, KT-402750, KT-402755, KT-402760 | king-tony
+- dado-cuadro-1-llanta-trasera-capuchon | KT-851426S | king-tony
+- dado-impacto-cuadro-1-2-17mm-6-puntas | KT-453517M | king-tony
+- llave-banda-60x140 | KT-3203 | king-tony
+- llave-estrias-golpe | KT-10B0-41 | king-tony
+- llave-gancho-ajustable-13-35mm | KT-3641-35 | king-tony
+- llaves-combinadas-matraca-cambio | KT-373208M, KT-373212M, KT-373217M, KT-373219M | king-tony
+- matraca-cuadro-1-2-cabeza-articulado | KT-4789-12 | king-tony
+- pinza-presion-c-6 | KT-6625-06 | king-tony
+- pinza-presion-curva-cromada | KT-6011-07 | king-tony
+- punta-cinco-estrellas-cuadro | KT-302D08, KT-302D09, KT-302D10, KT-302D15, KT-302D20, KT-302D25, KT-302D27, KT-302D30, KT-302D40, KT-302D45, KT-302D50, KT-302D55, KT-302D60 | king-tony
 
 ### lubricantes-multifuncionales (whole category)
-- wd-40-aerosol — weston
+- wd-40-aerosol | WD-52203, WD-52208, WD-52211 | weston
 
 ### perforacion-accesorios-taladro
-- arbol-para-broquero-weston — weston
-- boquilla-cono-morse-weston — weston
-- broquero-ajustable-weston — weston
-- broquero-con-llave-y-montaje-weston — weston
-- broquero-jacobs-con-llave-weston — weston
-- broquero-jacobs-weston — weston
-- llave-jacobs-weston — weston
-- moleteador-weston — weston
-- super-broquero-embalado-con-llave-weston — weston
+- arbol-para-broquero-weston | SA-015-0290, SA-015-0310, SA-015-0340, SA-015-0350, SA-015-0360, SA-015-0370, SA-015-0400, SA-015-0410, SA-015-0420, SA-015-0430, SA-015-0440, SA-015-0480 | weston
+- boquilla-cono-morse-weston | SA-015-0620, SA-015-0640, SA-015-0670, SA-015-0710, SA-015-0730 | weston
+- broquero-ajustable-weston | SA-010-0340, SA-010-0360, SA-010-0370, SA-010-0380 | weston
+- broquero-con-llave-y-montaje-weston | SA-010-0100, SA-010-0120, SA-010-0130, SA-010-0140, SA-010-0150, SA-010-0160, SA-010-0170 | weston
+- broquero-jacobs-con-llave-weston | SA-012-0060, SA-012-0080, SA-012-0200, SA-012-0230 | weston
+- broquero-jacobs-weston | SA-012-0110 | weston
+- llave-jacobs-weston | SA-012-0010, SA-012-0020, SA-012-0120, SA-012-0130, SA-012-0140, SA-012-0150, SA-012-0160, SA-012-0170 | weston
+- moleteador-weston | SA-100-0080, SA-100-0090, SA-100-0100 | weston
+- super-broquero-embalado-con-llave-weston | SA-010-0190, SA-010-0200, SA-010-0210 | weston
 
 ### roscado-herramientas-roscas
-- maneral-para-insertar-volkel — volkel (only if the `maneral-dado-tarraja-volkel` `?` guess is wrong)
+- maneral-para-insertar-volkel | TEV-08004, TEV-08006, TEV-08008, TEV-08009, TEV-08010, TEV-08011, TEV-08013, TEV-08014, TEV-08015, TEV-08016, TEV-08018, TEV-08021, TEV-08022, TEV-08023 | volkel (only if the `maneral-dado-tarraja-volkel` `?` guess is wrong)
 
 ### sujecion
-- clamp-accion-pestillo-weston — weston
-- clamp-pestillo-weston — weston
+- clamp-accion-pestillo-weston | CH-40324, CH-40371 | weston
+- clamp-pestillo-weston | CH-40344 | weston
 
 ### tornilleria
-- tornillo-ojo-forjado-weston — weston (only if the `argolla-carga` `?` guess is wrong)
-- varilla-rosc-cl-4.8-neg-1mt-mm — libre (fallback: varilla-87)
-- varilla-rosc-cl-8.8-neg-1mt-mm — libre (fallback: varilla-87)
+- tornillo-ojo-forjado-weston | C-00600, C-00605, C-00610, C-00615, C-00620, C-00625, C-00630, C-00635, C-00640, C-00645, C-00650, C-00655, C-00660, C-00665, C-00670 | weston (only if the `argolla-carga` `?` guess is wrong)
+- varilla-rosc-cl-4.8-neg-1mt-mm | — | libre (fallback: varilla-87)
+- varilla-rosc-cl-8.8-neg-1mt-mm | — | libre (fallback: varilla-87)
 
 Rough count: ~215 products mapped (≈95 `✓`, rest shared/guessed), ~115 without an image.
 
