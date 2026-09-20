@@ -1,6 +1,8 @@
 # Product images plan
 
-Date: 2026-09-19. Products: 332 in `../products-tehesa/data` @ current HEAD. Images: 196 Cloudinary webp URLs (base `https://res.cloudinary.com/dov7g4avx/image/upload/`), organized by category folder. Image names are **product-type** slugs, not `customId`s, so the map below is by hand and one image often serves several products.
+Date: 2026-09-20 (first draft 2026-09-19). Products: 332 in `../products-tehesa/data` @ current HEAD. Images live on Cloudinary (`https://res.cloudinary.com/dov7g4avx/image/upload/`).
+
+Images are now named **by product `customId`**, one image per product. The earlier attempt to map generic product-type images onto many products is abandoned; it is kept in Appendix B for reference only.
 
 ## 1. How the image gets into Strapi
 
@@ -14,23 +16,491 @@ Images already live on Cloudinary — no upload step. Store the URL as a string.
 
 Frontend fallback: products without `imageUrl` should render a category placeholder; don't invent a fallback in the API.
 
-## 2. Image → product map
+## 2. Product → image map (by customId)
+
+Source of truth for `data/product-images.json`. Notes in parentheses come from the review. `tornilleria` is not mapped yet.
+
+### herramientas-marcado
+- marcador-valve-action
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913701/marcador-valve-action_ffhui1.webp
+- marcador-hp-proline
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913699/marcador-hp-proline_unmrrx.webp
+
+### lubricantes-multifuncionales
+- wd-40-aerosol
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914049/wd-40-aerosol_nbapge.webp
+
+### herrajes-accesorios-cable
+- nudo-para-cable-maleable-weston — not found
+
+### equipo-seguridad
+- lente-general-tricolor-ansi-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913186/lente-general-tricolor-ansi-weston_kclful.webp
+
+### calibrador
+- calibrador-gage-cuerda-60-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912663/calibrador-gage-cuerda-60-weston_lki799.webp
+- calibrador-gage-cuerdas-acme-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912664/calibrador-gage-cuerdas-acme-weston_qnwlrx.webp
+- calibrador-gage-angulo-corte-rosca-acero-inoxidable-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912682/calibrador-gage-angulo-corte-rosca-acero-inoxidable-weston_daesod.webp
+- contador-hilos-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912664/contador-hilos-weston_oxwzb2.webp
+- cuenta-hilos-metrico-weston (mala calidad)
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912664/cuenta-hilos-metrico-weston_ebvmv8.webp
+
+### carburo
+- cortador-vertical-av-2f-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912824/cortador-vertical-av-2f-weston_jcrrsb.webp
+- cortador-vertical-cobalto-4f-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912828/cortador-vertical-cobalto-4f-weston_ve8m0q.webp
+- juego-limas-diamantadas-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912830/juego-limas-diamantadas-weston_pi71go.webp
+- lima-rotativa-doble-corte-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912832/lima-rotativa-doble-corte-weston_ln3b17.webp
+- cortador-vertical-bola-av-2f-weston (mala calidad)
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912826/cortador-vertical-bola-av-2f-weston_nkxao2.webp
+- cortador-anular-titanio-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912823/cortador-anular-titanio-weston_cdhxzs.webp
+- cortador-desbaste-cobalto-4f-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912823/cortador-desbaste-cobalto-4f-weston_sb8r8r.webp
+- cortador-vertical-av-milimetrico-weston (mc)
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912826/cortador-vertical-av-milimetrico-weston_gsizwr.webp
+- cortador-vertical-4f-titanio-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912823/cortador-vertical-4f-titanio-weston_by4lub.webp
+- cortador-vertical-av-4f-lgo-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912825/cortador-vertical-av-4f-lgo-weston_jwgqq4.webp
+- lima-rotativa-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912832/lima-rotativa-weston_rvfahp.webp
+- cortador-vertical-radial-carburo-4f-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912829/cortador-vertical-radial-carburo-4f-weston_wi7mma.webp
+- cortador-vertical-ext-lgo-4f-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912829/cortador-vertical-ext-lgo-4f-weston_puhns1.webp
+- cortador-vertical-radial-carburo-altin-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912830/cortador-vertical-radial-carburo-altin-weston_ipstji.webp
+- cortador-vertical-carburo-4f-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912827/cortador-vertical-carburo-4f-weston_qeaxzw.webp
+- juego-puntas-diamante-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912831/juego-puntas-diamante-weston_fta6fh.webp
+- punta-montada-rosa-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912832/punta-montada-rosa-weston_d5nqxm.webp
+- cortador-vertical-av-4f-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912825/cortador-vertical-av-4f-weston_nxzmb5.webp
+- cortador-vertical-carburo-milimetrico-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912828/cortador-vertical-carburo-milimetrico-weston_w1cb3z.webp
+- cortador-vertical-carburo-ctian-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912827/cortador-vertical-carburo-ctian-weston_ahklnf.webp
+
+### adhesivos-selladores
+- loctite-243-fijador-de-roscas-resistencia-removible-50-ml
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912447/loctite-243-fijador-de-roscas-resistencia-removible-50-ml_cxnjof.webp
+- loctite-495-adhesivo-instantaneo-super-bonder-20-gr
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912447/loctite-495-adhesivo-instantaneo-super-bonder-20-gr_xhcibo.webp
+
+### sujecion
+- clamp-accion-horizontal-barra-u-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914648/clamp-accion-horizontal-barra-u-weston_skntzi.webp
+- clamp-accion-lineal-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914644/clamp-accion-lineal-weston_eseatq.webp
+- clamp-accion-pestillo-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914642/clamp-accion-pestillo-weston_azgcxl.webp
+- clamp-accion-vertical-manija-recta-barra-u-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914640/clamp-accion-vertical-manija-recta-barra-u-weston_gyjqgo.webp
+- clamp-pestillo-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914638/clamp-pestillo-weston_n0a2m0.webp
+- abrazadera-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914650/abrazadera-weston_hsl7zt.webp
+- clamp-accion-jalar-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914646/clamp-accion-jalar-weston_vodjy4.webp
+
+### llaves-herramientas-apriete
+- llave-banda-60x140
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913785/llave-banda-60x140_ft0unk.webp
+- dado-cuadro-1-2-punta-bristol-80mm
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913773/dado-cuadro-1-2-punta-bristol-80mm_zspleo.webp
+- juego-llaves-allen-std-mm
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913782/juego-llaves-allen-std-mm_bn9gbp.webp
+- punta-cinco-estrellas-cuadro
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913802/punta-cinco-estrellas-cuadro_acvgqt.webp
+- dado-cuadro-1-2-estrella-largo
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913770/dado-cuadro-1-2-estrella-largo_skabac.webp
+- 1-2-dr-dado-punta-spline
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913766/1-2-dr-dado-punta-spline_loyxlp.webp
+- dado-cuadro-1-2-punta-bristol-60mm
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913772/dado-cuadro-1-2-punta-bristol-60mm_cvmxd8.webp
+- llave-hexagonal-mm-punta-de-bola-bondhus
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913791/llave-hexagonal-mm-punta-de-bola-bondhus_jqdv8p.webp
+- pinza-presion-c-6
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913800/pinza-presion-c-6_jfiajb.webp
+- dado-cuadro-1-2-corto-estrella
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913767/dado-cuadro-1-2-corto-estrella_gu0t7q.webp
+- llave-hexagonal-std-corta-bondhus
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913793/llave-hexagonal-std-corta-bondhus_jqyvii.webp
+- dado-cuadro-1-2-punta-torx-larga
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913778/dado-cuadro-1-2-punta-torx-larga_iekeo9.webp
+- matraca-cuadro-1-2-cabeza-articulado
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913799/matraca-cuadro-1-2-cabeza-articulado_chxlft.webp
+- dado-cuadro-1-2-punta-torx-segmento-corto
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913779/dado-cuadro-1-2-punta-torx-segmento-corto_f9dkbc.webp
+- juego-llaves-torx
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913784/juego-llaves-torx_qp3yyy.webp
+- llave-hexagonal-std-punta-de-bola-bondhus
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913796/llave-hexagonal-std-punta-de-bola-bondhus_i2cvc7.webp
+- llave-hexagonal-std-larga-recta-bondhus
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913794/llave-hexagonal-std-larga-recta-bondhus_uivj9y.webp
+- llave-estrias-golpe
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913787/llave-estrias-golpe_xivlwo.webp
+- dado-impacto-cuadro-1-2-17mm-6-puntas
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913781/dado-impacto-cuadro-1-2-17mm-6-puntas_yndvms.webp
+- dado-cuadro-1-2-punta-bristol-de-seguridad
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913775/dado-cuadro-1-2-punta-bristol-de-seguridad_rg69mr.webp
+- dado-cuadro-1-2-de-cuadro
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913769/dado-cuadro-1-2-de-cuadro_v9w2lp.webp
+- dado-cuadro-1-2-punta-bristol-m-measure
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913776/dado-cuadro-1-2-punta-bristol-m-measure_jd2yvs.webp
+- llave-hexagonal-mm-corta-recta-bondhus
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913788/llave-hexagonal-mm-corta-recta-bondhus_ai0ey1.webp
+- llave-tipo-torx-corta-bondhus
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913797/llave-tipo-torx-corta-bondhus_zm06mg.webp
+- llave-hexagonal-mm-larga-recta-bondhus
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913790/llave-hexagonal-mm-larga-recta-bondhus_melp2q.webp
+
+### herramientas-diagnostico-electricidad
+- probador-circuito-6-24v
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913632/probador-circuito-6-24v_fwxohz.webp
+
+### herramientas-impacto-forja
+- martillo-estilo-aleman
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913663/martillo-estilo-aleman_akid2p.webp
+- martillo-reparacion-hojalateria
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913664/martillo-reparacion-hojalateria_p0hkbe.webp
+
+### herramientas-corte-conformado
+- buriles-cobalto-co8-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913329/buriles-cobalto-co8-weston_lbaeww.webp
+- machelo-bsp-aav-conico-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913317/machelo-bsp-aav-conico-volkel_otzvte.webp
+- machuelo-fraccional-aav-semiconico-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913323/machuelo-fraccional-aav-semiconico-volkel_z2se05.webp
+- laina-acero-azul-templado-precision
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913316/laina-acero-azul-templado-precision_lechav.webp
+- jgo-machuelo-ac-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913310/jgo-machuelo-ac-weston_ij4ak9.webp
+- buriles-redondo-av-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913330/buriles-redondo-av-weston_k99w0o.webp
+- machuelo-nps-aav-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913326/machuelo-nps-aav-volkel_arjypu.webp
+- machuelo-maquina-acero-inox-agujeros-pasados-mm-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913324/machuelo-maquina-acero-inox-agujeros-pasados-mm-volkel_iij1nw.webp
+- laina-acero-150mm-2-5m-precision
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913315/laina-acero-150mm-2-5m-precision_dt3dfd.webp
+- machuelo-maquina-mm-aav-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913325/machuelo-maquina-mm-aav-volkel_phjy6i.webp
+- machuelo-fraccional-aav-recto-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913322/machuelo-fraccional-aav-recto-volkel_dluzwy.webp
+- machuelo-plug-ac-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913326/machuelo-plug-ac-weston_vgmbvw.webp
+- machelo-conico-milimetricos-av-fino-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913319/machelo-conico-milimetricos-av-fino-volkel_odwhkv.webp
+- machuelo-fraccional-aav-conico-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913321/machuelo-fraccional-aav-conico-volkel_rrgq6v.webp
+- juego-machuelos-bsp-aav-2-piezas-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913312/juego-machuelos-bsp-aav-2-piezas-volkel_icofy8.webp
+- extension-machuelos-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913331/extension-machuelos-volkel_euebwx.webp
+- juego-machuelos-fraccionales-aav-3-piezas-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913313/juego-machuelos-fraccionales-aav-3-piezas-volkel_npv9u4.webp
+- machuelos-izq-fraccionales-conicos-aav-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913327/machuelos-izq-fraccionales-conicos-aav-volkel_wqwp8g.webp
+- juego-machuelos-ac-3-piezas-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913311/juego-machuelos-ac-3-piezas-weston_fala9a.webp
+- machuelo-bsp-av-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913320/machuelo-bsp-av-weston_notc15.webp
+- juego-machuelos-av-bohrcraft — missing internal id
+- rima-perno-conico-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913328/rima-perno-conico-weston_pbos23.webp
+- laina-acero-inoxidable-6pul-50pul-precision
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913316/laina-acero-inoxidable-6pul-50pul-precision_v5os6d.webp
+- machelo-bsp-aav-recto-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913318/machelo-bsp-aav-recto-volkel_bz5jvb.webp
+- laina-acero-6pul-100pul-precision
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913314/laina-acero-6pul-100pul-precision_vysprh.webp
+
+### extraccion-reparacion-fijaciones
+- maneral-extractor-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913230/maneral-extractor-volkel_za6xnn.webp
+- extractor-tornillos-diager-saravia
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789913230/extractor-tornillos-diager-saravia_hbtlzk.webp
+
+### roscado-herramientas-roscas
+- dado-tarraja-ajustable-milim-aav-fino-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914382/dado-tarraja-ajustable-milim-aav-fino-volkel_tsf4u6.webp
+- inserto-roscado-bohrcraft
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914371/inserto-roscado-bohrcraft_yklwhl.webp
+- dado-tarraja-ajustable-milim-aav-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914380/dado-tarraja-ajustable-milim-aav-volkel_qzyet5.webp
+- insertos-elicoil-milim-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914369/insertos-elicoil-milim-weston_d92xqk.webp
+- kit-reparador-roscas-bohrcraft
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914365/kit-reparador-roscas-bohrcraft_eqht3w.webp
+- maneral-para-insertar-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914355/maneral-para-insertar-volkel_eqf3wd.webp
+- dado-tarraja-ajustable-fracc-aav-fino-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914386/dado-tarraja-ajustable-fracc-aav-fino-volkel_rgqyo3.webp
+- kit-reparador-roscas-milim-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914361/kit-reparador-roscas-milim-weston_cjco3v.webp
+- dado-tarraja-izquierdo-aav-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914376/dado-tarraja-izquierdo-aav-volkel_lcmlik.webp
+- kit-reparador-roscas-fracc-volkel — not found
+- dado-tarraja-izquierdo-aav-bohrcraft — missing internal id
+- manerales-para-machuelos-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914357/manerales-para-machuelos-volkel_a3lwzf.webp
+- dado-tarraja-bsp-aav-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914378/dado-tarraja-bsp-aav-volkel_osi86w.webp
+- dado-tarraja-npt-aav-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914373/dado-tarraja-npt-aav-volkel_uwe4ku.webp
+- dado-tarraja-ajustable-bohrcraft — missing internal id
+- kit-reparador-roscas-milim-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914363/kit-reparador-roscas-milim-volkel_ampi1g.webp
+- dado-tarraja-izquierdo-milim-aav-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914374/dado-tarraja-izquierdo-milim-aav-volkel_xqjqqd.webp
+- dado-tarraja-ajustable-fracc-aav-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914384/dado-tarraja-ajustable-fracc-aav-volkel_b0gwy7.webp
+- dado-tarraja-bsp-aav-bohrcraft — missing internal id
+- insertos-elicoil-std-volkel
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914367/insertos-elicoil-std-volkel_uinkst.webp
+- UNMATCHED (filename says `kit-reparador-roscas-taller-volkel`, which is a catalog product — confirm)
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914359/kit-reparador-roscas-taller-volkel_avgdfk.webp
+
+### perforacion-accesorios-taladro
+- moleteador-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914097/moleteador-weston_ligysd.webp
+- broca-larga-aav-wp-black-silver-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914126/broca-larga-aav-wp-black-silver-weston_oenl6e.webp
+- broca-punta-carburo-tungsteno-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914123/broca-punta-carburo-tungsteno-weston_d1zvs6.webp
+- broca-carburo-solido-m13-tialn-bohrcraft
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914128/broca-carburo-solido-m13-tialn-bohrcraft_d2ryyz.webp
+- broca-larga-av-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914124/broca-larga-av-weston_xux9rb.webp
+- broca-para-concreto-diager — not found
+- super-broquero-embalado-con-llave-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914095/super-broquero-embalado-con-llave-weston_ott1it.webp
+- escareador-tornillo-allen-acero-av-bohrcraft
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914109/escareador-tornillo-allen-acero-av-bohrcraft_mcivx7.webp
+- boquilla-cono-morse-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914130/boquilla-cono-morse-weston_jw6nac.webp
+- arbol-para-broquero-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914131/arbol-para-broquero-weston_p2jahy.webp
+- broca-zco-recto-acero-av-bohrcraft
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914119/broca-zco-recto-acero-av-bohrcraft_dhshab.webp
+- broca-zco-conico-inches-number-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914121/broca-zco-conico-inches-number-weston_o8h0fd.webp
+- broca-zco-recto-acero-av-weston-inches
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914116/broca-zco-recto-acero-av-weston-inches_nrehfd.webp
+- juego-brocas-acero-av-25-pzas-bohrcraft
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914103/juego-brocas-acero-av-25-pzas-bohrcraft_qdrsh5.webp
+- broquero-jacobs-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914110/broquero-jacobs-weston_qakbmo.webp
+- broca-aav-135-split-point — not found
+- broca-zco-recto-acero-av-mims-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914117/broca-zco-recto-acero-av-mims-weston_o0fcrc.webp
+- juego-brocas-acero-av-fraccionales
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914102/juego-brocas-acero-av-fraccionales_f1dbvr.webp
+- broca-zco-recto-cobalto-bohrcraft — not found
+- juego-brocas-av-metricas-25-pzas
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914100/juego-brocas-av-metricas-25-pzas_cvyzyq.webp
+- broca-zco-recto-cobalto-weston-m-measure
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914112/broca-zco-recto-cobalto-weston-m-measure_bwxykz.webp
+- jgo-brocas-av-alfabeticas-26-pzas-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914105/jgo-brocas-av-alfabeticas-26-pzas-weston_hggdcg.webp
+- broca-zco-recto-acero-av-weston-number
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914114/broca-zco-recto-acero-av-weston-number_e7kbkv.webp
+- jgo-brocas-acer-av-std-numericas-alfabetica-115-pzas-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914107/jgo-brocas-acer-av-std-numericas-alfabetica-115-pzas-weston_qapxe2.webp
+- llave-jacobs-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914098/llave-jacobs-weston_jy2q6s.webp
+
+### tornilleria
+- pending — whole category still to be mapped (see section 3)
+
+### Still without image in the categories above
+
+Products of the categories above that are neither mapped nor mentioned in the review. Format: `customId (brand)`.
+
+- **herrajes-accesorios-cable** (1)
+  - nudo-para-cable-maleable-weston (weston)
+- **llaves-herramientas-apriete** (7)
+  - dado-cuadro-1-llanta-trasera-capuchon (king-tony)
+  - dado-cuadro-1-2-punta-ribe (king-tony)
+  - llave-tipo-torx-larga-bondhus (bondhus)
+  - llave-gancho-ajustable-13-35mm (king-tony)
+  - llaves-combinadas-matraca-cambio (king-tony)
+  - 1-2-punta-bristol-cromado (king-tony)
+  - pinza-presion-curva-cromada (king-tony)
+- **herramientas-corte-conformado** (53)
+  - discos-corte-weston (weston)
+  - buriles-cuadrados-cobalto-cleveland (cleveland)
+  - buriles-incor-k-42 (cleveland)
+  - extension-machuelos-bohrcraft (bohrcraft)
+  - juego-machuelos-aac-cleveland (cleveland)
+  - juego-machuelos-aav-cleveland (cleveland)
+  - machuelos-izq-semiconicos-aav-volkel (volkel)
+  - machuelos-izq-fraccionales-semiconicos-aav-volkel (volkel)
+  - machuelos-izq-fracc-rectos-aav-volkel (volkel)
+  - machuelos-izq-con-finos-volkel (volkel)
+  - machuelos-izq-rectos-aav-volkel (volkel)
+  - machuelos-izq-rectos-finos-volkel (volkel)
+  - machuelo-npt-aav-volkel (volkel)
+  - machuelo-maquina-acero-inox-agujeros-pasados-fracc-volkel (volkel)
+  - machuelo-maquina-acero-inox-agujeros-ciegos-mm-volkel (volkel)
+  - machuelo-maquina-acero-inox-agujeros-ciegos-fracc-volkel (volkel)
+  - machuelo-maquina-helice-35-volkel (volkel)
+  - dado-tarraja-mm-aav-volkel (volkel)
+  - machuelo-izq-conicos-aav-volkel (volkel)
+  - juego-machuelos-otros-volkel (volkel)
+  - juego-machuelos-bsp-av-2-piezas-bohrcraft (bohrcraft)
+  - juego-machuelos-fraccionales-aav-2-piezas-volkel (volkel)
+  - juego-machuelos-milimetrico-aav-2-piezas-finos-volkel (volkel)
+  - juego-machuelos-izq-fraccionales-aav-2-piezas-volkel (volkel)
+  - juego-machuelos-izq-fraccionales-aav-3-piezas-volkel (volkel)
+  - juego-machuelos-izq-milimetricos-aav-3-piezas-volkel (volkel)
+  - juego-machuelos-aav-milimetricos-tipo-europeo-volkel (volkel)
+  - machelo-conico-milimetricos-av-tipo-europeo-volkel (volkel)
+  - machelo-recto-milimetricos-av-tipo-europeo-volkel (volkel)
+  - machelo-recto-milimetricos-aav-fino-volkel (volkel)
+  - laina-acero-azul-templado-5pul-precision (precision)
+  - laina-acero-inoxidable-150mm-1-25m-precision (precision)
+  - machuelo-bsp-aav-volkel (volkel)
+  - machuelo-fraccional-aav-conico-fino-volkel (volkel)
+  - machuelo-fraccional-aav-recto-fino-volkel (volkel)
+  - machuelo-fino-l-coil-fraccional-aav-volkel (volkel)
+  - machuelo-l-coil-fraccional-aav-volkel (volkel)
+  - machuelo-l-coil-aav-milimetrico-volkel (volkel)
+  - machuelo-milimetrico-aav-semiconico-volkel (volkel)
+  - machuelo-npt-aav-weston (weston)
+  - machuelo-ac-weston (weston)
+  - machuelo-npt-ac-weston (weston)
+  - machuelo-aav-npt-cleveland (cleveland)
+  - machuelo-npt-av-bohrcraft (bohrcraft)
+  - machuelo-maquina-fraccional-aav-volkel (volkel)
+  - machuelo-sti-av-bohrcraft (bohrcraft)
+  - punzon-rompe-arrastre-volkel (volkel)
+  - rayador-carburo-saravia (bondhus)
+  - rima-recta-maquina-h8-weston (weston)
+  - rima-maquina-h8-weston (weston)
+  - rima-flauta-recta-aav-h7-weston (weston)
+  - avellanador-weston (weston)
+  - avellanador-juego-6f-weston (weston)
+- **roscado-herramientas-roscas** (1)
+  - kit-reparador-roscas-taller-volkel (volkel)
+- **perforacion-accesorios-taladro** (24)
+  - broca-aav-135-split-point-thunderbit (bondhus)
+  - broca-carburo-solido-weston (weston)
+  - broca-concreto-sds-weston (weston)
+  - broca-concreto-weston (weston)
+  - broca-centro-acero-av-weston (weston)
+  - broca-larga-acero-av-bohrcraft (bohrcraft)
+  - broca-wp-concreto-weston (weston)
+  - broca-wp-zanco-sds-plus-weston (weston)
+  - broca-extra-larga-acero-av-bohrcraft (bohrcraft)
+  - broca-zanco-recto-acero-av-weston-abc (weston)
+  - broca-zco-recto-cobalto-weston-inches (weston)
+  - broca-zco-recto-acero-av-weston (weston)
+  - jgo-brocas-av-numericas-60-pzas-weston (weston)
+  - insertos-elicoil-std-juego-6-escareadores-tornillo-allen-acero-av-bohrcraft (bohrcraft)
+  - juego-brocas-cobalto-metricas-25-pzas (weston)
+  - juego-brocas-cobalto-fraccionales-weston (weston)
+  - broca-larga-tl-weston (weston)
+  - broca-av-zanco-weston-inches (weston)
+  - broca-av-zanco-weston-metric (weston)
+  - broca-zanco-1-2-cobalto-weston (weston)
+  - broca-larga-tl-inches-weston (weston)
+  - broquero-con-llave-y-montaje-weston (weston)
+  - broquero-ajustable-weston (weston)
+  - broquero-jacobs-con-llave-weston (weston)
+
+## 3. Pending
+
+- **tornilleria**: whole category (107 products) not mapped yet.
+- **not found** (no image from the brand): kit-reparador-roscas-fracc-volkel, broca-para-concreto-diager, broca-aav-135-split-point, broca-zco-recto-cobalto-bohrcraft, nudo-para-cable-maleable-weston.
+- **missing internal id** (cannot be matched to a brand photo until the variants get an `internalId`): juego-machuelos-av-bohrcraft, dado-tarraja-izquierdo-aav-bohrcraft, dado-tarraja-ajustable-bohrcraft, dado-tarraja-bsp-aav-bohrcraft.
+- **mala calidad** (mapped, replace when a better photo exists): cuenta-hilos-metrico-weston, cortador-vertical-bola-av-2f-weston. `cortador-vertical-av-milimetrico-weston` is tagged `mc` — same meaning?
+- **UNMATCHED** in roscado: the file is named `kit-reparador-roscas-taller-volkel` and that customId exists — confirm and map.
+- 86 products in the covered categories have no image and no review note (list above).
+
+Count: 130 products mapped.
+
+## 4. Steps
+
+1. Finish `tornilleria` and resolve section 3.
+2. `data/product-images.json` is generated from section 2 (`{ customId: url }`); regenerate when the map changes.
+3. Add `imageUrl` to the product schema; `npm run build`.
+4. Write `scripts/set-product-images.js`, add `images:products` to `package.json`, run it, check updated vs. missing counts.
+5. Update `AGENTS.md` / `REPO_CONTEXT.md` / `CLAUDE.md` script list and field table.
+6. `npm run transfer:prod`.
+7. Frontend: category placeholder for products without `imageUrl`.
+
+## Appendix A. Commercial use of brand images in Mexico
+
+Not legal advice — checklist to clear with the brands and, if in doubt, a lawyer. Context: Tehesa is an authorized commercial supplier of these brands and the images come from the brands themselves.
+
+### What applies
+- **Copyright (Ley Federal del Derecho de Autor):** product photos and renders are protected works; the photographer/brand holds the economic rights. Using them on a store needs a license (written, even a simple email/PDF counts). Being a distributor does not by itself grant a license to the brand's photos.
+- **Trademarks (Ley Federal de Protección a la Propiedad Industrial):** showing a brand's name/logo to identify genuine goods you legitimately sell is allowed (nominative use). Don't use the logo as if Tehesa were the brand, don't alter it, don't imply exclusivity or official-store status unless the brand agrees.
+- **Consumer protection (Ley Federal de Protección al Consumidor, PROFECO):** the image must not mislead — it has to match what is actually sold (e.g. shared "type" images from section 2 should be labeled "imagen ilustrativa" when the variant/finish differs).
+- **Third-party content inside the image:** stock photos, models, or other brands' products in a manufacturer image are not covered by the manufacturer's permission — avoid those images.
+
+### What Tehesa needs per brand
+1. **Written authorization** to reproduce the brand's product images on `tehesa` web/store and social media. Ask for: scope (web, social, print), territory (Mexico), duration (while distributor), whether Tehesa may crop/resize/convert (we serve webp on Cloudinary), and whether attribution is required.
+2. **Official source**: dealer/partner media portal or an email from the brand's marketing contact with the files. Prefer that over saving images from their website or from other resellers.
+3. **Brand guidelines** if they have them (logo use, minimum size, "distribuidor autorizado" wording).
+4. **Proof of distributor status** (invoice/contract) — not for the images, but it is what makes the trademark use clearly legitimate.
+
+Brands to cover (from the seed): weston, volkel, bohrcraft, bondhus, cleveland, precision, king-tony, plus Loctite (Henkel), WD-40, Diager, Saravia, Surtek where their products/images appear. Products with brand `libre` have no brand owner — those images must be Tehesa's own or licensed stock.
+
+### Record keeping
+Keep one row per brand in a small table (here or `docs/image-licenses.md`): brand · contact · date · what was authorized · where the authorization file is. Add a `source` note per brand in `data/product-images.json` only if the map ever mixes brand images with Tehesa's own photos; today all URLs are one Cloudinary folder, so a per-brand table is enough.
+
+| brand | authorization | date | contact / file |
+|---|---|---|---|
+| weston | pending | | |
+| volkel | pending | | |
+| bohrcraft | pending | | |
+| bondhus | pending | | |
+| cleveland | pending | | |
+| precision | pending | | |
+| king-tony | pending | | |
+| henkel (loctite) | pending | | |
+| wd-40 | pending | | |
+| diager | pending | | |
+
+### Cleanup before launch
+- Remove any image whose origin you can't name (unknown reseller, Google Images).
+- Show `imagen ilustrativa` on products mapped with `~` / `?` in section 2.
+- Don't hotlink from brand sites — keep serving from Tehesa's Cloudinary (already the case).
+
+## Appendix B. Superseded: product-type image mapping (informational)
+
+First approach (2026-09-19): 196 generic images named by product *type* (`broca-cobalto`, `tuerca-nylon`, …) were mapped by hand onto the 332 products, one image serving many products. It was dropped on 2026-09-20 in favor of one brand image per `customId` (section 2). Kept as-is for reference — the internalId lists per product are still useful when asking brands for photos.
+
+### B.1 Image → product map (old)
 
 Confidence: ✓ exact match, ~ same product type (shared image), ? guess — verify before shipping. `✓ confirmed` = reviewed by Tehesa. `not registered` = image exists but the product is not in the catalog.
 
-### carburo
+#### carburo
 | image | customId | internalIds (first 3) | conf |
 |---|---|---|---|
 | lima-sc | lima-rotativa-weston | ST-2-200-003, ST-2-200-005, ST-2-200-007… | ✓ confirmed |
 | lima-sd | lima-rotativa-doble-corte-weston | ST-1-199-003, ST-1-199-004, ST-1-199-025… | ✓ confirmed |
 
-### extraccion-reparacion-fijaciones
+#### extraccion-reparacion-fijaciones
 | image | customId | internalIds (first 3) | conf |
 |---|---|---|---|
 | insertos-helicoil | insertos-elicoil-std-volkel, insertos-elicoil-milim-weston | TEV-08302, TEV-08304, TEV-08205… / SB-200-020 | ✓ |
 | insertos-roscado-con-ranura | inserto-roscado-bohrcraft | BC-4601-300, BC-4601-400, BC-4601-500… | ✓ |
 
-### herramientas-corte-conformado
+#### herramientas-corte-conformado
 | image | customId | internalIds (first 3) | conf |
 |---|---|---|---|
 | avellanador-3-filos | avellanador-weston | ST-5-660-6015, ST-5-660-6020, ST-5-660-6035… | ✓ |
@@ -46,7 +516,7 @@ Confidence: ✓ exact match, ~ same product type (shared image), ? guess — ver
 | buril-cobalto-8-porciento | buriles-cobalto-co8-weston | ST-5-095-007, ST-5-095-012, ST-5-095-017… | ✓ |
 | buril-calzado-punta-60, buril-calzado-punta-80, buril-calzado-punta-cuadrada, buril-corte-izquierdo, buril-corte-derecho, sierra-cinta, rima-ajustable | — | — | not registered |
 
-### llaves-herramientas-torque (category `llaves-herramientas-apriete`)
+#### llaves-herramientas-torque (category `llaves-herramientas-apriete`)
 | image | customId | internalIds (first 3) | conf |
 |---|---|---|---|
 | llave-torx-larga | llave-tipo-torx-larga-bondhus | B421-32806, B421-32807, B421-32808… | ✓ |
@@ -60,7 +530,7 @@ Confidence: ✓ exact match, ~ same product type (shared image), ? guess — ver
 | jgo-llave-punta-bola-fraccional, jgo-llave-allen-punta-bola-metrica, llave-allen-t-metrica, llave-allen-t-fraccional, llave-torx-t, goldguard, colorguard | — | — | not found or related |
 | plateado, extra-largas | — | — | pending: image needs a more descriptive name |
 
-### perforacion-accesorios-taladro
+#### perforacion-accesorios-taladro
 | image | customId | internalIds (first 3) | conf |
 |---|---|---|---|
 | broca-fraccional-zanco-recto | broca-zco-recto-acero-av-weston-inches, broca-zco-recto-acero-av-weston, broca-zco-recto-acero-av-weston-number, broca-zanco-recto-acero-av-weston-abc, broca-zco-recto-acero-av-mims-weston, broca-zco-recto-acero-av-bohrcraft, broca-aav-135-split-point, broca-aav-135-split-point-thunderbit | ST-5-160-005, ST-5-160-010, ST-5-160-015… / ST-5-163-010, ST-5-163-017, ST-5-163-022… / ST-5-170-005, ST-5-170-010, ST-5-170-015… / ST-5-180-005, ST-5-180-010, ST-5-180-015… / ST-5-154-020, ST-5-154-025, ST-5-154-030… / BC-1100-100, BC-1100-130, BC-1100-150… / M111-11201, M111-11202, M111-11203… / M211-12504, M211-12505, M211-12506… | ✓ confirmed |
@@ -81,7 +551,7 @@ Confidence: ✓ exact match, ~ same product type (shared image), ? guess — ver
 | broca-larga | broca-larga-acero-av-bohrcraft, broca-extra-larga-acero-av-bohrcraft, broca-larga-tl-weston, broca-larga-av-weston, broca-larga-tl-inches-weston, broca-larga-aav-wp-black-silver-weston | BC-1350-100, BC-1350-150, BC-1350-200… / BC-1400-10200, BC-1400-10250, BC-1400-10300… / NB-5-164-015, NB-5-164-035, NB-5-164-050… / ST-5-165-005, ST-5-165-010 / ST-5-164-005, ST-5-164-010, ST-5-164-055… / NB-5-165-005, NB-5-165-010, NB-5-165-015… | ✓ confirmed |
 | jgo-broca-zanco-media, broca-multiusos | — | — | not found or related |
 
-### roscado-herramientas-roscas (products split across `herramientas-corte-conformado` and `roscado-herramientas-roscas`)
+#### roscado-herramientas-roscas (products split across `herramientas-corte-conformado` and `roscado-herramientas-roscas`)
 | image | customId | internalIds (first 3) | conf |
 |---|---|---|---|
 | machuelo-nps-volkel | machuelo-nps-aav-volkel | 99402, 99406, 99414… | ✓ |
@@ -110,7 +580,7 @@ Confidence: ✓ exact match, ~ same product type (shared image), ? guess — ver
 | machuelo-maquina-volkel (fallback) | machelo-conico-milimetricos-av-tipo-europeo-volkel, machelo-conico-milimetricos-av-fino-volkel, machelo-recto-milimetricos-av-tipo-europeo-volkel, machelo-recto-milimetricos-aav-fino-volkel, machuelo-fraccional-aav-conico-volkel, machuelo-fraccional-aav-conico-fino-volkel, machuelo-fraccional-aav-recto-volkel, machuelo-fraccional-aav-recto-fino-volkel, machuelos-izq-* (7), machuelo-izq-conicos-aav-volkel | 27316-1, 27322-1, 27326-1… / 26326-1, 26336-1, 26338-1… / 27316-3, 27322-3, 27326-3… / 26326-2, 26336-2, 26338-2… / 23305-1, 23308-1, 23310-1… / 24305-1, 24310-1, 24314-1… / 23305-3, 23308-3, 23310-3… / 24305-3, 24310-3, 24314-3… / 27026-1, 27030-1, 27034-1… | ? (no cónico/recto image exists; decide fallback or leave empty) |
 | jgo-extractor-tornillos, maneral-tipo-garrote, maneral-tipo-garrote-surtek, maneral-machuelo-t-weston, maneral-dado-tarraja, maneral-dado-tarraja-weston, punzo-rompe-arrastre-volkel-7 | — | — | no product |
 
-### sujecion
+#### sujecion
 | image | customId | internalIds (first 3) | conf |
 |---|---|---|---|
 | nudo-galvanizado | nudo-para-cable-maleable-weston | WT-00100, WT-00120, WT-00140… | ✓ |
@@ -124,12 +594,12 @@ Confidence: ✓ exact match, ~ same product type (shared image), ? guess — ver
 | argolla-carga | tornillo-ojo-forjado-weston | C-00600, C-00605, C-00610… | ? |
 | taquete-z, taquete-tx, taquete-plastico, taquete-arpon, sujetador-mariposa, armellas, abrazadera-alta-presion | — | — | no product |
 
-### suministros-maquinado
+#### suministros-maquinado
 | image | customId | internalIds (first 3) | conf |
 |---|---|---|---|
 | rayador-carburo | rayador-carburo-saravia | D600-94338 | ✓ |
 
-### tornilleria
+#### tornilleria
 | image | customId | internalIds (first 3) | conf |
 |---|---|---|---|
 | taquete-arpon-inox | taquete-arpon-acero-inoxidable-304 | — | ✓ |
@@ -201,22 +671,22 @@ Confidence: ✓ exact match, ~ same product type (shared image), ? guess — ver
 | varilla-galvanizada-1m-3m | varilla-grad-2-galv-1mt, varilla-grad-2-galv-3mt | — / — | ✓ |
 | opresor-ranurado-pivote, opresor-ranurado-balin, opresor-allen-resorte, opresor-allen-pivote, opresor-allen-balin, perno-roscado, pija-hexagonal-punta-aguda, pija-durock, accesorio-pija-inox, rondana-seguridad, rondana-plana-metrica, rondana-plana-galvanizada, tuerca-resorte | — | — | no product |
 
-## 3. Products with no image (need a photo or an explicit fallback)
+### B.2 Products with no image under the old map
 
 Format: `customId | internalId(s) of its variants | brand`.
 
-### adhesivos-selladores (whole category)
+#### adhesivos-selladores (whole category)
 - loctite-243-fijador-de-roscas-resistencia-removible-50-ml | LT-1329467 | weston
 - loctite-495-adhesivo-instantaneo-super-bonder-20-gr | LT-270821 | weston
 
-### calibrador (whole category)
+#### calibrador (whole category)
 - calibrador-gage-angulo-corte-rosca-acero-inoxidable-weston | STW-9047 | weston
 - calibrador-gage-cuerda-60-weston | STW-9050 | weston
 - calibrador-gage-cuerdas-acme-weston | STW-9045 | weston
 - contador-hilos-weston | STW-4823-31, STW-4823-52, STW-4823-55, STW-4823-60, STW-4823-65 | weston
 - cuenta-hilos-metrico-weston | STW-4821-52 | weston
 
-### carburo
+#### carburo
 - punta-montada-rosa-weston | Z-50600, Z-50615, Z-50620, Z-50630, Z-50632, Z-50640, Z-50660, Z-50662, Z-50665, Z-50670, Z-50680, Z-50690, Z-50700, Z-50710, Z-50720, Z-50721, Z-50722, Z-50725, Z-50725-A, Z-50727, Z-50728, Z-50729-A, Z-50730, Z-50740, Z-50750, Z-50765 | weston
 - juego-puntas-diamante-weston | SA-290-0010, SA-290-0020, SA-290-0030 | weston
 - juego-limas-diamantadas-weston | SA-290-0040, SA-290-0050, SA-290-0060, SA-290-0070, SA-290-0080 | weston
@@ -233,10 +703,10 @@ Format: `customId | internalId(s) of its variants | brand`.
 - cortador-vertical-ext-lgo-4f-weston | ST-5-425-015, ST-5-425-020, ST-5-425-035, ST-5-425-040, ST-5-425-045, ST-5-425-050 | weston
 - cortador-vertical-radial-carburo-4f-weston | ST-2-220-5005, ST-2-220-5010, ST-2-220-5015, ST-2-220-5020, ST-2-220-5025, ST-2-220-5030, ST-2-220-5035, ST-2-220-5050 | weston
 
-### equipo-seguridad (whole category)
+#### equipo-seguridad (whole category)
 - lente-general-tricolor-ansi-weston | ST-6-500-065, ST-6-500-066 | weston
 
-### herramientas-corte-conformado
+#### herramientas-corte-conformado
 - discos-corte-weston | Z-20185, Z-20190, Z-20197, Z-20198, Z-20215 | weston
 - machuelo-ac-weston | ST-5-778-140 | weston
 - machuelo-bsp-av-weston | ST-5-764-002-1, ST-5-764-003-1, ST-5-764-004-1, ST-5-764-005-1, ST-5-764-006-1, ST-5-764-007-1 | weston
@@ -266,18 +736,18 @@ Format: `customId | internalId(s) of its variants | brand`.
   - machuelos-izq-rectos-aav-volkel | 27026-3, 27030-3, 27034-3, 27038-3, 27042-3, 27046-3, 27050-3, 27054-3, 27058-3 | volkel
   - machuelos-izq-rectos-finos-volkel | 24010-3, 24014-3, 24016-3, 24018-3, 24020-3, 24022-3, 24024-3, 24026-3 | volkel
 
-### herramientas-diagnostico-electricidad (whole category)
+#### herramientas-diagnostico-electricidad (whole category)
 - probador-circuito-6-24v | KT-9DC22 | king-tony
 
-### herramientas-impacto-forja (whole category)
+#### herramientas-impacto-forja (whole category)
 - martillo-estilo-aleman | KT-7821-50 | king-tony
 - martillo-reparacion-hojalateria | KT-9CF131 | king-tony
 
-### herramientas-marcado (whole category)
+#### herramientas-marcado (whole category)
 - marcador-hp-proline | STM-096960, STM-096961, STM-096964, STM-096966 | weston
 - marcador-valve-action | STM-096809, STM-096820, STM-096821, STM-096822, STM-096823, STM-096825, STM-096826 | weston
 
-### llaves-herramientas-apriete
+#### llaves-herramientas-apriete
 - 1-2-dr-dado-punta-spline | KT-406610, KT-406612 | king-tony
 - 1-2-punta-bristol-cromado | KT-406614 | king-tony
 - dado-cuadro-1-2-corto-estrella | KT-437510M, KT-437512M, KT-437514M, KT-437516M, KT-437518M, KT-437520M, KT-437522M, KT-437524M | king-tony
@@ -301,10 +771,10 @@ Format: `customId | internalId(s) of its variants | brand`.
 - pinza-presion-curva-cromada | KT-6011-07 | king-tony
 - punta-cinco-estrellas-cuadro | KT-302D08, KT-302D09, KT-302D10, KT-302D15, KT-302D20, KT-302D25, KT-302D27, KT-302D30, KT-302D40, KT-302D45, KT-302D50, KT-302D55, KT-302D60 | king-tony
 
-### lubricantes-multifuncionales (whole category)
+#### lubricantes-multifuncionales (whole category)
 - wd-40-aerosol | WD-52203, WD-52208, WD-52211 | weston
 
-### perforacion-accesorios-taladro
+#### perforacion-accesorios-taladro
 - arbol-para-broquero-weston | SA-015-0290, SA-015-0310, SA-015-0340, SA-015-0350, SA-015-0360, SA-015-0370, SA-015-0400, SA-015-0410, SA-015-0420, SA-015-0430, SA-015-0440, SA-015-0480 | weston
 - boquilla-cono-morse-weston | SA-015-0620, SA-015-0640, SA-015-0670, SA-015-0710, SA-015-0730 | weston
 - broquero-ajustable-weston | SA-010-0340, SA-010-0360, SA-010-0370, SA-010-0380 | weston
@@ -315,65 +785,17 @@ Format: `customId | internalId(s) of its variants | brand`.
 - moleteador-weston | SA-100-0080, SA-100-0090, SA-100-0100 | weston
 - super-broquero-embalado-con-llave-weston | SA-010-0190, SA-010-0200, SA-010-0210 | weston
 
-### roscado-herramientas-roscas
+#### roscado-herramientas-roscas
 - maneral-para-insertar-volkel | TEV-08004, TEV-08006, TEV-08008, TEV-08009, TEV-08010, TEV-08011, TEV-08013, TEV-08014, TEV-08015, TEV-08016, TEV-08018, TEV-08021, TEV-08022, TEV-08023 | volkel (only if the `maneral-dado-tarraja-volkel` `?` guess is wrong)
 
-### sujecion
+#### sujecion
 - clamp-accion-pestillo-weston | CH-40324, CH-40371 | weston
 - clamp-pestillo-weston | CH-40344 | weston
 
-### tornilleria
+#### tornilleria
 - tornillo-ojo-forjado-weston | C-00600, C-00605, C-00610, C-00615, C-00620, C-00625, C-00630, C-00635, C-00640, C-00645, C-00650, C-00655, C-00660, C-00665, C-00670 | weston (only if the `argolla-carga` `?` guess is wrong)
 - varilla-rosc-cl-4.8-neg-1mt-mm | — | libre (fallback: varilla-87)
 - varilla-rosc-cl-8.8-neg-1mt-mm | — | libre (fallback: varilla-87)
 
 Rough count: ~215 products mapped (≈95 `✓`, rest shared/guessed), ~115 without an image.
 
-## 4. Steps
-
-1. Review every `?` and `~` row; fix the map in this file.
-2. Generate `data/product-images.json` from sections 2 (one node one-liner over this table, or by hand — ~215 lines).
-3. Add `imageUrl` to the product schema; `npm run build`.
-4. Write `scripts/set-product-images.js`, add `images:products` to `package.json`, run it, check the count of updated vs. missing.
-5. Update `AGENTS.md` / `REPO_CONTEXT.md` / `CLAUDE.md` script list and field table.
-6. `npm run transfer:prod`.
-7. Shoot / source photos for section 3 (category placeholders in the frontend meanwhile).
-
-## Appendix A. Commercial use of brand images in Mexico
-
-Not legal advice — checklist to clear with the brands and, if in doubt, a lawyer. Context: Tehesa is an authorized commercial supplier of these brands and the images come from the brands themselves.
-
-### What applies
-- **Copyright (Ley Federal del Derecho de Autor):** product photos and renders are protected works; the photographer/brand holds the economic rights. Using them on a store needs a license (written, even a simple email/PDF counts). Being a distributor does not by itself grant a license to the brand's photos.
-- **Trademarks (Ley Federal de Protección a la Propiedad Industrial):** showing a brand's name/logo to identify genuine goods you legitimately sell is allowed (nominative use). Don't use the logo as if Tehesa were the brand, don't alter it, don't imply exclusivity or official-store status unless the brand agrees.
-- **Consumer protection (Ley Federal de Protección al Consumidor, PROFECO):** the image must not mislead — it has to match what is actually sold (e.g. shared "type" images from section 2 should be labeled "imagen ilustrativa" when the variant/finish differs).
-- **Third-party content inside the image:** stock photos, models, or other brands' products in a manufacturer image are not covered by the manufacturer's permission — avoid those images.
-
-### What Tehesa needs per brand
-1. **Written authorization** to reproduce the brand's product images on `tehesa` web/store and social media. Ask for: scope (web, social, print), territory (Mexico), duration (while distributor), whether Tehesa may crop/resize/convert (we serve webp on Cloudinary), and whether attribution is required.
-2. **Official source**: dealer/partner media portal or an email from the brand's marketing contact with the files. Prefer that over saving images from their website or from other resellers.
-3. **Brand guidelines** if they have them (logo use, minimum size, "distribuidor autorizado" wording).
-4. **Proof of distributor status** (invoice/contract) — not for the images, but it is what makes the trademark use clearly legitimate.
-
-Brands to cover (from the seed): weston, volkel, bohrcraft, bondhus, cleveland, precision, king-tony, plus Loctite (Henkel), WD-40, Diager, Saravia, Surtek where their products/images appear. Products with brand `libre` have no brand owner — those images must be Tehesa's own or licensed stock.
-
-### Record keeping
-Keep one row per brand in a small table (here or `docs/image-licenses.md`): brand · contact · date · what was authorized · where the authorization file is. Add a `source` note per brand in `data/product-images.json` only if the map ever mixes brand images with Tehesa's own photos; today all URLs are one Cloudinary folder, so a per-brand table is enough.
-
-| brand | authorization | date | contact / file |
-|---|---|---|---|
-| weston | pending | | |
-| volkel | pending | | |
-| bohrcraft | pending | | |
-| bondhus | pending | | |
-| cleveland | pending | | |
-| precision | pending | | |
-| king-tony | pending | | |
-| henkel (loctite) | pending | | |
-| wd-40 | pending | | |
-| diager | pending | | |
-
-### Cleanup before launch
-- Remove any image whose origin you can't name (unknown reseller, Google Images).
-- Show `imagen ilustrativa` on products mapped with `~` / `?` in section 2.
-- Don't hotlink from brand sites — keep serving from Tehesa's Cloudinary (already the case).
