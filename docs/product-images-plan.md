@@ -433,13 +433,16 @@ Count: 130 products mapped.
 
 ## 4. Steps
 
-1. Finish `tornilleria` and resolve section 3.
-2. `data/product-images.json` is generated from section 2 (`{ customId: url }`); regenerate when the map changes.
-3. Add `imageUrl` to the product schema; `npm run build`.
-4. Write `scripts/set-product-images.js`, add `images:products` to `package.json`, run it, check updated vs. missing counts.
-5. Update `AGENTS.md` / `REPO_CONTEXT.md` / `CLAUDE.md` script list and field table.
-6. `npm run transfer:prod`.
-7. Frontend: category placeholder for products without `imageUrl`.
+Order: ship what is mapped now (steps 1–7), then come back for "Still without image" and `tornilleria` (step 8). Not executed yet — plan only.
+
+1. `data/product-images.json` is generated from section 2 (`{ customId: url }`); regenerate when the map changes.
+2. Add `imageUrl` to the product schema; `npm run build`.
+3. Write `scripts/set-product-images.js`, add `images:products` to `package.json`, run it, check updated vs. missing counts.
+4. Update `AGENTS.md` / `REPO_CONTEXT.md` / `CLAUDE.md` script list and field table.
+5. `npm run transfer:prod`.
+6. Frontend: category placeholder for products without `imageUrl`.
+7. **Backfill the seed** in `/home/rafael/projects/tehesa/products-tehesa`: write each product's URL as `imageUrl` into its entry in `data/<category>/products.<name>.json` (keyed by `customId`, one-off script in that repo), so the mapping survives if this repo or `data/product-images.json` is lost and a full reseed carries images. Then make `scripts/seed.js` here pass `imageUrl` through on create. After that, the seed is the source of truth and `data/product-images.json` can be dropped.
+8. Second pass: resolve section 3 (tornilleria, "not found", "missing internal id", "mala calidad") and the 86 "Still without image" products; repeat steps 1, 3, 5 and 7 for the new URLs.
 
 ## Appendix A. Commercial use of brand images in Mexico
 
