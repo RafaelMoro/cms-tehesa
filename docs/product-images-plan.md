@@ -330,95 +330,449 @@ Products of the categories above that are neither mapped nor mentioned in the re
 
 - **herrajes-accesorios-cable** (1)
   - nudo-para-cable-maleable-weston (weston)
+    - `WT-00100`
+    - `WT-00120`
+    - `WT-00140`
 - **llaves-herramientas-apriete** (7)
   - dado-cuadro-1-llanta-trasera-capuchon (king-tony)
+    - `KT-851426S`
   - dado-cuadro-1-2-punta-ribe (king-tony)
+    - `KT-404904`
+    - `KT-404905`
+    - `KT-404906`
   - llave-tipo-torx-larga-bondhus (bondhus)
+    - `B421-32806`
+    - `B421-32807`
+    - `B421-32808`
   - llave-gancho-ajustable-13-35mm (king-tony)
+    - `KT-3641-35`
   - llaves-combinadas-matraca-cambio (king-tony)
+    - `KT-373208M`
+    - `KT-373212M`
+    - `KT-373217M`
   - 1-2-punta-bristol-cromado (king-tony)
+    - `KT-406614`
   - pinza-presion-curva-cromada (king-tony)
+    - `KT-6011-07`
 - **herramientas-corte-conformado** (53)
   - discos-corte-weston (weston)
+    - `Z-20185`
+    - `Z-20190`
+    - `Z-20197`
   - buriles-cuadrados-cobalto-cleveland (cleveland)
+    - `CC44540`
+    - `CC44544`
+    - `CC44545`
   - buriles-incor-k-42 (cleveland)
+    - `I01-001`
+    - `I01-002`
+    - `I01-003`
   - extension-machuelos-bohrcraft (bohrcraft)
+    - `BC-4500-270`
+    - `BC-4500-340`
+    - `BC-4500-700`
   - juego-machuelos-aac-cleveland (cleveland)
+    - `GGG107883`
+    - `GGG107943`
+    - `GGG108003`
   - juego-machuelos-aav-cleveland (cleveland)
+    - `CC1123-05323`
+    - `CC1123-06243`
+    - `CC1123-06323`
   - machuelos-izq-semiconicos-aav-volkel (volkel)
+    - `27026-2`
+    - `27030-2`
+    - `27034-2`
   - machuelos-izq-fraccionales-semiconicos-aav-volkel (volkel)
+    - `23008-2`
+    - `23010-2`
+    - `23014-2`
   - machuelos-izq-fracc-rectos-aav-volkel (volkel)
+    - `23008-3`
+    - `23010-3`
+    - `23014-3`
   - machuelos-izq-con-finos-volkel (volkel)
+    - `24010-1`
+    - `24014-1`
+    - `24016-1`
   - machuelos-izq-rectos-aav-volkel (volkel)
+    - `27026-3`
+    - `27030-3`
+    - `27034-3`
   - machuelos-izq-rectos-finos-volkel (volkel)
+    - `24010-3`
+    - `24014-3`
+    - `24016-3`
   - machuelo-npt-aav-volkel (volkel)
+    - `63510`
+    - `63512`
+    - `63514`
   - machuelo-maquina-acero-inox-agujeros-pasados-fracc-volkel (volkel)
+    - `35945`
+    - `35946`
+    - `35947`
   - machuelo-maquina-acero-inox-agujeros-ciegos-mm-volkel (volkel)
+    - `36226`
+    - `36230`
+    - `36234`
   - machuelo-maquina-acero-inox-agujeros-ciegos-fracc-volkel (volkel)
+    - `36945`
+    - `36946`
+    - `36947`
   - machuelo-maquina-helice-35-volkel (volkel)
+    - `38726`
+    - `38730`
+    - `38734`
   - dado-tarraja-mm-aav-volkel (volkel)
+    - `27416`
+    - `27422`
+    - `27440`
   - machuelo-izq-conicos-aav-volkel (volkel)
+    - `27026-1`
+    - `27030-1`
+    - `27034-1`
   - juego-machuelos-otros-volkel (volkel)
+    - `49510`
+    - `47001`
+    - `47033`
   - juego-machuelos-bsp-av-2-piezas-bohrcraft (bohrcraft)
+    - no `internalId` on any variant
   - juego-machuelos-fraccionales-aav-2-piezas-volkel (volkel)
+    - `24305`
+    - `24310`
+    - `24314`
   - juego-machuelos-milimetrico-aav-2-piezas-finos-volkel (volkel)
+    - `26326`
+    - `26336`
+    - `26338`
   - juego-machuelos-izq-fraccionales-aav-2-piezas-volkel (volkel)
+    - `24010`
+    - `24014`
+    - `24016`
   - juego-machuelos-izq-fraccionales-aav-3-piezas-volkel (volkel)
+    - `23008`
+    - `23010`
+    - `23014`
   - juego-machuelos-izq-milimetricos-aav-3-piezas-volkel (volkel)
+    - `27026`
+    - `27030`
+    - `27034`
   - juego-machuelos-aav-milimetricos-tipo-europeo-volkel (volkel)
+    - `27316`
+    - `27322`
+    - `27326`
   - machelo-conico-milimetricos-av-tipo-europeo-volkel (volkel)
+    - `27316-1`
+    - `27322-1`
+    - `27326-1`
   - machelo-recto-milimetricos-av-tipo-europeo-volkel (volkel)
+    - `27316-3`
+    - `27322-3`
+    - `27326-3`
   - machelo-recto-milimetricos-aav-fino-volkel (volkel)
+    - `26326-2`
+    - `26336-2`
+    - `26338-2`
   - laina-acero-azul-templado-5pul-precision (precision)
+    - `PB-23130`
   - laina-acero-inoxidable-150mm-1-25m-precision (precision)
+    - `PB-22971`
+    - `PB-22972`
+    - `PB-22973`
   - machuelo-bsp-aav-volkel (volkel)
+    - `65312`
+    - `65314`
+    - `65316`
   - machuelo-fraccional-aav-conico-fino-volkel (volkel)
+    - `24305-1`
+    - `24310-1`
+    - `24314-1`
   - machuelo-fraccional-aav-recto-fino-volkel (volkel)
+    - `24305-3`
+    - `24310-3`
+    - `24314-3`
   - machuelo-fino-l-coil-fraccional-aav-volkel (volkel)
+    - `TEV-03154`
+    - `TEV-03155`
+    - `TEV-03156`
   - machuelo-l-coil-fraccional-aav-volkel (volkel)
+    - `TEV-03102`
+    - `TEV-03104`
+    - `TEV-03105`
   - machuelo-l-coil-aav-milimetrico-volkel (volkel)
+    - `TEV-03005`
+    - `TEV-03006`
+    - `TEV-03007`
   - machuelo-milimetrico-aav-semiconico-volkel (volkel)
+    - `27322-2`
+    - `27326-2`
+    - `27330-2`
   - machuelo-npt-aav-weston (weston)
+    - `ST-5-764-001`
+    - `ST-5-764-002`
+    - `ST-5-764-003`
   - machuelo-ac-weston (weston)
+    - `ST-5-778-140`
   - machuelo-npt-ac-weston (weston)
+    - `ST-5-778-500`
+    - `ST-5-778-510`
+    - `ST-5-778-515`
   - machuelo-aav-npt-cleveland (cleveland)
+    - `CC64038`
+    - `CC64039`
+    - `CC64040`
   - machuelo-npt-av-bohrcraft (bohrcraft)
+    - no `internalId` on any variant
   - machuelo-maquina-fraccional-aav-volkel (volkel)
+    - `75505`
+    - `75508`
+    - `75510`
   - machuelo-sti-av-bohrcraft (bohrcraft)
+    - `BC-4800-300`
+    - `BC-4800-400`
+    - `BC-4800-500`
   - punzon-rompe-arrastre-volkel (volkel)
+    - `TEV-07006`
+    - `TEV-07008`
+    - `TEV-07009`
   - rayador-carburo-saravia (bondhus)
+    - `D600-94338`
   - rima-recta-maquina-h8-weston (weston)
+    - `ST-8-015-005`
+    - `ST-8-015-010`
+    - `ST-8-015-015`
   - rima-maquina-h8-weston (weston)
+    - `ST-8-019-040`
+    - `ST-8-019-055`
+    - `ST-8-019-065`
   - rima-flauta-recta-aav-h7-weston (weston)
+    - `ST-8-015-403`
+    - `ST-8-015-406`
+    - `ST-8-015-409`
   - avellanador-weston (weston)
+    - `ST-5-660-6015`
+    - `ST-5-660-6020`
+    - `ST-5-660-6035`
   - avellanador-juego-6f-weston (weston)
+    - `ST-5-660-6088`
+    - `ST-5-660-8288`
+    - `ST-5-660-9088`
 - **roscado-herramientas-roscas** (1)
   - kit-reparador-roscas-taller-volkel (volkel)
+    - `TEV-04085`
 - **perforacion-accesorios-taladro** (24)
   - broca-aav-135-split-point-thunderbit (bondhus)
+    - `M211-12504`
+    - `M211-12505`
+    - `M211-12506`
   - broca-carburo-solido-weston (weston)
+    - `ST-1-160-040`
+    - `ST-1-160-045`
+    - `ST-1-160-050`
   - broca-concreto-sds-weston (weston)
+    - `ST-5-151-100`
+    - `ST-5-151-150`
+    - `ST-5-151-200`
   - broca-concreto-weston (weston)
+    - `ST-5-150-10000`
+    - `ST-5-150-10002`
+    - `ST-5-150-10004`
   - broca-centro-acero-av-weston (weston)
+    - `ST-8-600-010`
+    - `ST-8-600-015`
+    - `ST-8-600-020`
   - broca-larga-acero-av-bohrcraft (bohrcraft)
+    - `BC-1350-100`
+    - `BC-1350-150`
+    - `BC-1350-200`
   - broca-wp-concreto-weston (weston)
+    - `ST-5-148-020`
+    - `ST-5-148-030`
+    - `ST-5-148-050`
   - broca-wp-zanco-sds-plus-weston (weston)
+    - `ST-5-148-350`
+    - `ST-5-148-370`
+    - `ST-5-148-410`
   - broca-extra-larga-acero-av-bohrcraft (bohrcraft)
+    - `BC-1400-10200`
+    - `BC-1400-10250`
+    - `BC-1400-10300`
   - broca-zanco-recto-acero-av-weston-abc (weston)
+    - `ST-5-180-005`
+    - `ST-5-180-010`
+    - `ST-5-180-015`
   - broca-zco-recto-cobalto-weston-inches (weston)
+    - `ST-5-162-010`
+    - `ST-5-162-025`
+    - `ST-5-162-035`
   - broca-zco-recto-acero-av-weston (weston)
+    - `ST-5-163-010`
+    - `ST-5-163-017`
+    - `ST-5-163-022`
   - jgo-brocas-av-numericas-60-pzas-weston (weston)
+    - `ST-5-170-525`
   - insertos-elicoil-std-juego-6-escareadores-tornillo-allen-acero-av-bohrcraft (bohrcraft)
+    - no `internalId` on any variant
   - juego-brocas-cobalto-metricas-25-pzas (weston)
+    - `ST-5-159-009`
   - juego-brocas-cobalto-fraccionales-weston (weston)
+    - `ST-5-159-006`
   - broca-larga-tl-weston (weston)
+    - `NB-5-164-015`
+    - `NB-5-164-035`
+    - `NB-5-164-050`
   - broca-av-zanco-weston-inches (weston)
+    - `ST-5-166-010`
+    - `ST-5-166-015`
+    - `ST-5-166-020`
   - broca-av-zanco-weston-metric (weston)
+    - `ST-5-166-260`
+    - `ST-5-166-265`
+    - `ST-5-166-270`
   - broca-zanco-1-2-cobalto-weston (weston)
+    - `ST-5-167-320`
+    - `ST-5-167-360`
+    - `ST-5-167-440`
   - broca-larga-tl-inches-weston (weston)
+    - `ST-5-164-005`
+    - `ST-5-164-010`
+    - `ST-5-164-055`
   - broquero-con-llave-y-montaje-weston (weston)
+    - `SA-010-0100`
+    - `SA-010-0120`
+    - `SA-010-0130`
   - broquero-ajustable-weston (weston)
+    - `SA-010-0340`
+    - `SA-010-0360`
+    - `SA-010-0370`
   - broquero-jacobs-con-llave-weston (weston)
+    - `SA-012-0060`
+    - `SA-012-0080`
+    - `SA-012-0200`
+
+### tornilleria — pending products (107)
+
+`categoryCustomId: "tornilleria"` in `../products-tehesa/data`, grouped by `subcategory`. None of these have a mapped image yet (see section 3).
+
+- **tornillos** (37)
+  - tornillo-cabeza-coche-acero-inoxidable-304 — Tornillo Cabeza Coche de Acero Inoxidable 304
+  - tornillo-cabeza-coche-grado-2-galvanizado — Tornillo Cabeza Coche Grado 2 Galvanizado
+  - tornillo-cabeza-fijadora-ranurado-din-85-acero-inoxidable-304-metrico — Tornillo Cabeza Fijadora Ranurado DIN 85 de Acero Inoxidable 304 Milimétrico
+  - tornillo-cabeza-gota-combinado-galvanizado — Tornillo Cabeza Gota Combinado Galvanizado
+  - tornillo-cabeza-gota-ranurado-combinado-acero-inoxidable-304 — Tornillo Cabeza Gota Ranurado y Combinado de Acero Inoxidable 304
+  - tornillo-cabeza-hexagonal-cl-8-8-din-933-931 — Tornillo Cabeza Hexagonal CL 8.8 DIN 933/931
+  - tornillo-cabeza-hexagonal-cl-8-8-fino-din-960-96 — Tornillo Cabeza Hexagonal CL 8.8 Fino DIN 960/96
+  - tornillo-cabeza-hexagonal-cuerda-corrida-acero-inoxidable-304 — Tornillo Cabeza Hexagonal Cuerda Corrida de Acero Inoxidable 304
+  - tornillo-cabeza-hexagonal-din-933-931-acero-inoxidable-304 — Tornillo Cabeza Hexagonal Din 933 / 931 de Acero Inoxidable 304 Milimétrico
+  - tornillo-cabeza-hexagonal-grado-5-negro-fino — Tornillo Cabeza Hexagonal Grado 5 Negro Fino
+  - tornillo-cabeza-hexagonal-grado-5-negro-unc — Tornillo Cabeza Hexagonal Grado 5 Negro UNC
+  - tornillo-cabeza-hexagonal-grado-8-negro-fino — Tornillo Cabeza Hexagonal Grado 8 Negro Fino
+  - tornillo-cabeza-hexagonal-grado-8-negro-std — Tornillo Cabeza Hexagonal Grado 8 Negro STD
+  - tornillo-cabeza-plana-phillips-galvanizado — Tornillo Cabeza Plana Phillips Galvanizado
+  - tornillo-cabeza-plana-phillips-metrico-din-965 — Tornillo Cabeza Plana Phillips Milimétrico DIN 965
+  - tornillo-cabeza-plana-ranurado-din-963-acero-inoxidable-304-metrico — Tornillo Cabeza Plana Ranurado DIN 963 de Acero Inoxidable 304 Milimétrico
+  - tornillo-cabeza-plana-ranurado-phillips-acero-inoxidable-304 — Tornillo Cabeza Plana Ranurado y Phillips de Acero Inoxidable 304
+  - tornillo-cabeza-queso-din-84-acero-inoxidable-304-metrico — Tornillo Cabeza Queso DIN 84 de Acero Inoxidable 304 Milimétrico
+  - tornillo-cabeza-queso-ranurado-din-84-metrico — Tornillo Cabeza Queso Ranurado Milimétrico DIN 84
+  - tornillo-hex-int-cab-bot-acer-inox-304 — Tornillo de Hexágono Interior Cabeza Boton de Acero Inoxidable 304
+  - tornillo-hex-int-cab-bot-acer-inox-304-metrico — Tornillo de Hexágono Interior Cabeza Boton de Acero Inoxidable 304 Milimétrico
+  - tornillo-hex-int-cab-cil-acer-inox-304 — Tornillo de Hexágono Interior Cabeza Cilindro de Acero Inoxidable 304
+  - tornillo-hex-int-cab-cil-din-912-acer-inox-304-mm — Tornillo de Hexágono Interior Cabeza Cilindro DIN 912 de Acero Inoxidable 304 Milimétrico
+  - tornillo-hex-int-cab-plana-acer-inox-304 — Tornillo de Hexágono Interior Cabeza Plana de Acero Inoxidable 304
+  - tornillo-hex-int-cab-plana-din-7991-acer-inox-304-mm — Tornillo de Hexágono Interior Cabeza Plana DIN 7991 de Acero Inoxidable 304 Milimétrico
+  - tornillo-hexagono-interior-cabeza-baja-cilindrica — Tornillo de Hexagono Interior Cabeza Baja Cilindrica
+  - tornillo-hexagono-interior-cabeza-baja-metrico — Tornillo de Hexágono Interior Cabeza Baja Milimétrico
+  - tornillo-hexagono-interior-cabeza-boton — Tornillo de Hexágono Interior Cabeza Botón
+  - tornillo-hexagono-interior-cabeza-boton-std — Tornillo de Hexagono Interior Cabeza Botón STD
+  - tornillo-hexagono-interior-cabeza-cilindrica — Tornillo de Hexágono Interior Cabeza Cilíndrica
+  - tornillo-hexagono-interior-cabeza-cilindrica-metrico-din-912 — Tornillo de Hexágono Interior Cabeza Cilindrica Milimétrico DIN 912
+  - tornillo-hexagono-interior-cabeza-plana-metrico-din-7991 — Tornillo de Hexágono Interior Cabeza Plana Milimétrico DIN 7991
+  - tornillo-hexagono-interior-cabeza-plana-std — Tornillo de Hexágono Interior Cabeza Plana STD
+  - tornillo-hexagono-interior-guia — Tornillo de Hexágono Interior Guia
+  - tornillo-hexagono-interior-guia-std — Tornillo de Hexágono Interior Guia STD
+  - tornillo-maquina-cabeza-hexagonal-grado-2-cda-corrida-galvanizado — Tornillo Maquina Cabeza Hexagonal Grado 2 CDA Corrida Galvanizado
+  - tornillo-ojo-forjado-weston — Tornillo Ojo Forjado
+- **tuerca** (26)
+  - tuerca-2h-negra — Tuerca 2H Negra
+  - tuerca-bellota-acer-inox-304 — Tuerca Bellota de Acero Inoxidable 304
+  - tuerca-bellota-niquelada-nc-nf — Tuerca Bellota Niquelada NC & NF
+  - tuerca-cople-galvanizada — Tuerca Cople Galvanizada
+  - tuerca-flange-aserra-galv-estandar — Tuerca Flange Aserrada Galvanizada Estándar
+  - tuerca-flange-aserra-galv-metr — Tuerca Flange Aserrada Galvanizada Métrica
+  - tuerca-gripco-grado-c-galv-nc-nf — Tuerca Gripco Grado C Galvanizada NC & NF
+  - tuerca-hexagonal-din-934-acer-inox-304 — Tuerca Hexagonal DIN 934 de Acero Inoxidable 304
+  - tuerca-hexagonal-grado-5-nc-pav — Tuerca Hexagonal Grado 5 NC Pavonada
+  - tuerca-hexagonal-grado-5-nf-pav — Tuerca Hexagonal Grado 5 NF Pavonada
+  - tuerca-hexagonal-grado-8-nc-pav — Tuerca Hexagonal Grado 8 NC Pavonada
+  - tuerca-hexagonal-inserto-nylon-acero-inoxidable-304-std — Tuerca Hexagonal Inserto de Nylon Acero Inoxidable 304 STD
+  - tuerca-hexagonal-inserto-nylon-fina-acero-inoxidable-304 — Tuerca Hexagonal Inserto de Nylon Fina Acero Inoxidable 304
+  - tuerca-hexagonal-inserto-nylon-inoxidable-304-milimetrica — Tuerca Hexagonal Inserto de Nylon Inoxidable 304 Milimétrica
+  - tuerca-hexagonal-liviana-grado-2-nc-galv — Tuerca Hexagonal Liviana Grado 2 NC Galvanizada
+  - tuerca-hexagonal-liviana-grado-2-nc-negra — Tuerca Hexagonal Liviana Grado 2 NC Negra
+  - tuerca-hexagonal-metrica-din-934-negra — Tuerca Hexagonal Métrica DIN 934 Negra
+  - tuerca-hexagonal-nc-nf-acer-inox-304 — Tuerca Hexagonal NC y NF de Acero Inoxidable 304
+  - tuerca-hexagonal-rosca-acme-gdo-2-negr-maquinada — Tuerca Hexagonal Rosca Acme Grado 2 Negra Maquinada
+  - tuerca-hexagonal-rosca-acme-grado-2-negra-forjada — Tuerca Hexagonal Rosca Acme Grado 2 Negra forjada
+  - tuerca-inserto-nylon-din-985-galv — Tuerca con Inserto de Nylon Métrica - DIN 985 Galvanizada
+  - tuerca-inserto-nylon-galv-nc — Tuerca con Inserto de Nylon Galvanizada NC
+  - tuerca-inserto-nylon-galvanizada-nf — Tuerca con Inserto de Nylon Galvanizada NF
+  - tuerca-mariposa-acer-inox-304 — Tuerca Mariposa de Acero Inoxidable 304
+  - tuerca-mariposa-forjada-galvanizada — Tuerca Mariposa Forjada Galvanizada
+  - tuerca-tino-4-puntas-galv-nc-nf — Tuerca Tino de 4 Puntas Galvanizado NC & NF
+- **pija** (17)
+  - accesorios-epdm-calidad-plus-pija-punta-de-broca — Accesorios de E.P.D.M. Calidad Plus para Pija Punta de Broca
+  - accesorios-epdm-pija-punta-de-broca — Accesorios de E.P.D.M para Pija Punta de Broca
+  - juego-pijas-cabeza-hexagonal-punta-broca-accesorio-epdm-calidad-plus — Juego de Pijas de Cabeza Hexagonal, Punta Broca y Accesorio de E.P.D.M. Ensamblado Calidad Plus
+  - juego-pijas-cabeza-hexagonal-punta-broca-accesorio-epdm-galaxy — Juego de Pijas de Cabeza Hexagonal, Punta Broca y Accesorio de E.P.D.M. Galaxy Ensamblado
+  - pija-304-cabeza-fijadora-phillips-acero-inoxidable — Pija 304 de Cabeza Fijadora Phillips de Acero Inoxidable
+  - pija-304-cabeza-plana-phillips-acero-inoxidable — Pija 304 de Cabeza Plana Phillips de Acero Inoxidable
+  - pija-410-punta-broca-cabeza-hexagonal-acero-inoxidable — Pija 410 Punta de Broca Cabeza Hexagonal de Acero Inoxidable
+  - pija-cabeza-fijadora-combi-latonada — Pija Cabeza Fijadora Combi Latonada
+  - pija-cabeza-hexagonal-para-lamina — Pija de Cabeza Hexagonal para Lamina
+  - pija-cabeza-plana-phillips-lamina-galvanizada — Pija de Cabeza Plana Phillips para Lamina Galvanizada
+  - pija-galvanizada-cabeza-hexagonal-madera — Pija Galvanizada de Cabeza Hexagonal para Madera
+  - pija-galvanizada-cabeza-hexagonal-punta-broca-calidad — Pija Galvanizada de Cabeza Hexagonal, Punta Broca Calidad Plus
+  - pija-galvanizada-galaxy-cabeza-hexagonal-punta-broca — Pija Galvanizada Galaxy de Cabeza Hexagonal, Punta de Broca
+  - pija-galvanizada-punta-fijadora-combinada — Pija Galvanizada de Punta Fijadora Combinada
+  - pija-k-lath-punta-aguda-galvanizada — Pija K-Lath Punta Aguda Galvanizada
+  - pija-k-lath-punta-broca-galvanizado-galaxy — Pija K-Lath Punta de Broca Galvanizado Galaxy
+  - pija-multiusos-phillips-negra — Pija Multiusos Phillips Negra
+- **varilla** (9)
+  - varilla-acme-1mt — Varilla Acme de 1 Metro de Largo
+  - varilla-grad-2-galv-1mt — Varilla Grado 2 Galvanizado de 1 Metro de Largo
+  - varilla-grad-2-galv-3mt — Varilla Grado 2 Galvanizado de 3 Metros de Largo
+  - varilla-grad-5-1mt-neg — Varilla Grado 5 de 1 Metro de Largo Negra
+  - varilla-negra-b7-1mt — Varilla Negra B7 de 1 Metro de Largo
+  - varilla-rosc-acer-inox-304-3ft — Varilla Roscada de Acero Inoxidable 304 de 3 pies
+  - varilla-rosc-cl-4.8-neg-1mt-mm — Varilla Roscada Clase 4.8 Negra de 1 Metro de Largo Milimétrica
+  - varilla-rosc-cl-8.8-neg-1mt-mm — Varilla Roscada Clase 8.8 Negra de 1 Metro de Largo Milimétrica
+  - varilla-rosc-din-975-acer-inox-304-1mt — Varilla Roscada DIN 975 de Acero Inoxidable 304 de 1 Metro de Largo
+- **rondana** (8)
+  - rondana-de-presion-acero-inoxidable-304-std — Rondana de Presión de Acero Inoxidable 304 STD
+  - rondana-de-presion-din-127-acero-inoxidable-304 — Rondana de Presión DIN 127 de Acero Inoxidable 304
+  - rondana-de-presion-galvanizada — Rondana de Presión Galvanizada
+  - rondana-de-presion-metrica-negra-din-127 — Rondana de Presion Métrica Negra DIN 127
+  - rondana-de-presion-negra — Rondana de Presión Negra
+  - rondana-f-436-negra — Rondana F-436 Negra
+  - rondana-plana-acero-inoxidable-304 — Rondana Plana de Acero Inoxidable 304
+  - rondana-plana-din-125-acero-inoxidable-304 — Rondana Plana DIN 125 de Acero Inoxidable 304
+- **opresor** (4)
+  - opresor-hexagono-interior-punta-copa-acero-inoxidable-304 — Opresor de Hexágono Interior Punta de Copa Acero Inoxidable 304
+  - opresor-hexagono-interior-punta-copa-din-916-acero-inoxidable — Opresor de Hexágono Interior Punta de Copa DIN 916 de Acero Inoxidable
+  - opresor-hexagono-interior-punta-copa-std — Opresor de Hexágono Interior Punta de Copa STD
+  - opresor-punta-copa-mm-din-916-std — Opresor Punta de Copa MM DIN 916 STD
+- **perno** (2)
+  - perno-solido-rectificado-inches — Perno Solido Rectificado en Pulgadas
+  - perno-solido-rectificado-mm — Perno Solido Rectificado en Millímetros
+- **remache** (2)
+  - remache-pop-ancha-acero-inoxidable-304 — Remache Pop a la ancha de Acero Inoxidable Tipo 304
+  - remache-pop-corta-acero-inoxidable-304 — Remache Pop a la corta de Acero Inoxidable Tipo 304
+- **nudo** (1)
+  - nudo-maleable-acero-inoxidable-304 — Nudo Maleable de Acero Inoxidable 304
+- **taquete** (1)
+  - taquete-arpon-acero-inoxidable-304 — Taquete Arpon de Acero Inoxidable 304
+
+Total: 107 products.
 
 ## 3. Pending
 
