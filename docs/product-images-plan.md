@@ -668,7 +668,7 @@ Products of the categories above that are neither mapped nor mentioned in the re
 
 ### tornilleria — pending products (107)
 
-`categoryCustomId: "tornilleria"` in `../products-tehesa/data`, grouped by `subcategory`. None of these have a mapped image yet (see section 3).
+`categoryCustomId: "tornilleria"` in `../products-tehesa/data`, grouped by `subcategory`. 78 mapped (`[x]`), 3 flagged (`ⓧ`: 1 not found, 2 mala calidad), 26 still without a mapped image (see section 3).
 
 - **tornillos** (37)
   - [x] tornillo-cabeza-coche-acero-inoxidable-304 — Tornillo Cabeza Coche de Acero Inoxidable 304
@@ -792,14 +792,14 @@ Total: 107 products.
 
 ## 3. Pending
 
-- **tornilleria**: whole category (107 products) not mapped yet.
+- **tornilleria** (107 products, see section 2 checklist): 78 mapped, 26 still without a mapped image, 1 not found (`tornillo-hexagono-interior-cabeza-plana-metrico-din-7991`), 2 mala calidad (`tuerca-cople-galvanizada`, `tuerca-hexagonal-grado-8-nc-pav`).
 - **not found** (no image from the brand): kit-reparador-roscas-fracc-volkel, broca-para-concreto-diager, broca-aav-135-split-point, broca-zco-recto-cobalto-bohrcraft, nudo-para-cable-maleable-weston.
 - **missing internal id** (cannot be matched to a brand photo until the variants get an `internalId`): juego-machuelos-av-bohrcraft, dado-tarraja-izquierdo-aav-bohrcraft, dado-tarraja-ajustable-bohrcraft, dado-tarraja-bsp-aav-bohrcraft.
 - **mala calidad** (mapped, replace when a better photo exists): cuenta-hilos-metrico-weston, cortador-vertical-bola-av-2f-weston. `cortador-vertical-av-milimetrico-weston` is tagged `mc` — same meaning?
 - **UNMATCHED** in roscado: the file is named `kit-reparador-roscas-taller-volkel` and that customId exists — confirm and map.
 - 86 products in the covered categories have no image and no review note (list above).
 
-Count: 130 products mapped.
+Count: 130 products mapped (other categories) + 78 mapped in tornilleria = 208 products mapped.
 
 ## 4. Steps
 
