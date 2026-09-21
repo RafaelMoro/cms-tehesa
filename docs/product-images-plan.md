@@ -674,36 +674,36 @@ Products of the categories above that are neither mapped nor mentioned in the re
   - [x] tornillo-cabeza-coche-acero-inoxidable-304 — Tornillo Cabeza Coche de Acero Inoxidable 304
   - [x] tornillo-cabeza-coche-grado-2-galvanizado — Tornillo Cabeza Coche Grado 2 Galvanizado
   - [x] tornillo-cabeza-fijadora-ranurado-din-85-acero-inoxidable-304-metrico — Tornillo Cabeza Fijadora Ranurado DIN 85 de Acero Inoxidable 304 Milimétrico
-  - tornillo-cabeza-gota-combinado-galvanizado — Tornillo Cabeza Gota Combinado Galvanizado
+  - [x] tornillo-cabeza-gota-combinado-galvanizado — Tornillo Cabeza Gota Combinado Galvanizado
   - [x] tornillo-cabeza-gota-ranurado-combinado-acero-inoxidable-304 — Tornillo Cabeza Gota Ranurado y Combinado de Acero Inoxidable 304
-  - tornillo-cabeza-hexagonal-cl-8-8-din-933-931 — Tornillo Cabeza Hexagonal CL 8.8 DIN 933/931
-  - tornillo-cabeza-hexagonal-cl-8-8-fino-din-960-96 — Tornillo Cabeza Hexagonal CL 8.8 Fino DIN 960/96
+  - [x] tornillo-cabeza-hexagonal-cl-8-8-din-933-931 — Tornillo Cabeza Hexagonal CL 8.8 DIN 933/931
+  - [x] tornillo-cabeza-hexagonal-cl-8-8-fino-din-960-96 — Tornillo Cabeza Hexagonal CL 8.8 Fino DIN 960/96
   - [x] tornillo-cabeza-hexagonal-cuerda-corrida-acero-inoxidable-304 — Tornillo Cabeza Hexagonal Cuerda Corrida de Acero Inoxidable 304
   - tornillo-cabeza-hexagonal-din-933-931-acero-inoxidable-304 — Tornillo Cabeza Hexagonal Din 933 / 931 de Acero Inoxidable 304 Milimétrico
-  - tornillo-cabeza-hexagonal-grado-5-negro-fino — Tornillo Cabeza Hexagonal Grado 5 Negro Fino
+  - [x] tornillo-cabeza-hexagonal-grado-5-negro-fino — Tornillo Cabeza Hexagonal Grado 5 Negro Fino
   - [x] tornillo-cabeza-hexagonal-grado-5-negro-unc — Tornillo Cabeza Hexagonal Grado 5 Negro UNC
   - tornillo-cabeza-hexagonal-grado-8-negro-fino — Tornillo Cabeza Hexagonal Grado 8 Negro Fino
-  - tornillo-cabeza-hexagonal-grado-8-negro-std — Tornillo Cabeza Hexagonal Grado 8 Negro STD
-  - tornillo-cabeza-plana-phillips-galvanizado — Tornillo Cabeza Plana Phillips Galvanizado
-  - tornillo-cabeza-plana-phillips-metrico-din-965 — Tornillo Cabeza Plana Phillips Milimétrico DIN 965
+  - [x] tornillo-cabeza-hexagonal-grado-8-negro-std — Tornillo Cabeza Hexagonal Grado 8 Negro STD
+  - [x] tornillo-cabeza-plana-phillips-galvanizado — Tornillo Cabeza Plana Phillips Galvanizado
+  - [x] tornillo-cabeza-plana-phillips-metrico-din-965 — Tornillo Cabeza Plana Phillips Milimétrico DIN 965
   - tornillo-cabeza-plana-ranurado-din-963-acero-inoxidable-304-metrico — Tornillo Cabeza Plana Ranurado DIN 963 de Acero Inoxidable 304 Milimétrico
   - [x] tornillo-cabeza-plana-ranurado-phillips-acero-inoxidable-304 — Tornillo Cabeza Plana Ranurado y Phillips de Acero Inoxidable 304
   - [x] tornillo-cabeza-queso-din-84-acero-inoxidable-304-metrico — Tornillo Cabeza Queso DIN 84 de Acero Inoxidable 304 Milimétrico
-  - tornillo-cabeza-queso-ranurado-din-84-metrico — Tornillo Cabeza Queso Ranurado Milimétrico DIN 84
+  - [x] tornillo-cabeza-queso-ranurado-din-84-metrico — Tornillo Cabeza Queso Ranurado Milimétrico DIN 84
   - [x] tornillo-hex-int-cab-bot-acer-inox-304 — Tornillo de Hexágono Interior Cabeza Boton de Acero Inoxidable 304
   - tornillo-hex-int-cab-bot-acer-inox-304-metrico — Tornillo de Hexágono Interior Cabeza Boton de Acero Inoxidable 304 Milimétrico
-  - tornillo-hex-int-cab-cil-acer-inox-304 — Tornillo de Hexágono Interior Cabeza Cilindro de Acero Inoxidable 304
+  - [x] tornillo-hex-int-cab-cil-acer-inox-304 — Tornillo de Hexágono Interior Cabeza Cilindro de Acero Inoxidable 304
   - tornillo-hex-int-cab-cil-din-912-acer-inox-304-mm — Tornillo de Hexágono Interior Cabeza Cilindro DIN 912 de Acero Inoxidable 304 Milimétrico
-  - tornillo-hex-int-cab-plana-acer-inox-304 — Tornillo de Hexágono Interior Cabeza Plana de Acero Inoxidable 304
+  - [x] tornillo-hex-int-cab-plana-acer-inox-304 — Tornillo de Hexágono Interior Cabeza Plana de Acero Inoxidable 304
   - tornillo-hex-int-cab-plana-din-7991-acer-inox-304-mm — Tornillo de Hexágono Interior Cabeza Plana DIN 7991 de Acero Inoxidable 304 Milimétrico
-  - tornillo-hexagono-interior-cabeza-baja-cilindrica — Tornillo de Hexagono Interior Cabeza Baja Cilindrica
+  - [x] tornillo-hexagono-interior-cabeza-baja-cilindrica — Tornillo de Hexagono Interior Cabeza Baja Cilindrica
   - tornillo-hexagono-interior-cabeza-baja-metrico — Tornillo de Hexágono Interior Cabeza Baja Milimétrico
   - tornillo-hexagono-interior-cabeza-boton — Tornillo de Hexágono Interior Cabeza Botón
-  - tornillo-hexagono-interior-cabeza-boton-std — Tornillo de Hexagono Interior Cabeza Botón STD
+  - [x] tornillo-hexagono-interior-cabeza-boton-std — Tornillo de Hexagono Interior Cabeza Botón STD
   - tornillo-hexagono-interior-cabeza-cilindrica — Tornillo de Hexágono Interior Cabeza Cilíndrica
-  - tornillo-hexagono-interior-cabeza-cilindrica-metrico-din-912 — Tornillo de Hexágono Interior Cabeza Cilindrica Milimétrico DIN 912
-  - tornillo-hexagono-interior-cabeza-plana-metrico-din-7991 — Tornillo de Hexágono Interior Cabeza Plana Milimétrico DIN 7991
-  - tornillo-hexagono-interior-cabeza-plana-std — Tornillo de Hexágono Interior Cabeza Plana STD
+  - [x] tornillo-hexagono-interior-cabeza-cilindrica-metrico-din-912 — Tornillo de Hexágono Interior Cabeza Cilindrica Milimétrico DIN 912
+  - ⓧ tornillo-hexagono-interior-cabeza-plana-metrico-din-7991 — Tornillo de Hexágono Interior Cabeza Plana Milimétrico DIN 7991 (not found)
+  - [x] tornillo-hexagono-interior-cabeza-plana-std — Tornillo de Hexágono Interior Cabeza Plana STD
   - tornillo-hexagono-interior-guia — Tornillo de Hexágono Interior Guia
   - tornillo-hexagono-interior-guia-std — Tornillo de Hexágono Interior Guia STD
   - [x] tornillo-maquina-cabeza-hexagonal-grado-2-cda-corrida-galvanizado — Tornillo Maquina Cabeza Hexagonal Grado 2 CDA Corrida Galvanizado
@@ -711,63 +711,63 @@ Products of the categories above that are neither mapped nor mentioned in the re
 - **tuerca** (26)
   - [x] tuerca-2h-negra — Tuerca 2H Negra
   - tuerca-bellota-acer-inox-304 — Tuerca Bellota de Acero Inoxidable 304
-  - tuerca-bellota-niquelada-nc-nf — Tuerca Bellota Niquelada NC & NF
-  - tuerca-cople-galvanizada — Tuerca Cople Galvanizada
-  - tuerca-flange-aserra-galv-estandar — Tuerca Flange Aserrada Galvanizada Estándar
-  - tuerca-flange-aserra-galv-metr — Tuerca Flange Aserrada Galvanizada Métrica
-  - tuerca-gripco-grado-c-galv-nc-nf — Tuerca Gripco Grado C Galvanizada NC & NF
+  - [x] tuerca-bellota-niquelada-nc-nf — Tuerca Bellota Niquelada NC & NF
+  - ⓧ tuerca-cople-galvanizada — Tuerca Cople Galvanizada (mala calidad)
+  - [x] tuerca-flange-aserra-galv-estandar — Tuerca Flange Aserrada Galvanizada Estándar
+  - [x] tuerca-flange-aserra-galv-metr — Tuerca Flange Aserrada Galvanizada Métrica
+  - [x] tuerca-gripco-grado-c-galv-nc-nf — Tuerca Gripco Grado C Galvanizada NC & NF
   - tuerca-hexagonal-din-934-acer-inox-304 — Tuerca Hexagonal DIN 934 de Acero Inoxidable 304
   - [x] tuerca-hexagonal-grado-5-nc-pav — Tuerca Hexagonal Grado 5 NC Pavonada
   - [x] tuerca-hexagonal-grado-5-nf-pav — Tuerca Hexagonal Grado 5 NF Pavonada
-  - tuerca-hexagonal-grado-8-nc-pav — Tuerca Hexagonal Grado 8 NC Pavonada
+  - ⓧ tuerca-hexagonal-grado-8-nc-pav — Tuerca Hexagonal Grado 8 NC Pavonad (mala calidad)
   - tuerca-hexagonal-inserto-nylon-acero-inoxidable-304-std — Tuerca Hexagonal Inserto de Nylon Acero Inoxidable 304 STD
   - tuerca-hexagonal-inserto-nylon-fina-acero-inoxidable-304 — Tuerca Hexagonal Inserto de Nylon Fina Acero Inoxidable 304
   - tuerca-hexagonal-inserto-nylon-inoxidable-304-milimetrica — Tuerca Hexagonal Inserto de Nylon Inoxidable 304 Milimétrica
   - [x] tuerca-hexagonal-liviana-grado-2-nc-galv — Tuerca Hexagonal Liviana Grado 2 NC Galvanizada
   - [x] tuerca-hexagonal-liviana-grado-2-nc-negra — Tuerca Hexagonal Liviana Grado 2 NC Negra
-  - tuerca-hexagonal-metrica-din-934-negra — Tuerca Hexagonal Métrica DIN 934 Negra
+  - [x] tuerca-hexagonal-metrica-din-934-negra — Tuerca Hexagonal Métrica DIN 934 Negra
   - tuerca-hexagonal-nc-nf-acer-inox-304 — Tuerca Hexagonal NC y NF de Acero Inoxidable 304
-  - tuerca-hexagonal-rosca-acme-gdo-2-negr-maquinada — Tuerca Hexagonal Rosca Acme Grado 2 Negra Maquinada
-  - tuerca-hexagonal-rosca-acme-grado-2-negra-forjada — Tuerca Hexagonal Rosca Acme Grado 2 Negra forjada
-  - tuerca-inserto-nylon-din-985-galv — Tuerca con Inserto de Nylon Métrica - DIN 985 Galvanizada
+  - [x] tuerca-hexagonal-rosca-acme-gdo-2-negr-maquinada — Tuerca Hexagonal Rosca Acme Grado 2 Negra Maquinada
+  - [x] tuerca-hexagonal-rosca-acme-grado-2-negra-forjada — Tuerca Hexagonal Rosca Acme Grado 2 Negra forjada
+  - [x] tuerca-inserto-nylon-din-985-galv — Tuerca con Inserto de Nylon Métrica - DIN 985 Galvanizada
   - [x] tuerca-inserto-nylon-galv-nc — Tuerca con Inserto de Nylon Galvanizada NC
   - [x] tuerca-inserto-nylon-galvanizada-nf — Tuerca con Inserto de Nylon Galvanizada NF
   - [x] tuerca-mariposa-acer-inox-304 — Tuerca Mariposa de Acero Inoxidable 304
-  - tuerca-mariposa-forjada-galvanizada — Tuerca Mariposa Forjada Galvanizada
+  - [x] tuerca-mariposa-forjada-galvanizada — Tuerca Mariposa Forjada Galvanizada
   - [x] tuerca-tino-4-puntas-galv-nc-nf — Tuerca Tino de 4 Puntas Galvanizado NC & NF
 - **pija** (17)
   - [x] accesorios-epdm-calidad-plus-pija-punta-de-broca — Accesorios de E.P.D.M. Calidad Plus para Pija Punta de Broca
-  - accesorios-epdm-pija-punta-de-broca — Accesorios de E.P.D.M para Pija Punta de Broca
+  - [x] accesorios-epdm-pija-punta-de-broca — Accesorios de E.P.D.M para Pija Punta de Broca
   - [x] juego-pijas-cabeza-hexagonal-punta-broca-accesorio-epdm-calidad-plus — Juego de Pijas de Cabeza Hexagonal, Punta Broca y Accesorio de E.P.D.M. Ensamblado Calidad Plus
   - [x] juego-pijas-cabeza-hexagonal-punta-broca-accesorio-epdm-galaxy — Juego de Pijas de Cabeza Hexagonal, Punta Broca y Accesorio de E.P.D.M. Galaxy Ensamblado
   - [x] pija-304-cabeza-fijadora-phillips-acero-inoxidable — Pija 304 de Cabeza Fijadora Phillips de Acero Inoxidable
   - [x] pija-304-cabeza-plana-phillips-acero-inoxidable — Pija 304 de Cabeza Plana Phillips de Acero Inoxidable
   - [x] pija-410-punta-broca-cabeza-hexagonal-acero-inoxidable — Pija 410 Punta de Broca Cabeza Hexagonal de Acero Inoxidable
-  - pija-cabeza-fijadora-combi-latonada — Pija Cabeza Fijadora Combi Latonada
+  - [x] pija-cabeza-fijadora-combi-latonada — Pija Cabeza Fijadora Combi Latonada
   - [x] pija-cabeza-hexagonal-para-lamina — Pija de Cabeza Hexagonal para Lamina
-  - pija-cabeza-plana-phillips-lamina-galvanizada — Pija de Cabeza Plana Phillips para Lamina Galvanizada
+  - [x] pija-cabeza-plana-phillips-lamina-galvanizada — Pija de Cabeza Plana Phillips para Lamina Galvanizada
   - [x] pija-galvanizada-cabeza-hexagonal-madera — Pija Galvanizada de Cabeza Hexagonal para Madera
   - [x] pija-galvanizada-cabeza-hexagonal-punta-broca-calidad — Pija Galvanizada de Cabeza Hexagonal, Punta Broca Calidad Plus
   - pija-galvanizada-galaxy-cabeza-hexagonal-punta-broca — Pija Galvanizada Galaxy de Cabeza Hexagonal, Punta de Broca
-  - pija-galvanizada-punta-fijadora-combinada — Pija Galvanizada de Punta Fijadora Combinada
-  - pija-k-lath-punta-aguda-galvanizada — Pija K-Lath Punta Aguda Galvanizada
-  - pija-k-lath-punta-broca-galvanizado-galaxy — Pija K-Lath Punta de Broca Galvanizado Galaxy
-  - pija-multiusos-phillips-negra — Pija Multiusos Phillips Negra
+  - [x] pija-galvanizada-punta-fijadora-combinada — Pija Galvanizada de Punta Fijadora Combinada
+  - [x] pija-k-lath-punta-aguda-galvanizada — Pija K-Lath Punta Aguda Galvanizada
+  - [x] pija-k-lath-punta-broca-galvanizado-galaxy — Pija K-Lath Punta de Broca Galvanizado Galaxy
+  - [x] pija-multiusos-phillips-negra — Pija Multiusos Phillips Negra
 - **varilla** (9)
-  - varilla-acme-1mt — Varilla Acme de 1 Metro de Largo
+  - [x] varilla-acme-1mt — Varilla Acme de 1 Metro de Largo
   - [x] varilla-grad-2-galv-1mt — Varilla Grado 2 Galvanizado de 1 Metro de Largo
   - [x] varilla-grad-2-galv-3mt — Varilla Grado 2 Galvanizado de 3 Metros de Largo
-  - varilla-grad-5-1mt-neg — Varilla Grado 5 de 1 Metro de Largo Negra
+  - [x] varilla-grad-5-1mt-neg — Varilla Grado 5 de 1 Metro de Largo Negra
   - [x] varilla-negra-b7-1mt — Varilla Negra B7 de 1 Metro de Largo
   - [x] varilla-rosc-acer-inox-304-3ft — Varilla Roscada de Acero Inoxidable 304 de 3 pies
   - varilla-rosc-cl-4.8-neg-1mt-mm — Varilla Roscada Clase 4.8 Negra de 1 Metro de Largo Milimétrica
-  - varilla-rosc-cl-8.8-neg-1mt-mm — Varilla Roscada Clase 8.8 Negra de 1 Metro de Largo Milimétrica
+  - [x] varilla-rosc-cl-8.8-neg-1mt-mm — Varilla Roscada Clase 8.8 Negra de 1 Metro de Largo Milimétrica
   - varilla-rosc-din-975-acer-inox-304-1mt — Varilla Roscada DIN 975 de Acero Inoxidable 304 de 1 Metro de Largo
 - **rondana** (8)
   - [x] rondana-de-presion-acero-inoxidable-304-std — Rondana de Presión de Acero Inoxidable 304 STD
   - rondana-de-presion-din-127-acero-inoxidable-304 — Rondana de Presión DIN 127 de Acero Inoxidable 304
   - [x] rondana-de-presion-galvanizada — Rondana de Presión Galvanizada
-  - rondana-de-presion-metrica-negra-din-127 — Rondana de Presion Métrica Negra DIN 127
+  - [x] rondana-de-presion-metrica-negra-din-127 — Rondana de Presion Métrica Negra DIN 127
   - [x] rondana-de-presion-negra — Rondana de Presión Negra
   - [x] rondana-f-436-negra — Rondana F-436 Negra
   - [x] rondana-plana-acero-inoxidable-304 — Rondana Plana de Acero Inoxidable 304
@@ -775,10 +775,10 @@ Products of the categories above that are neither mapped nor mentioned in the re
 - **opresor** (4)
   - [x] opresor-hexagono-interior-punta-copa-acero-inoxidable-304 — Opresor de Hexágono Interior Punta de Copa Acero Inoxidable 304
   - opresor-hexagono-interior-punta-copa-din-916-acero-inoxidable — Opresor de Hexágono Interior Punta de Copa DIN 916 de Acero Inoxidable
-  - opresor-hexagono-interior-punta-copa-std — Opresor de Hexágono Interior Punta de Copa STD
-  - opresor-punta-copa-mm-din-916-std — Opresor Punta de Copa MM DIN 916 STD
+  - [x] opresor-hexagono-interior-punta-copa-std — Opresor de Hexágono Interior Punta de Copa STD
+  - [x] opresor-punta-copa-mm-din-916-std — Opresor Punta de Copa MM DIN 916 STD
 - **perno** (2)
-  - perno-solido-rectificado-inches — Perno Solido Rectificado en Pulgadas
+  - [x] perno-solido-rectificado-inches — Perno Solido Rectificado en Pulgadas
   - perno-solido-rectificado-mm — Perno Solido Rectificado en Millímetros
 - **remache** (2)
   - remache-pop-ancha-acero-inoxidable-304 — Remache Pop a la ancha de Acero Inoxidable Tipo 304
