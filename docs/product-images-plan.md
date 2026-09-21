@@ -18,7 +18,7 @@ Frontend fallback: products without `imageUrl` should render a category placehol
 
 ## 2. Product → image map (by customId)
 
-Source of truth for `data/product-images.json`. Notes in parentheses come from the review. `tornilleria` is not mapped yet.
+Source of truth for `data/product-images.json`. Notes in parentheses come from the review. `tornilleria` is now mostly mapped (see below).
 
 ### herramientas-marcado
 
@@ -336,9 +336,182 @@ Source of truth for `data/product-images.json`. Notes in parentheses come from t
 - llave-jacobs-weston
   - https://res.cloudinary.com/dov7g4avx/image/upload/v1789914098/llave-jacobs-weston_jy2q6s.webp
 
+### sellado-taponado
+
+Found alongside the tornilleria batch upload; not part of that category.
+
+- tapon-dry-seal
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025849/tapon-dry-seal_reezsm.webp
+
 ### tornilleria
 
-- pending — whole category still to be mapped (see section 3)
+81 mapped, 3 flagged (1 not found, 2 mala calidad without a photo yet), 23 still without a mapped image (see section 3).
+
+- tornillo-cabeza-coche-acero-inoxidable-304
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025851/tornillo-cabeza-coche-acero-inoxidable-304_ecbqvp.webp
+- tornillo-cabeza-coche-grado-2-galvanizado
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025852/tornillo-cabeza-coche-grado-2-galvanizado_gknqi6.webp
+- tornillo-cabeza-fijadora-ranurado-din-85-acero-inoxidable-304-metrico
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025854/tornillo-cabeza-fijadora-ranurado-din-85-acero-inoxidable-304-metrico_oma1sd.webp
+- tornillo-cabeza-gota-combinado-galvanizado
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025855/tornillo-cabeza-gota-combinado-galvanizado_y7hkly.webp
+- tornillo-cabeza-gota-ranurado-combinado-acero-inoxidable-304
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025856/tornillo-cabeza-gota-ranurado-combinado-acero-inoxidable-304_feoedh.webp
+- tornillo-cabeza-hexagonal-cl-8-8-din-933-931
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025857/tornillo-cabeza-hexagonal-cl-8-8-din-933-931_cnolh3.webp
+- tornillo-cabeza-hexagonal-cl-8-8-fino-din-960-96
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025859/tornillo-cabeza-hexagonal-cl-8-8-fino-din-960-96_hbxqbd.webp
+- tornillo-cabeza-hexagonal-cuerda-corrida-acero-inoxidable-304
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025860/tornillo-cabeza-hexagonal-cuerda-corrida-acero-inoxidable-304_re6uhs.webp
+- tornillo-cabeza-hexagonal-grado-5-negro-fino
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025861/tornillo-cabeza-hexagonal-grado-5-negro-fino_lzn9of.webp
+- tornillo-cabeza-hexagonal-grado-5-negro-unc
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025862/tornillo-cabeza-hexagonal-grado-5-negro-unc_liapr1.webp
+- tornillo-cabeza-hexagonal-grado-8-negro-std
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025863/tornillo-cabeza-hexagonal-grado-8-negro-std_b1yzlv.webp
+- tornillo-cabeza-plana-phillips-galvanizado
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025865/tornillo-cabeza-plana-phillips-galvanizado_eqp8ze.webp
+- tornillo-cabeza-plana-phillips-metrico-din-965
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025866/tornillo-cabeza-plana-phillips-metrico-din-965_xhbmz8.webp
+- tornillo-cabeza-plana-ranurado-phillips-acero-inoxidable-304
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025867/tornillo-cabeza-plana-ranurado-phillips-acero-inoxidable-304_kntjiq.webp
+- tornillo-cabeza-queso-din-84-acero-inoxidable-304-metrico
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025868/tornillo-cabeza-queso-din-84-acero-inoxidable-304-metrico_t626go.webp
+- tornillo-cabeza-queso-ranurado-din-84-metrico
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025869/tornillo-cabeza-queso-ranurado-din-84-metrico_wfetgl.webp
+- tornillo-hex-int-cab-bot-acer-inox-304
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025878/tornillo-hex-int-cab-bot-acer-inox-304_yhegmx.webp
+- tornillo-hex-int-cab-cil-acer-inox-304
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025879/tornillo-hex-int-cab-cil-acer-inox-304_em43bo.webp
+- tornillo-hex-int-cab-plana-acer-inox-304
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025880/tornillo-hex-int-cab-plana-acer-inox-304_jv8yus.webp
+- tornillo-hexagono-interior-cabeza-baja-cilindrica
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025871/tornillo-hexagono-interior-cabeza-baja-cilindrica_mkq1a0.webp
+- tornillo-hexagono-interior-cabeza-baja-metrico
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025872/tornillo-hexagono-interior-cabeza-baja-metrico_r24d7j.webp
+- tornillo-hexagono-interior-cabeza-boton-std
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025873/tornillo-hexagono-interior-cabeza-boton-std_jggvri.webp
+- tornillo-hexagono-interior-cabeza-cilindrica-metrico-din-912
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025874/tornillo-hexagono-interior-cabeza-cilindrica-metrico-din-912_lfrpty.webp
+- tornillo-hexagono-interior-cabeza-plana-metrico-din-7991 — not found
+- tornillo-hexagono-interior-cabeza-plana-std
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025876/tornillo-hexagono-interior-cabeza-plana-std_p2dx36.webp
+- tornillo-hexagono-interior-guia-std
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025877/tornillo-hexagono-interior-guia-std_qkrjbo.webp
+- tornillo-maquina-cabeza-hexagonal-grado-2-cda-corrida-galvanizado
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025882/tornillo-maquina-cabeza-hexagonal-grado-2-cda-corrida-galvanizado_yivy5b.webp
+- tuerca-2h-negra
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025883/tuerca-2h-negra_c1rhpl.webp
+- tuerca-bellota-niquelada-nc-nf
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025884/tuerca-bellota-niquelada-nc-nf_cro6zh.webp
+- tuerca-cople-galvanizada — mala calidad, no image captured yet
+- tuerca-flange-aserra-galv-estandar
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025885/tuerca-flange-aserra-galv-estandar_dodemy.webp
+- tuerca-flange-aserra-galv-metr
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025788/tuerca-flange-aserra-galv-metr_e40xwl.webp
+- tuerca-gripco-grado-c-galv-nc-nf
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025789/tuerca-gripco-grado-c-galv-nc-nf_wxcfzv.webp
+- tuerca-hexagonal-grado-5-nc-pav
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025790/tuerca-hexagonal-grado-5-nc-pav_cunrz2.webp
+- tuerca-hexagonal-grado-5-nf-pav
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025791/tuerca-hexagonal-grado-5-nf-pav_xm75rz.webp
+- tuerca-hexagonal-grado-8-nc-pav — mala calidad, no image captured yet
+- tuerca-hexagonal-liviana-grado-2-nc-galv
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025793/tuerca-hexagonal-liviana-grado-2-nc-galv_jqn377.webp
+- tuerca-hexagonal-liviana-grado-2-nc-negra
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025794/tuerca-hexagonal-liviana-grado-2-nc-negra_slxiu5.webp
+- tuerca-hexagonal-metrica-din-934-negra
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025795/tuerca-hexagonal-metrica-din-934-negra_f7mggq.webp
+- tuerca-hexagonal-rosca-acme-gdo-2-negr-maquinada
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025796/tuerca-hexagonal-rosca-acme-gdo-2-negr-maquinada_owldyg.webp
+- tuerca-hexagonal-rosca-acme-grado-2-negra-forjada
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025797/tuerca-hexagonal-rosca-acme-grado-2-negra-forjada_l31lea.webp
+- tuerca-inserto-nylon-din-985-galv
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025798/tuerca-inserto-nylon-din-985-galv_b3putv.webp
+- tuerca-inserto-nylon-galv-nc
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025801/tuerca-inserto-nylon-galv-nc_ykpg0g.webp
+- tuerca-inserto-nylon-galvanizada-nf
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025800/tuerca-inserto-nylon-galvanizada-nf_cpfg9u.webp
+- tuerca-mariposa-acer-inox-304
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025802/tuerca-mariposa-acer-inox-304_gqxu2j.webp
+- tuerca-mariposa-forjada-galvanizada
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025803/tuerca-mariposa-forjada-galvanizada_th0h9l.webp
+- tuerca-tino-4-puntas-galv-nc-nf
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025804/tuerca-tino-4-puntas-galv-nc-nf_iangq5.webp
+- accesorios-epdm-calidad-plus-pija-punta-de-broca
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025814/accesorios-epdm-calidad-plus-pija-punta-de-broca_e3lwyf.webp
+- accesorios-epdm-pija-punta-de-broca
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025815/accesorios-epdm-pija-punta-de-broca_wgihmd.webp
+- juego-pijas-cabeza-hexagonal-punta-broca-accesorio-epdm-calidad-plus
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025817/juego-pijas-cabeza-hexagonal-punta-broca-accesorio-epdm-calidad-plus_grgvre.webp
+- juego-pijas-cabeza-hexagonal-punta-broca-accesorio-epdm-galaxy
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025818/juego-pijas-cabeza-hexagonal-punta-broca-accesorio-epdm-galaxy_mpp6hz.webp
+- pija-304-cabeza-fijadora-phillips-acero-inoxidable
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025826/pija-304-cabeza-fijadora-phillips-acero-inoxidable_lbj2mi.webp
+- pija-304-cabeza-plana-phillips-acero-inoxidable
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025827/pija-304-cabeza-plana-phillips-acero-inoxidable_l2fgjz.webp
+- pija-410-punta-broca-cabeza-hexagonal-acero-inoxidable
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025829/pija-410-punta-broca-cabeza-hexagonal-acero-inoxidable_dcxe5s.webp
+- pija-cabeza-fijadora-combi-latonada
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025830/pija-cabeza-fijadora-combi-latonada_jxe8en.webp
+- pija-cabeza-hexagonal-para-lamina
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025831/pija-cabeza-hexagonal-para-lamina_f2umoi.webp
+- pija-cabeza-plana-phillips-lamina-galvanizada
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025832/pija-cabeza-plana-phillips-lamina-galvanizada_iz22nd.webp
+- pija-galvanizada-cabeza-hexagonal-madera
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025833/pija-galvanizada-cabeza-hexagonal-madera_jjspiy.webp
+- pija-galvanizada-cabeza-hexagonal-punta-broca-calidad
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025835/pija-galvanizada-cabeza-hexagonal-punta-broca-calidad_z0usra.webp
+- pija-galvanizada-punta-fijadora-combinada
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025836/pija-galvanizada-punta-fijadora-combinada_f02x9t.webp
+- pija-k-lath-punta-aguda-galvanizada
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025837/pija-k-lath-punta-aguda-galvanizada_xgcws8.webp
+- pija-k-lath-punta-broca-galvanizado-galaxy
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025838/pija-k-lath-punta-broca-galvanizado-galaxy_jqauaa.webp
+- pija-multiusos-phillips-negra
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025839/pija-multiusos-phillips-negra_vduwrr.webp
+- varilla-acme-1mt
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025806/varilla-acme-1mt_va0fkv.webp
+- varilla-grad-2-galv-1mt
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025807/varilla-grad-2-galv-1mt_xwj86t.webp
+- varilla-grad-2-galv-3mt
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025808/varilla-grad-2-galv-3mt_bck3hj.webp
+- varilla-grad-5-1mt-neg
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025809/varilla-grad-5-1mt-neg_njknro.webp
+- varilla-negra-b7-1mt
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025810/varilla-negra-b7-1mt_vgeivj.webp
+- varilla-rosc-acer-inox-304-3ft
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025812/varilla-rosc-acer-inox-304-3f_ypezli.webp
+- varilla-rosc-cl-8.8-neg-1mt-mm
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025813/varilla-rosc-cl-8.8-neg-1mt-mm_egmyin.webp
+- rondana-de-presion-acero-inoxidable-304-std
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025842/rondana-de-presion-acero-inoxidable-304-std_op2isy.webp
+- rondana-de-presion-galvanizada
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025843/rondana-de-presion-galvanizada_zkv20o.webp
+- rondana-de-presion-metrica-negra-din-127
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025844/rondana-de-presion-metrica-negra-din-12_x8wj2y.webp
+- rondana-de-presion-negra
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025845/rondana-de-presion-negra_kmkshm.webp
+- rondana-f-436-negra
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025847/rondana-f-436-negra_ltf09n.webp
+- rondana-plana-acero-inoxidable-304
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025848/rondana-plana-acero-inoxidable-304_z23l5c.webp
+- opresor-hexagono-interior-punta-copa-acero-inoxidable-304
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025820/opresor-hexagono-interior-punta-copa-acero-inoxidable-304_u52ti7.webp
+- opresor-hexagono-interior-punta-copa-std
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025821/opresor-hexagono-interior-punta-copa-std_zzoowo.webp
+- opresor-punta-copa-mm-din-916-std
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025823/opresor-punta-copa-mm-din-916-std_jeftxm.webp
+- perno-solido-rectificado-inches
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025824/perno-solido-rectificado-inches_dzyhlm.webp
+- perno-solido-rectificado-mm
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025825/perno-solido-rectificado-mm_lxtd0l.webp
+- remache-pop-corta-acero-inoxidable-304
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025841/remache-pop-corta-acero-inoxidable-304_rvan45.webp
+- nudo-maleable-acero-inoxidable-304
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025819/nudo-maleable-acero-inoxidable-304_hoterp.webp
+- taquete-arpon-acero-inoxidable-304
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790025850/taquete-arpon-acero-inoxidable-304_i2zhrs.webp
 
 ### Still without image in the categories above
 
@@ -837,7 +1010,7 @@ Products of the categories above that are neither mapped nor mentioned in the re
 
 ### tornilleria — pending products (107)
 
-`categoryCustomId: "tornilleria"` in `../products-tehesa/data`, grouped by `subcategory`. 78 mapped (`[x]`), 3 flagged (`ⓧ`: 1 not found, 2 mala calidad), 26 still without a mapped image (see section 3).
+`categoryCustomId: "tornilleria"` in `../products-tehesa/data`, grouped by `subcategory`. 81 mapped (`[x]`, see the actual URLs in section 2), 3 flagged (`ⓧ`: 1 not found, 2 mala calidad), 23 still without a mapped image (see section 3).
 
 - **tornillos** (37)
   - [x] tornillo-cabeza-coche-acero-inoxidable-304 — Tornillo Cabeza Coche de Acero Inoxidable 304
@@ -866,7 +1039,7 @@ Products of the categories above that are neither mapped nor mentioned in the re
   - [x] tornillo-hex-int-cab-plana-acer-inox-304 — Tornillo de Hexágono Interior Cabeza Plana de Acero Inoxidable 304
   - tornillo-hex-int-cab-plana-din-7991-acer-inox-304-mm — Tornillo de Hexágono Interior Cabeza Plana DIN 7991 de Acero Inoxidable 304 Milimétrico
   - [x] tornillo-hexagono-interior-cabeza-baja-cilindrica — Tornillo de Hexagono Interior Cabeza Baja Cilindrica
-  - tornillo-hexagono-interior-cabeza-baja-metrico — Tornillo de Hexágono Interior Cabeza Baja Milimétrico
+  - [x] tornillo-hexagono-interior-cabeza-baja-metrico — Tornillo de Hexágono Interior Cabeza Baja Milimétrico
   - tornillo-hexagono-interior-cabeza-boton — Tornillo de Hexágono Interior Cabeza Botón
   - [x] tornillo-hexagono-interior-cabeza-boton-std — Tornillo de Hexagono Interior Cabeza Botón STD
   - tornillo-hexagono-interior-cabeza-cilindrica — Tornillo de Hexágono Interior Cabeza Cilíndrica
@@ -874,7 +1047,7 @@ Products of the categories above that are neither mapped nor mentioned in the re
   - ⓧ tornillo-hexagono-interior-cabeza-plana-metrico-din-7991 — Tornillo de Hexágono Interior Cabeza Plana Milimétrico DIN 7991 (not found)
   - [x] tornillo-hexagono-interior-cabeza-plana-std — Tornillo de Hexágono Interior Cabeza Plana STD
   - tornillo-hexagono-interior-guia — Tornillo de Hexágono Interior Guia
-  - tornillo-hexagono-interior-guia-std — Tornillo de Hexágono Interior Guia STD
+  - [x] tornillo-hexagono-interior-guia-std — Tornillo de Hexágono Interior Guia STD
   - [x] tornillo-maquina-cabeza-hexagonal-grado-2-cda-corrida-galvanizado — Tornillo Maquina Cabeza Hexagonal Grado 2 CDA Corrida Galvanizado
   - tornillo-ojo-forjado-weston — Tornillo Ojo Forjado
 - **tuerca** (26)
@@ -948,7 +1121,7 @@ Products of the categories above that are neither mapped nor mentioned in the re
   - [x] opresor-punta-copa-mm-din-916-std — Opresor Punta de Copa MM DIN 916 STD
 - **perno** (2)
   - [x] perno-solido-rectificado-inches — Perno Solido Rectificado en Pulgadas
-  - perno-solido-rectificado-mm — Perno Solido Rectificado en Millímetros
+  - [x] perno-solido-rectificado-mm — Perno Solido Rectificado en Millímetros
 - **remache** (2)
   - remache-pop-ancha-acero-inoxidable-304 — Remache Pop a la ancha de Acero Inoxidable Tipo 304
   - [x] remache-pop-corta-acero-inoxidable-304 — Remache Pop a la corta de Acero Inoxidable Tipo 304
@@ -961,14 +1134,14 @@ Total: 107 products.
 
 ## 3. Pending
 
-- **tornilleria** (107 products, see section 2 checklist): 78 mapped, 26 still without a mapped image, 1 not found (`tornillo-hexagono-interior-cabeza-plana-metrico-din-7991`), 2 mala calidad (`tuerca-cople-galvanizada`, `tuerca-hexagonal-grado-8-nc-pav`).
+- **tornilleria** (107 products, mapped list now in section 2): 81 mapped and injected into `data/product-images.json` / the DB, 23 still without a mapped image, 1 not found (`tornillo-hexagono-interior-cabeza-plana-metrico-din-7991`), 2 mala calidad with no photo captured yet (`tuerca-cople-galvanizada`, `tuerca-hexagonal-grado-8-nc-pav`).
 - **not found** (no image from the brand): kit-reparador-roscas-fracc-volkel, broca-para-concreto-diager, broca-aav-135-split-point, broca-zco-recto-cobalto-bohrcraft, nudo-para-cable-maleable-weston.
 - **missing internal id** (cannot be matched to a brand photo until the variants get an `internalId`): juego-machuelos-av-bohrcraft, dado-tarraja-izquierdo-aav-bohrcraft, dado-tarraja-ajustable-bohrcraft, dado-tarraja-bsp-aav-bohrcraft.
 - **mala calidad** (mapped, replace when a better photo exists): cuenta-hilos-metrico-weston, cortador-vertical-bola-av-2f-weston. `cortador-vertical-av-milimetrico-weston` is tagged `mc` — same meaning?
 - **UNMATCHED** in roscado: the file is named `kit-reparador-roscas-taller-volkel` and that customId exists — confirm and map.
 - 86 products in the covered categories have no image and no review note (list above).
 
-Count: 130 products mapped (other categories) + 78 mapped in tornilleria = 208 products mapped.
+Count: 130 products mapped (other categories) + 81 mapped in tornilleria + 1 in sellado-taponado (`tapon-dry-seal`, found in the same batch) = 212 products mapped and injected via `npm run images:products`.
 
 ## 4. Steps
 
