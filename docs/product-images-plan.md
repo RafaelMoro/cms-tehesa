@@ -64,24 +64,24 @@ Source of truth for `data/product-images.json`. Notes in parentheses come from t
   - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912830/juego-limas-diamantadas-weston_pi71go.webp
 - lima-rotativa-doble-corte-weston
   - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912832/lima-rotativa-doble-corte-weston_ln3b17.webp
-- cortador-vertical-bola-av-2f-weston (mala calidad)
-  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912826/cortador-vertical-bola-av-2f-weston_nkxao2.webp
+- cortador-vertical-bola-av-2f-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790090528/cortador-vertical-bola-av-2f-weston_xtmfcq.webp
 - cortador-anular-titanio-weston
   - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912823/cortador-anular-titanio-weston_cdhxzs.webp
 - cortador-desbaste-cobalto-4f-weston
-  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912823/cortador-desbaste-cobalto-4f-weston_sb8r8r.webp
-- cortador-vertical-av-milimetrico-weston (mc)
-  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912826/cortador-vertical-av-milimetrico-weston_gsizwr.webp
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790090530/cortador-desbaste-cobalto-4f-weston_ofsa1d.webp
+- cortador-vertical-av-milimetrico-weston
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790090528/cortador-vertical-av-milimetrico-weston_cgznbb.webp
 - cortador-vertical-4f-titanio-weston
   - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912823/cortador-vertical-4f-titanio-weston_by4lub.webp
 - cortador-vertical-av-4f-lgo-weston
-  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912825/cortador-vertical-av-4f-lgo-weston_jwgqq4.webp
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790090528/cortador-vertical-av-4f-lgo-weston_uhyyvn.webp
 - lima-rotativa-weston
   - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912832/lima-rotativa-weston_rvfahp.webp
 - cortador-vertical-radial-carburo-4f-weston
   - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912829/cortador-vertical-radial-carburo-4f-weston_wi7mma.webp
 - cortador-vertical-ext-lgo-4f-weston
-  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912829/cortador-vertical-ext-lgo-4f-weston_puhns1.webp
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790090528/cortador-vertical-ext-lgo-4f-weston_zr0shs.webp
 - cortador-vertical-radial-carburo-altin-weston
   - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912830/cortador-vertical-radial-carburo-altin-weston_ipstji.webp
 - cortador-vertical-carburo-4f-weston
@@ -95,7 +95,7 @@ Source of truth for `data/product-images.json`. Notes in parentheses come from t
 - cortador-vertical-carburo-milimetrico-weston
   - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912828/cortador-vertical-carburo-milimetrico-weston_w1cb3z.webp
 - cortador-vertical-carburo-ctian-weston
-  - https://res.cloudinary.com/dov7g4avx/image/upload/v1789912827/cortador-vertical-carburo-ctian-weston_ahklnf.webp
+  - https://res.cloudinary.com/dov7g4avx/image/upload/v1790090528/cortador-vertical-carburo-ctian-weston_rqulpk.webp
 
 ### adhesivos-selladores
 
