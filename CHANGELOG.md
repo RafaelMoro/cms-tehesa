@@ -1,3 +1,9 @@
+## v1.3.1 (2026-09-22)
+
+### Pull Requests
+[#34](https://github.com/RafaelMoro/cms-tehesa/pull/34) | Replace low quality "tornilleria" images and update images plan
+
+
 ## v1.3.0 (2026-09-22)
 
 ### Pull Requests
