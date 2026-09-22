@@ -51,20 +51,20 @@ console work. Read this section before doing anything.
 **Every `[HUMAN]` step, in order.** This is the whole list of things the agent will stop and
 ask you for. Each links to the section with the click-by-click detail.
 
-| # | Step | You hand back |
-|---|---|---|
-| 1 | [§1.0](#10-generate-the-ssh-keypair--do-this-first-locally) Generate SSH keypair locally | nothing — the agent finds it at `~/.ssh/tehesa_lightsail` |
-| 2 | [§1.1](#11-create-the-instance) Create the Lightsail instance | instance RAM size |
-| 3 | [§1.2](#12-attach-a-static-ip) Attach a static IP | `<STATIC_IP>` |
-| 4 | [§1.3](#13-dns) Create the DNS A record (DNS-only if Cloudflare) | "done" |
-| 5 | [§1.4](#14-firewall) Add HTTPS 443 to the firewall | "done" |
-| 6 | [§2.4](#24-human-create-the-first-admin-user) Register the first admin at `https://<DOMAIN>/admin` | "logged in, survived a refresh" |
-| 7 | [§3.1](#31-human-mint-a-transfer-token) Mint a transfer token, put it in local `.env`, run `npm run transfer:prod` | the summary table it prints |
-| 8 | [§8](#8-phase-4-human--wire-the-frontend) Empty the Public role, mint a read-only API token, wire the frontend | "done" |
-| 9 | [§5.1](#51-human-bucket-and-iam-user) S3 bucket + IAM user + access key, then `ssh tehesa aws configure` | "done" |
-| 10 | [§5.4](#54-human-lightsail-snapshots) Enable automatic snapshots | "done" |
-| 11 | [§6.1](#61-human-repo-secrets) Deploy keypair + 3 GitHub secrets | "done" |
-| 12 | [§6.2](#62-agent-githubworkflowsdeployyml) Open the PR, merge it, confirm the *Deploy to Lightsail* run is green | run URL |
+| #   | Step                                                                                                               | You hand back                                             |
+| --- | ------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------- |
+| 1   | [§1.0](#10-generate-the-ssh-keypair--do-this-first-locally) Generate SSH keypair locally                           | nothing — the agent finds it at `~/.ssh/tehesa_lightsail` |
+| 2   | [§1.1](#11-create-the-instance) Create the Lightsail instance                                                      | instance RAM size                                         |
+| 3   | [§1.2](#12-attach-a-static-ip) Attach a static IP                                                                  | `<STATIC_IP>`                                             |
+| 4   | [§1.3](#13-dns) Create the DNS A record (DNS-only if Cloudflare)                                                   | "done"                                                    |
+| 5   | [§1.4](#14-firewall) Add HTTPS 443 to the firewall                                                                 | "done"                                                    |
+| 6   | [§2.4](#24-human-create-the-first-admin-user) Register the first admin at `https://<DOMAIN>/admin`                 | "logged in, survived a refresh"                           |
+| 7   | [§3.1](#31-human-mint-a-transfer-token) Mint a transfer token, put it in local `.env`, run `npm run transfer:prod` | the summary table it prints                               |
+| 8   | [§8](#8-phase-4-human--wire-the-frontend) Empty the Public role, mint a read-only API token, wire the frontend     | "done"                                                    |
+| 9   | [§5.1](#51-human-bucket-and-iam-user) S3 bucket + IAM user + access key, then `ssh tehesa aws configure`           | "done"                                                    |
+| 10  | [§5.4](#54-human-lightsail-snapshots) Enable automatic snapshots                                                   | "done"                                                    |
+| 11  | [§6.1](#61-human-repo-secrets) Deploy keypair + 3 GitHub secrets                                                   | "done"                                                    |
+| 12  | [§6.2](#62-agent-githubworkflowsdeployyml) Open the PR, merge it, confirm the _Deploy to Lightsail_ run is green   | run URL                                                   |
 
 ---
 
@@ -478,10 +478,10 @@ the instance already ships with SSH 22 (anywhere) and HTTP 80 (anywhere).
 
 To add 443: instance → **Networking** tab → IPv4 Firewall → **+ Add rule** → set exactly:
 
-| Field | Value |
-|---|---|
-| Application | `HTTPS` (this auto-fills Protocol `TCP`, Port `443`) |
-| Source IP addresses, Preset | `Anywhere IPv4` (`0.0.0.0/0`) |
+| Field                       | Value                                                |
+| --------------------------- | ---------------------------------------------------- |
+| Application                 | `HTTPS` (this auto-fills Protocol `TCP`, Port `443`) |
+| Source IP addresses, Preset | `Anywhere IPv4` (`0.0.0.0/0`)                        |
 
 → **Add rule** (the orange button, not "Add" which adds another source row). It applies
 immediately; no restart. Note Let's Encrypt only needs port 80, so **Caddy will obtain a
@@ -802,27 +802,27 @@ RDS later.
 Three console tasks. Check the region selector (top right) says **US East (N. Virginia)
 `us-east-1`** before each.
 
-**1. S3 bucket** — console → S3 → *Create bucket*:
+**1. S3 bucket** — console → S3 → _Create bucket_:
 
-| Field | Value |
-|---|---|
-| Bucket name | `<S3_BUCKET>` |
-| Region | US East (N. Virginia) |
+| Field               | Value                            |
+| ------------------- | -------------------------------- |
+| Bucket name         | `<S3_BUCKET>`                    |
+| Region              | US East (N. Virginia)            |
 | Block Public Access | leave **all four boxes checked** |
-| Default encryption | SSE-S3 (the default) |
+| Default encryption  | SSE-S3 (the default)             |
 
-→ *Create bucket*. Then open the bucket → **Management** tab → *Create lifecycle rule*:
-name `expire-pg-dumps`, scope *Limit the scope using filters* → Prefix `pg/`, action
-**Expire current versions of objects** → 30 days → *Create rule*.
+→ _Create bucket_. Then open the bucket → **Management** tab → _Create lifecycle rule_:
+name `expire-pg-dumps`, scope _Limit the scope using filters_ → Prefix `pg/`, action
+**Expire current versions of objects** → 30 days → _Create rule_.
 
-**2. IAM user** — console → IAM → Users → *Create user*:
+**2. IAM user** — console → IAM → Users → _Create user_:
 
 - User name `tehesa-strapi-backup`. **Do not** tick "Provide user access to the AWS
   Management Console" — this user is for a script, not a person.
-- Permissions: *Attach policies directly* → attach nothing → Next → *Create user*.
-- Open the user → **Permissions** tab → *Add permissions* → **Create inline policy** →
+- Permissions: _Attach policies directly_ → attach nothing → Next → _Create user_.
+- Open the user → **Permissions** tab → _Add permissions_ → **Create inline policy** →
   **JSON** tab → paste the policy below → Next → name `tehesa-strapi-backup-put` →
-  *Create policy*.
+  _Create policy_.
 
 Write-only, single prefix, no delete:
 
@@ -840,8 +840,8 @@ Write-only, single prefix, no delete:
 ```
 
 **3. Access key** — this is where `<AWS_ACCESS_KEY_ID>` and `<AWS_SECRET_ACCESS_KEY>` come
-from. Same user → **Security credentials** tab → *Access keys* → **Create access key** → use
-case **Application running outside AWS** → Next → *Create access key*. The page shows the
+from. Same user → **Security credentials** tab → _Access keys_ → **Create access key** → use
+case **Application running outside AWS** → Next → _Create access key_. The page shows the
 Access key ID (`AKIA…`) and the Secret access key. **The secret is shown once** — copy both
 now or download the `.csv`.
 
@@ -958,8 +958,8 @@ matters). Images build on GitHub's runners and the box only pulls.
 Do the keypair block below **first**, then the secrets. Order matters: `SSH_KEY` is the
 private half of the key you are about to create.
 
-GitHub → repo → **Settings** → *Secrets and variables* → **Actions** → *New repository
-secret*, three times:
+GitHub → repo → **Settings** → _Secrets and variables_ → **Actions** → _New repository
+secret_, three times:
 
 | Secret     | Value                                                |
 | ---------- | ---------------------------------------------------- |
@@ -989,8 +989,8 @@ private copy if you prefer — the box and the secret are the only places it nee
 cat ~/.ssh/tehesa_deploy     # copy ALL of this into the SSH_KEY secret
 ```
 
-**If you skip this section** the *Build and push* step still succeeds (the image lands in
-GHCR) and only *Deploy over SSH* fails. That is what happened on the first run: symptom is a
+**If you skip this section** the _Build and push_ step still succeeds (the image lands in
+GHCR) and only _Deploy over SSH_ fails. That is what happened on the first run: symptom is a
 red run with every step green except the last. Fix the secrets and re-run — no code change.
 
 ### 6.2 `[AGENT]` `.github/workflows/deploy.yml`
@@ -1078,8 +1078,8 @@ push step fails outright. `${GITHUB_REPOSITORY,,}` is bash lowercasing, so the t
 `ghcr.io/rafaelmoro/cms-tehesa`. Do not "simplify" it back.
 
 **To trigger the first run:** open the PR `feat/… → develop` with a `minor` label, merge it.
-*Deploy to Lightsail* appears under the repo's **Actions** tab within a minute. To re-run
-without a new merge: Actions → *Deploy to Lightsail* → **Run workflow** → branch `develop`.
+_Deploy to Lightsail_ appears under the repo's **Actions** tab within a minute. To re-run
+without a new merge: Actions → _Deploy to Lightsail_ → **Run workflow** → branch `develop`.
 
 **Done when:** the run is green, and on the box `docker compose images` shows the `strapi`
 service on `ghcr.io/rafaelmoro/cms-tehesa:<sha>`, not `store-tehesa-api:local`. Then delete
@@ -1199,3 +1199,44 @@ The single deferred decision worth revisiting on a schedule is **RDS**. The argu
 deferring it is write frequency, not database size: with price updates every three months,
 "last night's dump" and "the current state" are almost always identical. That stops being
 true the moment editing gets frequent.
+
+---
+
+## 14. Resizing an instance (as done 2026-09-18)
+
+Lightsail has no in-place plan change — resizing is snapshot the running instance → create a
+new instance from the bundle you want → reattach the static IP → delete the old instance. Done
+here to move from the $5/512 MB box to the $12/2 GB plan once the admin started feeling the RAM
+ceiling (§13's own trigger).
+
+**`[HUMAN]` checklist, in order:**
+
+1. Create a manual snapshot of the running old instance (or use an existing automatic one).
+2. Create the new instance from that snapshot, on the target bundle.
+3. Detach the static IP from the old instance and attach it to the new one. DNS needs no
+   change — it points at the static IP, not the instance.
+4. Re-verify SSH (§1.6) and the deployed stack on the new instance before touching the old one.
+   Same `<STATIC_IP>` and `~/.ssh/tehesa_lightsail` key carry over unchanged; nothing in Phase 6
+   CI (`SSH_HOST` secret) needs updating either, for the same reason.
+5. **Do not rely on "stopped" as a cost-saving state.** Lightsail bills the bundle price flat,
+   running or stopped — a stopped instance costs exactly what a running one costs. The only way
+   to stop paying for it is deleting it.
+6. Before deleting the old instance: confirm the static IP is confirmed attached to the new one
+   (step 3), confirm at least one nightly S3 backup has run from the new instance
+   (`aws s3 ls s3://<S3_BUCKET>/pg/`), and confirm the row counts on the new instance match
+   (§3.3). Only power the old instance back on first if one of those three is unverified and
+   something on it hasn't been captured elsewhere — otherwise there is nothing on a fully
+   migrated box worth booting for.
+7. Delete the old instance. Its console prompt offers to keep or discard existing automatic
+   snapshots — discard them unless there's a specific reason to keep one, since each kept
+   snapshot bills separately for storage.
+
+**Done when:** the old instance no longer appears in the Lightsail instance list, the static IP
+shows attached to the new instance, and `https://<DOMAIN>/admin` still serves from it.
+
+My notes:
+
+- Create new instance
+- Attach static ip by going in the lightsail instance -> networking -> set static ip
+- Update dns record
+- Add firewall in lightsail instance the part of [firewall](#14-firewall)

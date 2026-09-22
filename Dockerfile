@@ -10,6 +10,9 @@ RUN npm ci
 # ---- build: compile server TS + admin panel ----
 FROM deps AS build
 ENV NODE_ENV=production
+# Node's default V8 heap ceiling is too low for the admin panel bundle on a 2 GB box;
+# it hits "JavaScript heap out of memory" well before the 2 GB swapfile is ever touched.
+ENV NODE_OPTIONS=--max-old-space-size=3072
 COPY . .
 RUN npm run build
 

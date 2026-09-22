@@ -5,8 +5,8 @@ const path = require('path');
 const mime = require('mime-types');
 const { categories, global, brands } = require('../data/data.json');
 
-// Load all products.*.json files from tehesa-products/data subdirectories
-const dataPath = path.join(__dirname, '../../tehesa-products/data');
+// Load all products.*.json files from products-tehesa/data subdirectories
+const dataPath = path.join(__dirname, '../../products-tehesa/data');
 const products = [];
 
 function loadProductsFromDirectory(dirPath) {
@@ -130,6 +130,7 @@ async function createEntry({ model, entry }) {
     // Actually create the entry in Strapi
     await strapi.documents(`api::${model}.${model}`).create({
       data: entry,
+      status: 'published',
     });
   } catch (error) {
     console.error({ model, entry, error });
@@ -172,8 +173,6 @@ async function importGlobal() {
     entry: {
       ...global,
       favicon,
-      // Make sure it's not a draft
-      publishedAt: Date.now(),
       defaultSeo: {
         ...global.defaultSeo,
       },
