@@ -1,3 +1,9 @@
+## v1.3.0 (2026-09-22)
+
+### Pull Requests
+[#33](https://github.com/RafaelMoro/cms-tehesa/pull/33) | Add plan to add product images and implement
+
+
 ## v1.2.4 (2026-09-18)
 
 ### Pull Requests
