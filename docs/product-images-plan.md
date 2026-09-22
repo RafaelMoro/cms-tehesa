@@ -1138,69 +1138,232 @@ Products with no entry in `data/product-images.json` (checked across every categ
 
 - **Herrajes y accesorios para cable** (1)
   - nudo-para-cable-maleable-weston — Nudo para cable maleable (Weston)
+    - WT-00100
+    - WT-00120
+    - WT-00140
 - **Herramientas de corte y conformado** (54)
   - discos-corte-weston — Discos de corte (Weston)
+    - Z-20185
+    - Z-20190
+    - Z-20197
   - buriles-cuadrados-cobalto-cleveland — Buriles Cuadrados de Cobalto (Cleveland)
+    - CC44540
+    - CC44544
+    - CC44545
   - buriles-incor-k-42 — Buriles Incor K-42 (Cleveland)
+    - I01-001
+    - I01-002
+    - I01-003
   - extension-machuelos-bohrcraft — Extensión para Machuelos (Bohrcraft)
+    - BC-4500-270
+    - BC-4500-340
+    - BC-4500-700
   - juego-machuelos-aac-cleveland — Juego de Machuelos AAC (Cleveland)
+    - GGG107883
+    - GGG107943
+    - GGG108003
   - juego-machuelos-aav-cleveland — Juego de Machuelos AAV (Cleveland)
+    - CC1123-05323
+    - CC1123-06243
+    - CC1123-06323
   - juego-machuelos-av-bohrcraft — Juego de Machuelos A.V. (Bohrcraft)
   - machuelos-izq-semiconicos-aav-volkel — Machuelos Izquierdos Semiconicos A.A.V. Milimétrico (Volkel)
+    - 27026-2
+    - 27030-2
+    - 27034-2
   - machuelos-izq-fraccionales-semiconicos-aav-volkel — Machuelos Izquierdos Fraccionales Semicónicos A.A.V. (Volkel)
+    - 23008-2
+    - 23010-2
+    - 23014-2
   - machuelos-izq-fracc-rectos-aav-volkel — Machuelos Izquierdos Fraccionales Rectos A.A.V. (Volkel)
+    - 23008-3
+    - 23010-3
+    - 23014-3
   - machuelos-izq-con-finos-volkel — Machuelos Izquierdos Cónicos Finos (Volkel)
+    - 24010-1
+    - 24014-1
+    - 24016-1
   - machuelos-izq-rectos-aav-volkel — Machuelos Izquierdos Rectos A.A.V. (Volkel)
+    - 27026-3
+    - 27030-3
+    - 27034-3
   - machuelos-izq-rectos-finos-volkel — Machuelos Izquierdos Rectos Finos (Volkel)
+    - 24010-3
+    - 24014-3
+    - 24016-3
   - machuelo-npt-aav-volkel — Machuelo NPT A.A.V. (Volkel)
+    - 63510
+    - 63512
+    - 63514
   - machuelo-maquina-acero-inox-agujeros-pasados-fracc-volkel — Machuelo Máquina Acero Inox Agujeros Pasados Fraccionales. (Volkel)
+    - 35945
+    - 35946
+    - 35947
   - machuelo-maquina-acero-inox-agujeros-ciegos-mm-volkel — Machuelo Máquina Acero Inox Agujeros Ciegos Milimétricos. (Volkel)
+    - 36226
+    - 36230
+    - 36234
   - machuelo-maquina-acero-inox-agujeros-ciegos-fracc-volkel — Machuelo Máquina Acero Inox Agujeros Ciegos Fraccionales. (Volkel)
+    - 36945
+    - 36946
+    - 36947
   - machuelo-maquina-helice-35-volkel — Machuelo Máquina Hélice 35° (Volkel)
+    - 38726
+    - 38730
+    - 38734
   - dado-tarraja-mm-aav-volkel — Dado Tarraja Milimétrica A.A.V. (Volkel)
+    - 27416
+    - 27422
+    - 27440
   - machuelo-izq-conicos-aav-volkel — Machuelo Izquierdos Cónicos A.A.V. (Volkel)
+    - 27026-1
+    - 27030-1
+    - 27034-1
   - juego-machuelos-otros-volkel — Juego de Machuelos y otros (Volkel)
+    - 49510
+    - 47001
+    - 47033
   - juego-machuelos-bsp-av-2-piezas-bohrcraft — Juego de Machuelos BSP A.V. de 2 Piezas (Bohrcraft)
   - juego-machuelos-fraccionales-aav-2-piezas-volkel — Juego de Machuelos Fraccionales A.A.V. de 2 Piezas Finos (Volkel)
+    - 24305
+    - 24310
+    - 24314
   - juego-machuelos-milimetrico-aav-2-piezas-finos-volkel — Juego de Machuelos Milimétricos A.A.V. de 2 Piezas finos (Volkel)
+    - 26326
+    - 26336
+    - 26338
   - juego-machuelos-izq-fraccionales-aav-2-piezas-volkel — Juego de Machuelos Izquierdos Fraccionales Finos A.A.V. de 2 Piezas (Volkel)
+    - 24010
+    - 24014
+    - 24016
   - juego-machuelos-izq-fraccionales-aav-3-piezas-volkel — Juego de Machuelos Izquierdos Fraccionales A.A.V. de 3 Piezas (Volkel)
+    - 23008
+    - 23010
+    - 23014
   - juego-machuelos-izq-milimetricos-aav-3-piezas-volkel — Juego de Machuelos Izquierdos A.A.V. Milimétrico de 3 Piezas (Volkel)
+    - 27026
+    - 27030
+    - 27034
   - juego-machuelos-aav-milimetricos-tipo-europeo-volkel — Juego de Machuelos A.A.V. Milimétrico Tipo Europeo (Volkel)
+    - 27316
+    - 27322
+    - 27326
   - machelo-conico-milimetricos-av-tipo-europeo-volkel — Machuelo Cónico Milimétrico A.V. Tipo Europeo (Volkel)
+    - 27316-1
+    - 27322-1
+    - 27326-1
   - machelo-recto-milimetricos-av-tipo-europeo-volkel — Machuelo Recto Milimétrico A.V. Tipo Europeo (Volkel)
+    - 27316-3
+    - 27322-3
+    - 27326-3
   - machelo-recto-milimetricos-aav-fino-volkel — Machuelo Recto Milimétrico A.A.V. Fino (Volkel)
+    - 26326-2
+    - 26336-2
+    - 26338-2
   - laina-acero-azul-templado-5pul-precision — Laina de Acero azul templado de 5" (Precision)
+    - PB-23130
   - laina-acero-inoxidable-150mm-1-25m-precision — Laina de Acero Inoxidable de 150mm, 1.25m (Precision)
+    - PB-22971
+    - PB-22972
+    - PB-22973
   - machuelo-bsp-aav-volkel — Machuelo BSP A.A.V. (Volkel)
+    - 65312
+    - 65314
+    - 65316
   - machuelo-fraccional-aav-conico-fino-volkel — Machuelo Fraccional A.A.V. Cónico Fino. (Volkel)
+    - 24305-1
+    - 24310-1
+    - 24314-1
   - machuelo-fraccional-aav-recto-fino-volkel — Machuelo Fraccional A.A.V. Recto Fino. (Volkel)
+    - 24305-3
+    - 24310-3
+    - 24314-3
   - machuelo-fino-l-coil-fraccional-aav-volkel — Machuelo Fino L-Coil Fraccional A.A.V. (Volkel)
+    - TEV-03154
+    - TEV-03155
+    - TEV-03156
   - machuelo-l-coil-fraccional-aav-volkel — Machuelo L-Coil Fraccional A.A.V. (Volkel)
+    - TEV-03102
+    - TEV-03104
+    - TEV-03105
   - machuelo-l-coil-aav-milimetrico-volkel — Machuelo L-Coil A.A.V. Milimétrico (Volkel)
+    - TEV-03005
+    - TEV-03006
+    - TEV-03007
   - machuelo-milimetrico-aav-semiconico-volkel — Machuelo Milimétrico A.A.V. Semiconico (Volkel)
+    - 27322-2
+    - 27326-2
+    - 27330-2
   - machuelo-npt-aav-weston — Machuelo NPT A.A.V. (Weston)
+    - ST-5-764-001
+    - ST-5-764-002
+    - ST-5-764-003
   - machuelo-ac-weston — Machuelo A.C. (Weston)
+    - ST-5-778-140
   - machuelo-npt-ac-weston — Machuelo NPT A.C (Weston)
+    - ST-5-778-500
+    - ST-5-778-510
+    - ST-5-778-515
   - machuelo-aav-npt-cleveland — Machuelo AAV NPT (Cleveland)
+    - CC64038
+    - CC64039
+    - CC64040
   - machuelo-npt-av-bohrcraft — Machuelo NPT A.V. (Bohrcraft)
   - machuelo-maquina-fraccional-aav-volkel — Machuelo para Máquina Fraccional A.A.V. (Volkel)
+    - 75505
+    - 75508
+    - 75510
   - machuelo-sti-av-bohrcraft — Machuelo STI A.V. (Bohrcraft)
+    - BC-4800-300
+    - BC-4800-400
+    - BC-4800-500
   - punzon-rompe-arrastre-volkel — Punzon Rompe Arrastre (Volkel)
+    - TEV-07006
+    - TEV-07008
+    - TEV-07009
   - rayador-carburo-saravia — Rayador de Carburo (Bondhus)
+    - D600-94338
   - rima-recta-maquina-h8-weston — Rima recta de máquina H8 (Weston)
+    - ST-8-015-005
+    - ST-8-015-010
+    - ST-8-015-015
   - rima-maquina-h8-weston — Rima de máquina H8 (Weston)
+    - ST-8-019-040
+    - ST-8-019-055
+    - ST-8-019-065
   - rima-flauta-recta-aav-h7-weston — Rima de máquina Flauta Recta A.A.V. H7 (Weston)
+    - ST-8-015-403
+    - ST-8-015-406
+    - ST-8-015-409
   - avellanador-weston — Avellanador A.V. (Weston)
+    - ST-5-660-6015
+    - ST-5-660-6020
+    - ST-5-660-6035
   - avellanador-juego-6f-weston — Juego de Avellanadores 6F (Weston)
+    - ST-5-660-6088
+    - ST-5-660-8288
+    - ST-5-660-9088
 - **Llaves y herramientas de apriete** (7)
   - dado-cuadro-1-llanta-trasera-capuchon — Dado Cuadro 1" Llanta Trasera Capuchon (King Tony)
+    - KT-851426S
   - dado-cuadro-1-2-punta-ribe — Dado Cuadro 1/2" con Punta Ribe (King Tony)
+    - KT-404904
+    - KT-404905
+    - KT-404906
   - llave-tipo-torx-larga-bondhus — Llave Tipo Torx Larga (Bondhus)
+    - B421-32806
+    - B421-32807
+    - B421-32808
   - llave-gancho-ajustable-13-35mm — Llave de Gancho Ajustable 13 - 35mm (King Tony)
+    - KT-3641-35
   - llaves-combinadas-matraca-cambio — Llaves Combinadas de Matraca con Cambio (King Tony)
+    - KT-373208M
+    - KT-373212M
+    - KT-373217M
   - 1-2-punta-bristol-cromado — 1/2" Punta Bristol Cromado (King Tony)
+    - KT-406614
   - pinza-presion-curva-cromada — Pinza de Presión Curva Cromada (King Tony)
+    - KT-6011-07
 - **Tornillería** (26)
   - opresor-hexagono-interior-punta-copa-din-916-acero-inoxidable — Opresor de Hexágono Interior Punta de Copa DIN 916 de Acero Inoxidable (Marca Libre)
   - pija-galvanizada-galaxy-cabeza-hexagonal-punta-broca — Pija Galvanizada Galaxy de Cabeza Hexagonal, Punta de Broca (Marca Libre)
@@ -1218,6 +1381,9 @@ Products with no entry in `data/product-images.json` (checked across every categ
   - tornillo-hex-int-cab-cil-din-912-acer-inox-304-mm — Tornillo de Hexágono Interior Cabeza Cilindro DIN 912 de Acero Inoxidable 304 Milimétrico (Marca Libre)
   - tornillo-hex-int-cab-plana-din-7991-acer-inox-304-mm — Tornillo de Hexágono Interior Cabeza Plana DIN 7991 de Acero Inoxidable 304 Milimétrico (Marca Libre)
   - tornillo-ojo-forjado-weston — Tornillo Ojo Forjado (Weston)
+    - C-00600
+    - C-00605
+    - C-00610
   - tuerca-hexagonal-inserto-nylon-acero-inoxidable-304-std — Tuerca Hexagonal Inserto de Nylon Acero Inoxidable 304 STD (Marca Libre)
   - tuerca-bellota-acer-inox-304 — Tuerca Bellota de Acero Inoxidable 304 (Marca Libre)
   - tuerca-cople-galvanizada — Tuerca Cople Galvanizada (Marca Libre)
@@ -1230,38 +1396,114 @@ Products with no entry in `data/product-images.json` (checked across every categ
   - varilla-rosc-din-975-acer-inox-304-1mt — Varilla Roscada DIN 975 de Acero Inoxidable 304 de 1 Metro de Largo (Marca Libre)
 - **Perforación y accesorios para taladro** (27)
   - broca-aav-135-split-point — Broca AAV 135° Split Point (Bondhus)
+    - M111-11201
+    - M111-11202
+    - M111-11203
   - broca-aav-135-split-point-thunderbit — Broca AAV 135° Split Point Thunderbit (Bondhus)
+    - M211-12504
+    - M211-12505
+    - M211-12506
   - broca-carburo-solido-weston — Broca de carburo sólido (Weston)
+    - ST-1-160-040
+    - ST-1-160-045
+    - ST-1-160-050
   - broca-para-concreto-diager — Broca para Concreto Diager (Bondhus)
+    - D282-03076
+    - D282-04076
+    - D282-05102
   - broca-concreto-sds-weston — Broca Concreto SDS (Weston)
+    - ST-5-151-100
+    - ST-5-151-150
+    - ST-5-151-200
   - broca-concreto-weston — Broca Concreto (Weston)
+    - ST-5-150-10000
+    - ST-5-150-10002
+    - ST-5-150-10004
   - broca-centro-acero-av-weston — Broca de Centro de Acero A.V. (Weston)
+    - ST-8-600-010
+    - ST-8-600-015
+    - ST-8-600-020
   - broca-larga-acero-av-bohrcraft — Broca Larga Acero A.V. (Bohrcraft)
+    - BC-1350-100
+    - BC-1350-150
+    - BC-1350-200
   - broca-wp-concreto-weston — Broca WP Concreto (Weston)
+    - ST-5-148-020
+    - ST-5-148-030
+    - ST-5-148-050
   - broca-wp-zanco-sds-plus-weston — Broca WP Zanco SDS Plus (Weston)
+    - ST-5-148-350
+    - ST-5-148-370
+    - ST-5-148-410
   - broca-extra-larga-acero-av-bohrcraft — Broca Extra Larga Acero A.V. (Bohrcraft)
+    - BC-1400-10200
+    - BC-1400-10250
+    - BC-1400-10300
   - broca-zco-recto-cobalto-bohrcraft — Broca Zco. Recto de Cobalto (Bohrcraft)
+    - BC-1141-100
+    - BC-1141-150
+    - BC-1141-200
   - broca-zanco-recto-acero-av-weston-abc — Broca Zanco Recto de Acero A.V. (Weston)
+    - ST-5-180-005
+    - ST-5-180-010
+    - ST-5-180-015
   - broca-zco-recto-cobalto-weston-inches — Broca Zco. Recto de Cobalto (Weston)
+    - ST-5-162-010
+    - ST-5-162-025
+    - ST-5-162-035
   - broca-zco-recto-acero-av-weston — Broca Zco. Recto de Acero A.V. (Weston)
+    - ST-5-163-010
+    - ST-5-163-017
+    - ST-5-163-022
   - jgo-brocas-av-numericas-60-pzas-weston — Juego de Brocas A.V. Númericas 60 de piezas (Weston)
+    - ST-5-170-525
   - insertos-elicoil-std-juego-6-escareadores-tornillo-allen-acero-av-bohrcraft — Insertos Elicoil STD - Juego de 6 Escareadores para Tornillo Allen Acero A.V., Bohrcraft (Bohrcraft)
   - juego-brocas-cobalto-metricas-25-pzas — Juego de brocas de Cobalto Métricas (25 pzas) (Weston)
+    - ST-5-159-009
   - juego-brocas-cobalto-fraccionales-weston — Juego de Brocas de Cobalto Fraccionales (Weston)
+    - ST-5-159-006
   - broca-larga-tl-weston — Broca Larga TL (Weston)
+    - NB-5-164-015
+    - NB-5-164-035
+    - NB-5-164-050
   - broca-av-zanco-weston-inches — Broca A.V. Zanco. 1/2" (Weston)
+    - ST-5-166-010
+    - ST-5-166-015
+    - ST-5-166-020
   - broca-av-zanco-weston-metric — Broca A.V. Zanco. 1/2" Milimétrico (Weston)
+    - ST-5-166-260
+    - ST-5-166-265
+    - ST-5-166-270
   - broca-zanco-1-2-cobalto-weston — Broca Zanco 1/2" de Cobalto (Weston)
+    - ST-5-167-320
+    - ST-5-167-360
+    - ST-5-167-440
   - broca-larga-tl-inches-weston — Broca Larga TL (Weston)
+    - ST-5-164-005
+    - ST-5-164-010
+    - ST-5-164-055
   - broquero-con-llave-y-montaje-weston — Broqueros (Weston)
+    - SA-010-0100
+    - SA-010-0120
+    - SA-010-0130
   - broquero-ajustable-weston — Broquero ajustable (Weston)
+    - SA-010-0340
+    - SA-010-0360
+    - SA-010-0370
   - broquero-jacobs-con-llave-weston — Broquero Jacobs con llave (Weston)
+    - SA-012-0060
+    - SA-012-0080
+    - SA-012-0200
 - **Roscado y herramientas para roscas** (5)
   - dado-tarraja-ajustable-bohrcraft — Dado Tarraja Ajustable (Bohrcraft)
   - dado-tarraja-bsp-aav-bohrcraft — Dado Tarraja BSP A.V. (Bohrcraft)
   - dado-tarraja-izquierdo-aav-bohrcraft — Dado Tarraja Izquierdo A.V. (Bohrcraft)
   - kit-reparador-roscas-fracc-volkel — Kit Reparador de Roscas Fraccional (Volkel)
+    - TEV-04101
+    - TEV-04103
+    - TEV-04104
   - kit-reparador-roscas-taller-volkel — Kit Reparador de Roscas para Taller (Volkel)
+    - TEV-04085
 
 Count: 212 products mapped and injected via `npm run images:products` (130 other categories + 81 tornilleria + 1 sellado-taponado) + 120 products above still with no image = 332 total products across `../products-tehesa/data`.
 
