@@ -1,6 +1,6 @@
 {
   "name": "tehesa-store-api",
-  "version": "1.2.4",
+  "version": "1.3.1",
   "private": true,
   "description": "A Strapi application",
   "scripts": {
@@ -18,6 +18,7 @@
     "draft:variants": "node ./scripts/list-draft-variants.js",
     "seed:transfer": "strapi transfer",
     "update-products-price-count": "node ./scripts/update-price-variant-count-products.js",
+    "images:products": "node ./scripts/set-product-images.js",
     "start": "strapi start",
     "strapi": "strapi",
     "upgrade": "npx @strapi/upgrade latest",

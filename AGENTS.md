@@ -22,6 +22,7 @@
 - `seed:start` and `seed:products` read product JSON from `../../products-tehesa/data` relative to `scripts/`, not from this repo's `data/data.json`.
 - `npm run seed:clear` deletes variants, products, brands, then categories; use it only when clearing local seed data is intended.
 - `npm run publish:all` publishes draft categories, brands, products and variants (`scripts/publish-content.js`, takes model names as args; `publish:variants` is the variant-only alias); `npm run update-products-price-count` only updates products in category customId `perforacion-accesorios-taladro`.
+- `npm run images:products` sets `product.imageUrl` from `data/product-images.json` (`{ customId: url }`), matching products by `customId`; idempotent, logs mapped IDs missing in the DB and DB products without a mapped URL.
 - `npm run seed:example` is the Strapi starter/sample seed path and references `article`/`author` content types that are not present in the current app.
 
 ## CI And Releases

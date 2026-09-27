@@ -40,7 +40,7 @@ types/                  Generated Strapi TypeScript types
 
 | Content Type | Schema File | Key Fields | Notes |
 | --- | --- | --- | --- |
-| `product` | `src/api/product/content-types/product/schema.json` | `name`, `description`, unique `customId`, `minPrice`, `maxPrice`, `variantCount`, `hasOneProductVariant` | Draft/publish enabled. Relates to variants, one brand, and one category. |
+| `product` | `src/api/product/content-types/product/schema.json` | `name`, `description`, unique `customId`, `imageUrl`, `minPrice`, `maxPrice`, `variantCount`, `hasOneProductVariant` | Draft/publish enabled. Relates to variants, one brand, and one category. `imageUrl` is a plain Cloudinary URL string, set by `scripts/set-product-images.js`, not a media-library field. |
 | `product-variant` | `src/api/product-variant/content-types/product-variant/schema.json` | `diameter`, required `quantity`, `material`, `packageQuantity`, `measurementUnit`, `internalId`, `pricing`, `stock` | Draft/publish enabled. Many-to-one relation to `product`. Contains fastener/head enum fields. |
 | `category` | `src/api/category/content-types/category/schema.json` | `name`, unique `customId` | Draft/publish enabled. One-to-many relation to products. |
 | `brand` | `src/api/brand/content-types/brand/schema.json` | `name`, unique `customId` | Draft/publish enabled. One-to-many relation to products. |
@@ -149,6 +149,7 @@ Important script behavior:
 - `npm run seed:clear` deletes product variants, products, brands, then categories. It is destructive for local seed data.
 - `npm run publish:variants` publishes draft product variants.
 - `npm run update-products-price-count` recalculates `minPrice`, `maxPrice`, and `variantCount` only for products in category customId `perforacion-accesorios-taladro`.
+- `npm run images:products` (`scripts/set-product-images.js`) sets `imageUrl` on products matched by `customId` against `data/product-images.json`.
 - `npm run seed:example` uses the Strapi starter/sample seed and references `article` and `author` content types that are not present in this app.
 
 ---

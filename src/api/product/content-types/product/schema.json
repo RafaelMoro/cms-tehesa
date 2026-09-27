@@ -21,6 +21,9 @@
       "type": "string",
       "unique": true
     },
+    "imageUrl": {
+      "type": "string"
+    },
     "product_variants": {
       "type": "relation",
       "relation": "oneToMany",

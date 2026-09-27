@@ -1234,6 +1234,16 @@ ceiling (§13's own trigger).
 **Done when:** the old instance no longer appears in the Lightsail instance list, the static IP
 shows attached to the new instance, and `https://<DOMAIN>/admin` still serves from it.
 
+**Closed out 2026-09-18.** New instance provisioned at static IP `34.231.224.254` (DNS updated
+accordingly), full Phase 0–6 runbook re-executed end to end on the $12/2 GB plan, S3 backup and
+restore drill verified from the new box before the old instance was deleted. One real fix found
+along the way, worth keeping for any future resize: the admin panel build OOM'd on `npm run build`
+inside the image (`FATAL ERROR: ... JavaScript heap out of memory`) even with the 2 GB swapfile in
+place, because it's a V8 heap ceiling hitting its own default limit, not a system-level OOM-kill.
+Fixed by adding `ENV NODE_OPTIONS=--max-old-space-size=3072` to the build stage in the `Dockerfile`
+(merged to `develop`/`main`). §12 troubleshooting only covered the 512 MB system-OOM case before
+this — the heap-limit failure looks similar in the log but needs a different fix.
+
 My notes:
 
 - Create new instance
