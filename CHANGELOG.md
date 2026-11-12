@@ -1,3 +1,9 @@
+## v1.3.2 (2026-11-12)
+
+### Pull Requests
+[#36](https://github.com/RafaelMoro/cms-tehesa/pull/36) | Move CMS domain to tehesa-cms.faber-solutions.com
+
+
 ## v1.3.1 (2026-09-22)
 
 ### Pull Requests
