@@ -123,7 +123,7 @@ If Docker or containerd was upgraded, the daemon restarts and **so do all contai
 
 ```bash
 docker ps --format '{{.Names}} {{.Status}}'     # three rows, postgres "(healthy)"
-curl -sI https://tehesa-strapi.budget-master.space/admin | head -1    # HTTP/2 200
+curl -sI https://tehesa-cms.faber-solutions.com/admin | head -1    # HTTP/2 200
 ```
 
 **Done when:** `apt list --upgradable` is empty and the curl returns 200.
@@ -212,7 +212,7 @@ ssh tehesa 'cd ~/store-tehesa-api; \
   docker ps --format "{{.Names}} {{.Status}}"; \
   tail -3 ~/backup.log; \
   ls /var/run/reboot-required 2>/dev/null; \
-  echo | openssl s_client -connect tehesa-strapi.budget-master.space:443 -servername tehesa-strapi.budget-master.space 2>/dev/null | openssl x509 -noout -enddate; \
+  echo | openssl s_client -connect tehesa-cms.faber-solutions.com:443 -servername tehesa-cms.faber-solutions.com 2>/dev/null | openssl x509 -noout -enddate; \
   docker compose logs --since 720h strapi 2>&1 | grep -ciE "error|killed" '
 ```
 
