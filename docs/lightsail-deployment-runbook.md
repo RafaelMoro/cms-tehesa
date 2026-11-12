@@ -38,7 +38,7 @@ console work. Read this section before doing anything.
 | Placeholder                                       | Example                                        | Where it comes from                                             |
 | ------------------------------------------------- | ---------------------------------------------- | --------------------------------------------------------------- |
 | `<STATIC_IP>`                                     | `54.210.11.22`                                 | Lightsail static IP, Phase 1.2 `[HUMAN]`                        |
-| `<DOMAIN>`                                        | `tehesa-strapi.budget-master.space`            | Fixed. Subdomain of `budget-master.space`                       |
+| `<DOMAIN>`                                        | `tehesa-cms.faber-solutions.com`               | Fixed. Subdomain of `faber-solutions.com` (Cloudflare DNS)      |
 | `<SSH_USER>`                                      | `ubuntu`                                       | Lightsail Ubuntu default                                        |
 | `<SSH_KEY>`                                       | `~/.ssh/tehesa_lightsail`                      | Generated locally in Phase 1.0 `[HUMAN]`                        |
 | `<REPO_URL>`                                      | `https://github.com/RafaelMoro/cms-tehesa.git` | Fixed. **Public** repo — HTTPS, no auth                         |
@@ -86,7 +86,7 @@ Confirm all of these before Phase 0. Missing any one blocks a later phase.
 
 - [ ] AWS account on the **Paid plan** (the Free plan auto-closes the account after
       6 months). Signup credits absorb the early bill.
-- [ ] DNS management access for `budget-master.space`.
+- [ ] DNS management access for `faber-solutions.com` (Cloudflare).
 - [ ] Local repo working tree clean, and **local `.env` + `.tmp/data.db` intact** — the
       local SQLite database is the source for the Phase 3 migration. Do not run
       `npm run seed:clear`.
@@ -387,8 +387,8 @@ Append (keep the existing six lines untouched):
 # DATABASE_USERNAME=strapi
 # DATABASE_PASSWORD=
 # DATABASE_SSL=false
-# PUBLIC_URL=https://tehesa-strapi.budget-master.space
-# PUBLIC_DOMAIN=tehesa-strapi.budget-master.space
+# PUBLIC_URL=https://tehesa-cms.faber-solutions.com
+# PUBLIC_DOMAIN=tehesa-cms.faber-solutions.com
 # IS_PROXIED=true
 ```
 
@@ -449,15 +449,21 @@ it detached. Record it as `<STATIC_IP>`.
 
 ### 1.3 DNS
 
-At the `budget-master.space` registrar, create an **A record**:
+In the `faber-solutions.com` zone (Cloudflare), create an **A record**:
 
 | Type | Host            | Value         | TTL |
 | ---- | --------------- | ------------- | --- |
-| A    | `tehesa-strapi` | `<STATIC_IP>` | 300 |
+| A    | `tehesa-cms`    | `<STATIC_IP>` | 300 |
 
 **If the zone is on Cloudflare, set the record to "DNS only" (grey cloud).** Proxied
 (orange cloud) resolves to Cloudflare IPs, auto-publishes AAAA records, and puts a second TLS
-terminator in front of Caddy. This bit us on the first attempt.
+terminator in front of Caddy. This bit us on the first attempt. `faber-solutions.com` has a
+proxied `*` wildcard: without its own DNS-only record the name still resolves to Cloudflare
+and answers 525.
+
+> **As changed 2026-11-12.** `budget-master.space` expired; the CMS moved from
+> `tehesa-strapi.budget-master.space` to `<DOMAIN>` by adding the A record above and editing
+> `PUBLIC_DOMAIN`/`PUBLIC_URL` in the box `.env` (then §11 `.env` changes).
 
 **Do not create an AAAA record.** Lightsail also assigns the instance a public IPv6 address,
 governed by a _separate_ IPv6 firewall tab. An AAAA record pointing at a v6 address with port 80
@@ -505,7 +511,7 @@ Two things to know before restricting SSH:
 ### 1.5 Verify DNS before going further
 
 ```bash
-dig +short tehesa-strapi.budget-master.space @1.1.1.1
+dig +short tehesa-cms.faber-solutions.com @1.1.1.1
 ```
 
 It must print `<STATIC_IP>`. `@1.1.1.1` deliberately bypasses your local resolver: if you
@@ -1111,9 +1117,21 @@ Every PR still needs a `major`/`minor`/`patch` label.
 | Deploy a new image manually | `docker login ghcr.io` first — the package is private and CI's token expires — then `docker compose pull strapi && docker compose up -d strapi` |
 | Strapi minor upgrade        | bump `@strapi/*` in `package.json`, merge to `develop`, CI redeploys                                                                            |
 
+**`STRAPI_IMAGE` before any manual `up`.** CI deploys `<GHCR_IMAGE>:<sha>` and never pulls
+`:latest` onto the box. A bare `docker compose up` that (re)creates `strapi` falls back to
+`:latest`, the pull is denied (private package), and Strapi stays down. Pin the running image
+first — before `down`, since it reads the live container:
+
+```bash
+export STRAPI_IMAGE=$(docker inspect store-tehesa-api-strapi-1 --format '{{.Config.Image}}')
+```
+
+Container restarts (`restart`, reboot, Docker upgrade) reuse the container and are unaffected.
+
 **Config changes** (`config/*.ts`) require a rebuilt image — they are compiled into `dist/`.
-Push to `develop` and let CI handle it. `.env` changes only need
-`docker compose up -d strapi`.
+Push to `develop` and let CI handle it. `.env` changes only need, with `STRAPI_IMAGE` set as
+above, `docker compose up -d --no-build --force-recreate strapi caddy` (`caddy` too if
+`PUBLIC_DOMAIN` changed).
 
 ---
 
